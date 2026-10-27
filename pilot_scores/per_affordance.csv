@@ -1,0 +1,20 @@
+affordance,gt_points,predicted_points,iou,correct_percent,predicted_none_percent,other_error_percent,mean_target_probability,mean_none_probability,target_minus_none,per_point_target_rank2_percent,region_average_target_rank
+grab,0,0,,,,,,,,,
+accommodate,225,0,0.0,0.0,100.0,0.0,0.054760331267284024,0.6581391355726454,-0.6033788043053614,60.888888888888886,2
+raise,0,0,,,,,,,,,
+unlock,0,0,,,,,,,,,
+rest,0,0,,,,,,,,,
+take a seat,0,0,,,,,,,,,
+bear,0,0,,,,,,,,,
+wrap,1028,0,0.0,0.0,100.0,0.0,0.10009539679620516,0.7302098956959256,-0.6301144988997205,89.98054474708171,2
+pour,563,0,0.0,0.0,100.0,0.0,0.06891708014132604,0.6006334156168502,-0.5317163354755242,55.06216696269982,2
+reposition,0,0,,,,,,,,,
+demonstrate,0,0,,,,,,,,,
+push,0,0,,,,,,,,,
+drag,0,0,,,,,,,,,
+hear,0,0,,,,,,,,,
+clothe,0,0,,,,,,,,,
+thumb,0,0,,,,,,,,,
+slice,0,0,,,,,,,,,
+jab,0,0,,,,,,,,,
+none,232,2048,0.11328125,100.0,100.0,0.0,0.6449940678631437,0.6449940678631437,0.0,0.0,1

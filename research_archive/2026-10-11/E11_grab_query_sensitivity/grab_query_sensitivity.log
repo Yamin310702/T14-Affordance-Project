@@ -1,0 +1,186 @@
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/cuda/__init__.py:68: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+{
+  "experiment": "E11",
+  "status": "running",
+  "model": "Unofficial Espresso-3D; Affogato-pretrained weights",
+  "device": "mps",
+  "seed": 1,
+  "scope": "Held-out exploratory evaluation, partial-view point clouds, grab affordance only",
+  "query_conditions": [
+    "Point to the part you would grasp.",
+    "Identify the region suitable for gripping.",
+    "Locate where you would grip the object."
+  ],
+  "ensemble": "Arithmetic mean of the three sigmoid score maps, pointwise",
+  "sample_selection": "For each shape ID, take first partial view with any GT pour points; sort eligible IDs by SHA256(\"E09-pour:\"+shape_id); next 20 after the E11 grab affordance set, excluding its 10 IDs. Selection uses GT availability only, not prediction outcomes.",
+  "metric": "Affogato/Espresso source sample_metrics; aIoU 20 thresholds [0,1], AUC, SIM, MAE",
+  "claim_limit": "Selected for positive grab labels; distinct from E09/E10 pour objects, still a small pilot rather than a definitive benchmark.",
+  "dataset_samples": 9140,
+  "eligible_unique_objects": 192,
+  "objects": [
+    {
+      "index": 1120,
+      "shape_id": "953ea008e95d811154d7082b34825ef0",
+      "category": "Faucet",
+      "gt_grab_points": 625,
+      "selection_hash": "0028f84b44b5902b6daf6ff5c298caf8d70c075de627e82726d63fdc71921c54"
+    },
+    {
+      "index": 4256,
+      "shape_id": "d1792ebb96fe73ff30612f5c0ef21eb8",
+      "category": "Bottle",
+      "gt_grab_points": 453,
+      "selection_hash": "029bfbd105ddeb5c1b2e73ba5c18ab83382787fafe63cdac9cf61673a993b8c0"
+    },
+    {
+      "index": 4236,
+      "shape_id": "ee007f1aac12fbe549a44197486ae284",
+      "category": "Bottle",
+      "gt_grab_points": 243,
+      "selection_hash": "02ff413eb277125376505718d80285b9955bc3f149a980abc0d148f1a47834da"
+    },
+    {
+      "index": 980,
+      "shape_id": "84ca0624075af918cc34b900bb2492e",
+      "category": "Knife",
+      "gt_grab_points": 582,
+      "selection_hash": "033ce85d067e76ce201870ac5161c6f80d33dcd73e44dc229c3dc4989c177bea"
+    },
+    {
+      "index": 424,
+      "shape_id": "4343b20f7adccba7bf96348b67d82100",
+      "category": "Earphone",
+      "gt_grab_points": 807,
+      "selection_hash": "05f9abcbf8c3f95447cd1c8703e9c7b1cffec01d32be6a7fe26ef62a56ea9368"
+    },
+    {
+      "index": 8760,
+      "shape_id": "df0dad9aa5876de3af81f84c1d08b8a2",
+      "category": "Hat",
+      "gt_grab_points": 895,
+      "selection_hash": "066c63d56653f116e8f146dbb0fc20322923d84c596b53a1da37bb2c6335402f"
+    },
+    {
+      "index": 1172,
+      "shape_id": "cbac6ded2160f1beb362845c6edb57fc",
+      "category": "Faucet",
+      "gt_grab_points": 817,
+      "selection_hash": "08a86f139f62139e6ee95b0d60e0cbb90163771ae9c1f556b43b0de3353ece44"
+    },
+    {
+      "index": 1196,
+      "shape_id": "2a7ffc2172f9a2ddb362845c6edb57fc",
+      "category": "Faucet",
+      "gt_grab_points": 1168,
+      "selection_hash": "09dba6f2522794036ba8661b63ab027518c0cb3b93a9caf39bb7af785ae644bd"
+    },
+    {
+      "index": 1316,
+      "shape_id": "1f713f9a9ba4eca2b362845c6edb57fc",
+      "category": "Faucet",
+      "gt_grab_points": 805,
+      "selection_hash": "0de24ab884c7dc21b3e2296268b2772df38e7e57a6ae9bc5472da74db779b38f"
+    },
+    {
+      "index": 4264,
+      "shape_id": "9f2bb4a157164af19a7c9976093a710d",
+      "category": "Bottle",
+      "gt_grab_points": 572,
+      "selection_hash": "0e6c0ffcc324b26684dbc3df18e7f1a2f974e840c6b0f05fa6d91a334bfa6a3d"
+    },
+    {
+      "index": 1132,
+      "shape_id": "3ab88b710b8ad3ee3321831d2245cf06",
+      "category": "Faucet",
+      "gt_grab_points": 1073,
+      "selection_hash": "0ecee1db055dc517918e1383cda08090ab92d04fd430b338a18641a47764dc55"
+    },
+    {
+      "index": 884,
+      "shape_id": "73dd7fb60dd52b85ed4efc1a1dc582cb",
+      "category": "Knife",
+      "gt_grab_points": 772,
+      "selection_hash": "0f018f9b193a60765fa5dcf1b127d062d17b1613dc439b12b12bc99938595bbe"
+    },
+    {
+      "index": 364,
+      "shape_id": "6bf1559769018cbb354b166143712fb3",
+      "category": "Earphone",
+      "gt_grab_points": 1058,
+      "selection_hash": "0f4ad4cfca16bba1db18b16edafb078e090bea80305b0eaa55ff56b40e9c1402"
+    },
+    {
+      "index": 1160,
+      "shape_id": "b7ca2740aaae2d2c908061a998e20526",
+      "category": "Faucet",
+      "gt_grab_points": 973,
+      "selection_hash": "0f783cac76c757109b79b64bce27fa8f96f369cea7462da08cb574b16d0e27d8"
+    },
+    {
+      "index": 412,
+      "shape_id": "5e5de53a10338650957b6a4f3924d982",
+      "category": "Earphone",
+      "gt_grab_points": 1156,
+      "selection_hash": "110ff66404c37d2951a7ec7e65940538be608f213a68dd86d97b5958f67a73cb"
+    },
+    {
+      "index": 896,
+      "shape_id": "a9a091c148dcd07a156edd8a0a2b1378",
+      "category": "Knife",
+      "gt_grab_points": 96,
+      "selection_hash": "1364cd7a11fdbd43dd906ccec5a1ce012c6fa2e370fc0981a9cb99818d7623fb"
+    },
+    {
+      "index": 888,
+      "shape_id": "854e7bb73afaff7591ea3afb2749822f",
+      "category": "Knife",
+      "gt_grab_points": 400,
+      "selection_hash": "1376bbb584860de3debfa013d01b4c8868e790388cc7df7cd8b716b6541d0e29"
+    },
+    {
+      "index": 1372,
+      "shape_id": "1dfea364-ded5-4c4d-b4d8-bf2c3c268f00",
+      "category": "Scissors",
+      "gt_grab_points": 1346,
+      "selection_hash": "18f5d885d03f65c57a3f6b024f7465cf9c90fed0fc1d80bb472c1e12ce0a6625"
+    },
+    {
+      "index": 392,
+      "shape_id": "uc4c0492a-3be3-40bf-88b6-e7a7e9dafc4d",
+      "category": "Earphone",
+      "gt_grab_points": 653,
+      "selection_hash": "1bd141a86fb2d9fc7c4d12765bdb44c11231dfff25ce4b74e63b8b7f253a8c67"
+    },
+    {
+      "index": 444,
+      "shape_id": "4beb536ea2909f40713decb1a0563b12",
+      "category": "Earphone",
+      "gt_grab_points": 1086,
+      "selection_hash": "1da7e13423670fab380b6c3fd8135238a30fe3489e808bfe39a068c6cb02e437"
+    }
+  ]
+}
+/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/voxelization.py:17: UserWarning: The reduce argument of torch.scatter with Tensor src is deprecated and will be removed in a future PyTorch release. Use torch.scatter_reduce instead for more reduction options. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:227.)
+  out_feature = result.scatter_(index=indices.long(), src=features, dim=2, reduce='add')
+Completed object 1/20: Faucet, 953ea008e95d811154d7082b34825ef0; GT grab points=625
+Completed object 2/20: Bottle, d1792ebb96fe73ff30612f5c0ef21eb8; GT grab points=453
+Completed object 3/20: Bottle, ee007f1aac12fbe549a44197486ae284; GT grab points=243
+Completed object 4/20: Knife, 84ca0624075af918cc34b900bb2492e; GT grab points=582
+Completed object 5/20: Earphone, 4343b20f7adccba7bf96348b67d82100; GT grab points=807
+Completed object 6/20: Hat, df0dad9aa5876de3af81f84c1d08b8a2; GT grab points=895
+Completed object 7/20: Faucet, cbac6ded2160f1beb362845c6edb57fc; GT grab points=817
+Completed object 8/20: Faucet, 2a7ffc2172f9a2ddb362845c6edb57fc; GT grab points=1168
+Completed object 9/20: Faucet, 1f713f9a9ba4eca2b362845c6edb57fc; GT grab points=805
+Completed object 10/20: Bottle, 9f2bb4a157164af19a7c9976093a710d; GT grab points=572
+Completed object 11/20: Faucet, 3ab88b710b8ad3ee3321831d2245cf06; GT grab points=1073
+Completed object 12/20: Knife, 73dd7fb60dd52b85ed4efc1a1dc582cb; GT grab points=772
+Completed object 13/20: Earphone, 6bf1559769018cbb354b166143712fb3; GT grab points=1058
+Completed object 14/20: Faucet, b7ca2740aaae2d2c908061a998e20526; GT grab points=973
+Completed object 15/20: Earphone, 5e5de53a10338650957b6a4f3924d982; GT grab points=1156
+Completed object 16/20: Knife, a9a091c148dcd07a156edd8a0a2b1378; GT grab points=96
+Completed object 17/20: Knife, 854e7bb73afaff7591ea3afb2749822f; GT grab points=400
+Completed object 18/20: Scissors, 1dfea364-ded5-4c4d-b4d8-bf2c3c268f00; GT grab points=1346
+Completed object 19/20: Earphone, uc4c0492a-3be3-40bf-88b6-e7a7e9dafc4d; GT grab points=653
+Completed object 20/20: Earphone, 4beb536ea2909f40713decb1a0563b12; GT grab points=1086
+Final status: complete

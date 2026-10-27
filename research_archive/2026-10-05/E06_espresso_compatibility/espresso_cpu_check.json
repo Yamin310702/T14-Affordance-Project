@@ -1,0 +1,15 @@
+{
+  "device": "cpu",
+  "torch": "2.14.1",
+  "pretrained": false,
+  "points": 2048,
+  "parameters": 106890240,
+  "shape": [
+    1,
+    2048,
+    448
+  ],
+  "finite": true,
+  "status": "passed",
+  "seconds": 2.645838125026785
+}

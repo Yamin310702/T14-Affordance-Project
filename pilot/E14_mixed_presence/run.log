@@ -1,0 +1,231 @@
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/cuda/__init__.py:68: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+{
+  "status": "running",
+  "eligible_counts": {
+    "grab": {
+      "positive": 81,
+      "negative": 1860
+    },
+    "pour": {
+      "positive": 32,
+      "negative": 1909
+    },
+    "wrap": {
+      "positive": 23,
+      "negative": 1918
+    },
+    "accommodate": {
+      "positive": 185,
+      "negative": 1756
+    },
+    "unlock": {
+      "positive": 188,
+      "negative": 1753
+    }
+  },
+  "sampled_per_affordance": "20 positive + 20 negative"
+}
+/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/voxelization.py:17: UserWarning: The reduce argument of torch.scatter with Tensor src is deprecated and will be removed in a future PyTorch release. Use torch.scatter_reduce instead for more reduction options. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:227.)
+  out_feature = result.scatter_(index=indices.long(), src=features, dim=2, reduce='add')
+Completed grab positive 1/20: Faucet, 941633c3da8099dc76c18e71fd49c4dc; GT points=1160
+Completed grab positive 2/20: Faucet, 66c916bcb881f8b13321831d2245cf06; GT points=1110
+Completed grab positive 3/20: Bag, abba6df6294f20c569ea850160c0b35; GT points=1155
+Completed grab positive 4/20: Earphone, 53433f3e15014d831220240e825d0985; GT points=237
+Completed grab positive 5/20: Bag, 71ead7f072106c63ed13f430b2941481; GT points=418
+Completed grab positive 6/20: Earphone, uaf979f5a-0783-4515-9205-96e6f9774dce; GT points=742
+Completed grab positive 7/20: Faucet, 182136abd343be8b8fa6d5040a6c641; GT points=392
+Completed grab positive 8/20: Faucet, 6b48e8d129f22956b362845c6edb57fc; GT points=909
+Completed grab positive 9/20: Faucet, 996932ea9d17bc9ab362845c6edb57fc; GT points=585
+Completed grab positive 10/20: Knife, b8fe56eeed3951392f98be9d5bb04d17; GT points=1178
+Completed grab positive 11/20: Bag, bb6eba59b185e6bce8a1430c80ad4e85; GT points=136
+Completed grab positive 12/20: Knife, 912ddeb6b325df6aad1d0cc319eac33d; GT points=215
+Completed grab positive 13/20: Faucet, 346a94616fa138bb85d4c34ee84c24a9; GT points=773
+Completed grab positive 14/20: Faucet, 4a77b3d8bca397c5f6c00faf69d13ed1; GT points=1790
+Completed grab positive 15/20: Bag, 10a885f5971d9d4ce858db1dc3499392; GT points=524
+Completed grab positive 16/20: Hat, bf120175fed89392954cc04e9b526b85; GT points=235
+Completed grab positive 17/20: Hat, 72877ec0bb0b921fb10e410f6c99c299; GT points=735
+Completed grab positive 18/20: Knife, 1460eded8006b10139c78a1e40e247f3; GT points=527
+Completed grab positive 19/20: Faucet, f4f6333e2342ea4276c18e71fd49c4dc; GT points=1250
+Completed grab positive 20/20: Knife, 171c19d5205fb3291fc43d5b32fa230f; GT points=685
+Completed grab negative 1/20: Table, 50323d86b68db6fbc35131da26f8061a; GT points=0
+Completed grab negative 2/20: StorageFurniture, fe025a756926fd9620192a5319e3e2e4; GT points=0
+Completed grab negative 3/20: StorageFurniture, babe716e40b3aa81a54c1b71c072d546; GT points=0
+Completed grab negative 4/20: Chair, d50a49368f5d0e7c284432ce2f42f498; GT points=0
+Completed grab negative 5/20: Table, f6b3638983b0effaf3bf08ec218707d; GT points=0
+Completed grab negative 6/20: StorageFurniture, 11beea78b1d558d4b246c4171f2c393b; GT points=0
+Completed grab negative 7/20: Table, f023a5489450b924520ad20925ff9d2d; GT points=0
+Completed grab negative 8/20: Table, da3e68c20b832c47a3b06ba374e12b77; GT points=0
+Completed grab negative 9/20: Display, 15e7231a97ccf7953aeb14563b37e04a; GT points=0
+Completed grab negative 10/20: Clock, 8af7cb8b42d0c8b1f9e8cd846ef13776; GT points=0
+Completed grab negative 11/20: Table, a44b3e23fa01c205c3bd24f986301745; GT points=0
+Completed grab negative 12/20: Table, 7842ac8b7a053dbf61bf305cc5ea87da; GT points=0
+Completed grab negative 13/20: Chair, e12ac2c1c707b7b2f45a7a3d26bcb6ad; GT points=0
+Completed grab negative 14/20: Chair, eeafc14e4e0db2ca3b481215325f1515; GT points=0
+Completed grab negative 15/20: Clock, a630e09afe21e711f51f77a6d7299806; GT points=0
+Completed grab negative 16/20: Chair, 3adba11cee055363f51f77a6d7299806; GT points=0
+Completed grab negative 17/20: Chair, c571ff6f3231fe861e1a7bd9d68b88a6; GT points=0
+Completed grab negative 18/20: Table, 1bce2f4937d36446a32c566d71fa585c; GT points=0
+Completed grab negative 19/20: Chair, 4dcf1f64f70f22d7b4569422e5e8ba0; GT points=0
+Completed grab negative 20/20: Table, aa615f385b320782eb57f2e4f0583f2c; GT points=0
+Completed pour positive 1/20: TrashCan, 8026b11c2f66d77ed5a4ff0c97164231; GT points=1457
+Completed pour positive 2/20: Vase, 789d336e4456d8854dff7c27c1f6df72; GT points=799
+Completed pour positive 3/20: TrashCan, f8b449eee1c8775fd2b12aa6a0f050b3; GT points=195
+Completed pour positive 4/20: Vase, 4706b6fc43ee09358fe24cab2bc152da; GT points=35
+Completed pour positive 5/20: Bottle, 5a1e624764af0205bf8b9d530de7a108; GT points=96
+Completed pour positive 6/20: Vase, 434351669b58f5bd438d8caa9ae106fa; GT points=287
+Completed pour positive 7/20: Vase, 10de406de3078873a2c59a4d90e63212; GT points=982
+Completed pour positive 8/20: TrashCan, e19887ca50862a434c86b1fdc94892eb; GT points=164
+Completed pour positive 9/20: Vase, 5d123380371637c330b9e09efbedfc98; GT points=311
+Completed pour positive 10/20: TrashCan, 555f9430c2ca273ccb2a965e75be701c; GT points=528
+Completed pour positive 11/20: TrashCan, bf4e08fe5e07373ade5ce145a809def2; GT points=400
+Completed pour positive 12/20: Vase, 23dd0031ba0db00d1a08ef511bce5615; GT points=562
+Completed pour positive 13/20: Vase, 1d7868b4ad0913bf9f6b966b784c8347; GT points=619
+Completed pour positive 14/20: Vase, 44aea02b6852ce98910e50f05b8001; GT points=792
+Completed pour positive 15/20: Mug, f626192a5930d6c712f0124e8fa3930b; GT points=746
+Completed pour positive 16/20: Vase, 7def3eec9ddc24d7a1c637e821f12a67; GT points=783
+Completed pour positive 17/20: TrashCan, af1dc226f465990e81faebbdea6bd9be; GT points=642
+Completed pour positive 18/20: Vase, 1b121101806758e4f9aec59741c69cf7; GT points=1235
+Completed pour positive 19/20: Vase, e0a62f7d9bb5cfea36b0f2a1430e993a; GT points=178
+Completed pour positive 20/20: TrashCan, d6474403437240d578e4d091a0ee3ecd; GT points=857
+Completed pour negative 1/20: Table, a54de0e6573dabc0ac42b9d8db52fc14; GT points=0
+Completed pour negative 2/20: Display, 453b06180bcfd33a86b76551c6a3b2b; GT points=0
+Completed pour negative 3/20: Chair, bd6bc40b3327e5109501f2fa226917d0; GT points=0
+Completed pour negative 4/20: Chair, 4918512f624696278b424343280aeccb; GT points=0
+Completed pour negative 5/20: Chair, 198bd40d94930950df6cfab91d65bb91; GT points=0
+Completed pour negative 6/20: Faucet, 6b48e8d129f22956b362845c6edb57fc; GT points=0
+Completed pour negative 7/20: Table, 1bab21890e560d54d5cb6d178687b980; GT points=0
+Completed pour negative 8/20: Table, a8a68d6e43cc0e094fde46457697d80; GT points=0
+Completed pour negative 9/20: Display, 1ec7d9fe07b94f6e274d4393e80e99fa; GT points=0
+Completed pour negative 10/20: Table, 2d018cff733a8e176870e413ec7729b0; GT points=0
+Completed pour negative 11/20: Chair, dd27edca07570d277ad11050da24bb12; GT points=0
+Completed pour negative 12/20: Table, 98dcbe480586e9a951d5d1004657a651; GT points=0
+Completed pour negative 13/20: Clock, 90d93cd686935a4bd866363c8e6eab2b; GT points=0
+Completed pour negative 14/20: Chair, bb9027dded04f7da2b3e9b6eb52d35df; GT points=0
+Completed pour negative 15/20: Table, 53433c9845f6b53955034479f8a160c7; GT points=0
+Completed pour negative 16/20: Laptop, 68adcb59ad19c431676394b063daab40; GT points=0
+Completed pour negative 17/20: Table, 9e3f1901ea14aca753315facdf531a34; GT points=0
+Completed pour negative 18/20: Chair, cbc76d55a04d5b2e1d9a8cea064f5297; GT points=0
+Completed pour negative 19/20: StorageFurniture, 5bfc4cb92e9d3b1f79b0363dd1368699; GT points=0
+Completed pour negative 20/20: Table, 9b17a95b794b3dc341a298cc53deb86e; GT points=0
+Completed wrap positive 1/20: Bottle, e24fb21f7cb7998d94b2f4c4a75fd722; GT points=1508
+Completed wrap positive 2/20: Vase, 789d336e4456d8854dff7c27c1f6df72; GT points=1249
+Completed wrap positive 3/20: Bottle, 5a1e624764af0205bf8b9d530de7a108; GT points=1158
+Completed wrap positive 4/20: Mug, 9ff8400080c77feac2ad6fd1941624c3; GT points=172
+Completed wrap positive 5/20: Vase, e0a62f7d9bb5cfea36b0f2a1430e993a; GT points=1444
+Completed wrap positive 6/20: Vase, 1b121101806758e4f9aec59741c69cf7; GT points=805
+Completed wrap positive 7/20: Vase, 23dd0031ba0db00d1a08ef511bce5615; GT points=50
+Completed wrap positive 8/20: Mug, 1ea9ea99ac8ed233bf355ac8109b9988; GT points=821
+Completed wrap positive 9/20: Vase, 434351669b58f5bd438d8caa9ae106fa; GT points=1418
+Completed wrap positive 10/20: Vase, 6488a88563cb1f3b2dcb7217e1ed4196; GT points=24
+Completed wrap positive 11/20: Vase, 3074ccca5d98c71c197894d64e83a327; GT points=1005
+Completed wrap positive 12/20: Vase, 5d123380371637c330b9e09efbedfc98; GT points=1380
+Completed wrap positive 13/20: Vase, 1d7868b4ad0913bf9f6b966b784c8347; GT points=1254
+Completed wrap positive 14/20: Vase, aeef58096019b9e25d8d4d8a3cf8b294; GT points=18
+Completed wrap positive 15/20: Vase, 386b99b2357ba64aa2c59a4d90e63212; GT points=1143
+Completed wrap positive 16/20: Vase, 48eaa8465573a112bba080e9e0b1ed91; GT points=1286
+Completed wrap positive 17/20: Vase, e4a868a10e10dda4befcf48d5b3e17b5; GT points=1539
+Completed wrap positive 18/20: Mug, f626192a5930d6c712f0124e8fa3930b; GT points=208
+Completed wrap positive 19/20: Vase, 44aea02b6852ce98910e50f05b8001; GT points=644
+Completed wrap positive 20/20: Vase, 10de406de3078873a2c59a4d90e63212; GT points=766
+Completed wrap negative 1/20: Table, b2867d5067f44e0d6b1cb83d86c19bfc; GT points=0
+Completed wrap negative 2/20: Clock, 38b77917fc05e5a390e588f8bb3fb0c; GT points=0
+Completed wrap negative 3/20: Table, e7c6731436bc2301bf94502f7765c22; GT points=0
+Completed wrap negative 4/20: Table, 9ada332060a35a9ea8a8d4103b2a0b3f; GT points=0
+Completed wrap negative 5/20: Chair, bb13760fd1e2dc182d19175e7d19b7cb; GT points=0
+Completed wrap negative 6/20: Clock, b0251e1b5ca130eb50dfe5d3d82f3d77; GT points=0
+Completed wrap negative 7/20: Bed, 946bd5aeda453b38b3a454ed6a7199e2; GT points=0
+Completed wrap negative 8/20: Chair, 891f1cd440afa11517b431cae0dd70ed; GT points=0
+Completed wrap negative 9/20: Table, 3f058be47b5d4cf353c1d159a8a8422; GT points=0
+Completed wrap negative 10/20: Chair, 95ff15679bc2d2bfab41e4eb455c2269; GT points=0
+Completed wrap negative 11/20: Door, 592cafaa0c19ca2a2350bbd39dd26be2; GT points=0
+Completed wrap negative 12/20: Keyboard, 44ed926c35d42e38b20f6e48f6a30cbf; GT points=0
+Completed wrap negative 13/20: Table, 677f0b4f9c5398caa3e1d5a29d2bb5b9; GT points=0
+Completed wrap negative 14/20: Display, 9a64fd5e660a8725ae95d460d60954d6; GT points=0
+Completed wrap negative 15/20: Knife, 912ddeb6b325df6aad1d0cc319eac33d; GT points=0
+Completed wrap negative 16/20: Table, 366902c0009575664f856154cf68897d; GT points=0
+Completed wrap negative 17/20: Chair, 5e6d8f9275fc311fb7c42e403b7689ad; GT points=0
+Completed wrap negative 18/20: Table, b420e0461893854bdf6cfab91d65bb91; GT points=0
+Completed wrap negative 19/20: Display, c98e0e745a92abccaa60d250862f15f; GT points=0
+Completed wrap negative 20/20: StorageFurniture, d6a55d2dece36ca0e3f7a74e12a274ef; GT points=0
+Completed accommodate positive 1/20: StorageFurniture, 6543e0c78675e6eb868fb986bc092533; GT points=12
+Completed accommodate positive 2/20: StorageFurniture, 59184214eb54c1144c3aee8e9d3a6ffa; GT points=19
+Completed accommodate positive 3/20: StorageFurniture, f7b449e5cbbf1ad26402b8f491cd92c7; GT points=995
+Completed accommodate positive 4/20: StorageFurniture, 1d442f753e2d7d3cb90e13b20a8dfddb; GT points=510
+Completed accommodate positive 5/20: TrashCan, 64393896dc4403c0e88c1d6fc3580355; GT points=96
+Completed accommodate positive 6/20: Vase, 10de406de3078873a2c59a4d90e63212; GT points=300
+Completed accommodate positive 7/20: Microwave, 38fa7b421065adf21efaaeff9cff2108; GT points=334
+Completed accommodate positive 8/20: StorageFurniture, 4b06417d98fabe3b4c62bee40dcdc539; GT points=288
+Completed accommodate positive 9/20: StorageFurniture, 3b98711b877ae402824662341ce2b233; GT points=23
+Completed accommodate positive 10/20: StorageFurniture, 34bc619e8ab3c0d2a93db6e4c0c75191; GT points=166
+Completed accommodate positive 11/20: StorageFurniture, c3dd5d3f16f231c7cb0c0d433974e32b; GT points=10
+Completed accommodate positive 12/20: StorageFurniture, 77d1cf70e480af7e6a400d4015c42de; GT points=1
+Completed accommodate positive 13/20: StorageFurniture, 321eb85037156544799b0b9a0d4a12cf; GT points=11
+Completed accommodate positive 14/20: StorageFurniture, 7b440b188067638a44221bef0fa3c36b; GT points=5
+Completed accommodate positive 15/20: StorageFurniture, 92c111f0456557c14da5feafe6f1c8fc; GT points=22
+Completed accommodate positive 16/20: Microwave, 6db8ab6c9693a340575f4e5007488531; GT points=49
+Completed accommodate positive 17/20: Bag, 5afe31025e8574ea8d6e12c39b2d5023; GT points=440
+Completed accommodate positive 18/20: StorageFurniture, 26dcf7a76c89d5aa4da5feafe6f1c8fc; GT points=2
+Completed accommodate positive 19/20: StorageFurniture, 275b26f0555e85acf858430284b28022; GT points=27
+Completed accommodate positive 20/20: Vase, 1b121101806758e4f9aec59741c69cf7; GT points=8
+Completed accommodate negative 1/20: Table, 4e9394f9f64859aef4ef86403cccc399; GT points=0
+Completed accommodate negative 2/20: Clock, ba3121c7429ff19b83cd0ac541913e0f; GT points=0
+Completed accommodate negative 3/20: Chair, a9b75041c8ef8654f2b838d6025155d8; GT points=0
+Completed accommodate negative 4/20: Chair, 5a7ad45fa4672684f63bf7d908efc575; GT points=0
+Completed accommodate negative 5/20: Chair, 70711d5a1aead05b90a9ce3e4b15521e; GT points=0
+Completed accommodate negative 6/20: Chair, df6157db2534b72a9a293c6471e6f319; GT points=0
+Completed accommodate negative 7/20: Table, 4020a2b829f148a18d8c7827464490b9; GT points=0
+Completed accommodate negative 8/20: Table, 56ef806397cc9c4a62e6af9325f07021; GT points=0
+Completed accommodate negative 9/20: Knife, 5391a808f36b46971638241f3ad71c10; GT points=0
+Completed accommodate negative 10/20: Table, 82f1ed2a66bf8b49f08a713d0c983d8d; GT points=0
+Completed accommodate negative 11/20: Table, c44792206360e4e4be1b0e1de3e987b3; GT points=0
+Completed accommodate negative 12/20: Chair, d0bb642e810bd2fea6fee8e2140acec9; GT points=0
+Completed accommodate negative 13/20: Chair, bc92651fd7cd9ca8cf68feb7ddf815ce; GT points=0
+Completed accommodate negative 14/20: Chair, 736e9ee917f741193b908295ece2b069; GT points=0
+Completed accommodate negative 15/20: Table, 5ce75eec38f8437c8a64c4f643bb7cf6; GT points=0
+Completed accommodate negative 16/20: Faucet, d3aa2eeb7641d99fb9101063463c970d; GT points=0
+Completed accommodate negative 17/20: Chair, d15c94b08b5d92e57962800be79c6e52; GT points=0
+Completed accommodate negative 18/20: Chair, cb74cf36ff8fcb8d61d7edc67034608e; GT points=0
+Completed accommodate negative 19/20: Table, 5ea758a6391a2f814b7c5e48b51e5c7c; GT points=0
+Completed accommodate negative 20/20: Table, b3a77356e56d7c9a2820d27b806f8454; GT points=0
+Completed unlock positive 1/20: Bag, 5afe31025e8574ea8d6e12c39b2d5023; GT points=396
+Completed unlock positive 2/20: StorageFurniture, 59184214eb54c1144c3aee8e9d3a6ffa; GT points=19
+Completed unlock positive 3/20: StorageFurniture, ad86354fb5faf1c98a4820926b2a786; GT points=14
+Completed unlock positive 4/20: Faucet, ec1c146241042d2c25faa413356e0316; GT points=153
+Completed unlock positive 5/20: Refrigerator, 1f51bf7da8ae7d40b9c80942c0a95e18; GT points=873
+Completed unlock positive 6/20: Faucet, 75d1c36ff0af66eb76c18e71fd49c4dc; GT points=213
+Completed unlock positive 7/20: Microwave, e0d08b4c03d1a0d36be98452b3c7a6c; GT points=325
+Completed unlock positive 8/20: Dishwasher, 55b0f47aea128c3b91d8be9599fbaa1f; GT points=112
+Completed unlock positive 9/20: StorageFurniture, 34bc619e8ab3c0d2a93db6e4c0c75191; GT points=13
+Completed unlock positive 10/20: Dishwasher, u84166e37-4f8e-453d-9d4b-77f21a29b7ee; GT points=27
+Completed unlock positive 11/20: StorageFurniture, c3dd5d3f16f231c7cb0c0d433974e32b; GT points=16
+Completed unlock positive 12/20: StorageFurniture, 31a142710610023cf51f77a6d7299806; GT points=6
+Completed unlock positive 13/20: StorageFurniture, 946ae7b4553f69d7784168ad9d1dbd5b; GT points=14
+Completed unlock positive 14/20: StorageFurniture, 17d25c26485edcf94da5feafe6f1c8fc; GT points=889
+Completed unlock positive 15/20: StorageFurniture, 24b3f8b6bf4a9a7391a3d45e8887248a; GT points=209
+Completed unlock positive 16/20: TrashCan, d6474403437240d578e4d091a0ee3ecd; GT points=773
+Completed unlock positive 17/20: Dishwasher, ba8f0622-1f41-4d79-8bf1-7f1305b837f0; GT points=829
+Completed unlock positive 18/20: StorageFurniture, 92c111f0456557c14da5feafe6f1c8fc; GT points=24
+Completed unlock positive 19/20: Microwave, 6db8ab6c9693a340575f4e5007488531; GT points=50
+Completed unlock positive 20/20: Microwave, a4a556292a3d9395230584014222e685; GT points=65
+Completed unlock negative 1/20: Display, fe3e7a35b8a1c06d3bb4a1304fe504d3; GT points=0
+Completed unlock negative 2/20: StorageFurniture, 29398b8b0425408a887c133d6a014f38; GT points=0
+Completed unlock negative 3/20: Chair, 63da17eda9d415b5319c5e90e9cc9126; GT points=0
+Completed unlock negative 4/20: Door, 55941165e4a7ffce368b7a773edbca80; GT points=0
+Completed unlock negative 5/20: Vase, 1b121101806758e4f9aec59741c69cf7; GT points=0
+Completed unlock negative 6/20: Table, 9e97c5ba09adfc481b17743c18fb63dc; GT points=0
+Completed unlock negative 7/20: Table, 8d01e61b216324d0f9814818e8ac1c35; GT points=0
+Completed unlock negative 8/20: Chair, 5c8ea11840795cb5f1783a44a88d6274; GT points=0
+Completed unlock negative 9/20: Table, 5370b493b077fdd39ccda3ab71692a66; GT points=0
+Completed unlock negative 10/20: Table, 4020a2b829f148a18d8c7827464490b9; GT points=0
+Completed unlock negative 11/20: Chair, fdd8b499294575175f1548797747d63; GT points=0
+Completed unlock negative 12/20: StorageFurniture, fe025a756926fd9620192a5319e3e2e4; GT points=0
+Completed unlock negative 13/20: Laptop, f72dc1ffeae0168aadcfd37206a0d18b; GT points=0
+Completed unlock negative 14/20: Chair, d1d9da0da16dbb1a765101d95c92a0e5; GT points=0
+Completed unlock negative 15/20: StorageFurniture, e22f10f551cac7fc6cb99ff1a702c4e9; GT points=0
+Completed unlock negative 16/20: Chair, 17e916fc863540ee3def89b32cef8e45; GT points=0
+Completed unlock negative 17/20: Table, e8d118117b86ab2e8884a069d9619eaf; GT points=0
+Completed unlock negative 18/20: Table, 6235d7bbd30566e4c955e5ed03ef3a2f; GT points=0
+Completed unlock negative 19/20: Table, 895c87ab1c2e404de7c7920f6a65a54d; GT points=0
+Completed unlock negative 20/20: Display, 21d627f21efd9298c9b80153270af5ed; GT points=0
+Final status: complete

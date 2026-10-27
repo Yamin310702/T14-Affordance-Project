@@ -1,0 +1,3 @@
+condition,threshold,cal_positive_object_macro_recall,cal_negative_object_alarm_rate,n_positive,n_negative,alarm_cap
+original,1.0,0.0,0.0,40,40,0.1
+selected_paraphrase,1.0,0.0,0.0,40,40,0.1

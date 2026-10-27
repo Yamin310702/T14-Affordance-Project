@@ -1,0 +1,4 @@
+espresso_env/
+python_deps/
+hf_cache/
+__pycache__/

@@ -1,0 +1,93 @@
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/cuda/__init__.py:68: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+{
+  "device": "mps",
+  "thresholds": [
+    {
+      "condition": "original",
+      "threshold": 1.0,
+      "cal_positive_object_macro_recall": 0.0,
+      "cal_negative_object_alarm_rate": 0.0,
+      "n_positive": 40,
+      "n_negative": 40,
+      "alarm_cap": 0.1
+    },
+    {
+      "condition": "selected_paraphrase",
+      "threshold": 1.0,
+      "cal_positive_object_macro_recall": 0.0,
+      "cal_negative_object_alarm_rate": 0.0,
+      "n_positive": 40,
+      "n_negative": 40,
+      "alarm_cap": 0.1
+    }
+  ],
+  "threshold_free_test": [
+    {
+      "split": "fresh_validation",
+      "condition": "original",
+      "threshold": 1.0,
+      "positive_macro_recall": 0.0,
+      "positive_operating_aiou": 0.0,
+      "ranking_aiou": 0.03639501664866611,
+      "auc": 0.3842388057289436,
+      "sim": 0.16604413880268112,
+      "mae": 0.312434147298336
+    },
+    {
+      "split": "fresh_validation",
+      "condition": "selected_paraphrase",
+      "threshold": 1.0,
+      "positive_macro_recall": 0.0,
+      "positive_operating_aiou": 0.0,
+      "ranking_aiou": 0.05993669348069418,
+      "auc": 0.423659881961657,
+      "sim": 0.18976561506278813,
+      "mae": 0.30938706174492836
+    }
+  ],
+  "paired": {
+    "ranking_aiou": {
+      "original_mean": 0.03639501664866611,
+      "paraphrase_mean": 0.05993669348069418,
+      "delta": 0.023541676832028072,
+      "paired_object_bootstrap_95pct_ci": [
+        0.0026064614928527434,
+        0.05329720274851897
+      ],
+      "n_positive_objects": 20
+    },
+    "operating_point_recall": {
+      "original_mean": 0.0,
+      "paraphrase_mean": 0.0,
+      "delta": 0.0,
+      "paired_object_bootstrap_95pct_ci": [
+        0.0,
+        0.0
+      ],
+      "n_positive_objects": 20
+    }
+  },
+  "fixed_05": {
+    "original": {
+      "positive": {
+        "flagged": 1,
+        "n": 20
+      },
+      "negative": {
+        "flagged": 4,
+        "n": 20
+      }
+    },
+    "selected_paraphrase": {
+      "positive": {
+        "flagged": 8,
+        "n": 20
+      },
+      "negative": {
+        "flagged": 19,
+        "n": 20
+      }
+    }
+  }
+}

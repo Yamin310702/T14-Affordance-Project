@@ -1,0 +1,80 @@
+diff --git a/models/openad_dgcnn.py b/models/openad_dgcnn.py
+index e1caa86..97b57b4 100644
+--- a/models/openad_dgcnn.py
++++ b/models/openad_dgcnn.py
+@@ -114,7 +114,11 @@ class Transform_Net(nn.Module):
+ class ClassEncoder(nn.Module):
+     def __init__(self):
+         super(ClassEncoder, self).__init__()
+-        self.device = torch.device('cuda')
++        self.device = torch.device(
++            "mps" if torch.backends.mps.is_available()
++            else "cuda" if torch.cuda.is_available()
++            else "cpu")
++        print("DGCNN CLIP device:", self.device)
+         self.clip_model, _ = clip.load("ViT-B/32", device=self.device)
+         for param in self.clip_model.parameters():
+             param.requires_grad = False
+@@ -241,4 +245,4 @@ class OpenAD_DGCNN(nn.Module):
+             text_features = cls_encoder(affordance)    # il [512, 19]
+         x = (self.logit_scale * (x @ text_features) / (torch.norm(x, dim=2, keepdim=True) @ torch.norm(text_features, dim=0, keepdim=True))).permute(0, 2, 1)
+         x = F.log_softmax(x, dim=1)
+-        return x
+\ No newline at end of file
++        return x
+diff --git a/models/openad_pn2.py b/models/openad_pn2.py
+index 782fc68..4ee18b6 100644
+--- a/models/openad_pn2.py
++++ b/models/openad_pn2.py
+@@ -9,7 +9,10 @@ from .pointnet_util import PointNetSetAbstractionMsg, PointNetSetAbstraction, Po
+ class ClassEncoder(nn.Module):
+     def __init__(self):
+         super(ClassEncoder, self).__init__()
+-        self.device = torch.device('cuda')
++        self.device = torch.device(
++    	    "mps" if torch.backends.mps.is_available()
++            else "cuda" if torch.cuda.is_available()
++            else "cpu")
+         self.clip_model, _ = clip.load("ViT-B/32", device=self.device)
+         for param in self.clip_model.parameters():
+             param.requires_grad = False
+diff --git a/test_open_vocab.py b/test_open_vocab.py
+index 35b58f3..8d60994 100644
+--- a/test_open_vocab.py
++++ b/test_open_vocab.py
+@@ -31,7 +31,10 @@ if __name__ == "__main__":
+     if args.gpu != None:
+         cfg.training_cfg.gpu = args.gpu
+     os.environ["CUDA_VISIBLE_DEVICES"] = cfg.training_cfg.gpu
+-    model = build_model(cfg).cuda()
++    device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
++    print("Using device:", device)
++
++    model = build_model(cfg).to(device)
+     if args.checkpoint == None:
+         print("Please specify the path to the saved model")
+         exit()
+@@ -39,7 +42,7 @@ if __name__ == "__main__":
+         print("Loading model....")
+         _, exten = os.path.splitext(args.checkpoint)
+         if exten == '.t7':
+-            model.load_state_dict(torch.load(args.checkpoint))
++            model.load_state_dict(torch.load(args.checkpoint, map_location=device))
+         elif exten == '.pth':
+             check = torch.load(args.checkpoint)
+             model.load_state_dict(check['model_state_dict'])
+diff --git a/utils/eval.py b/utils/eval.py
+index ee2c5b6..70e50ea 100644
+--- a/utils/eval.py
++++ b/utils/eval.py
+@@ -16,7 +16,9 @@ def evaluation(logger, model, val_loader, affordance):
+ 
+             (data, _, label, _, _) = temp_data
+ 
+-            data, label = data.float().cuda(), label.float().cuda()
++            device = next(model.parameters()).device
++            data = data.float().to(device)
++            label = label.float().to(device)
+             data = data.permute(0, 2, 1)
+             label = torch.squeeze(label).cpu().numpy()
+             B = label.shape[0]

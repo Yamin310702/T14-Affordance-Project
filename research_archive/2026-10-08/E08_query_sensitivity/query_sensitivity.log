@@ -1,0 +1,76 @@
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/cuda/__init__.py:68: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Loading cached weights offline...
+/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/voxelization.py:17: UserWarning: The reduce argument of torch.scatter with Tensor src is deprecated and will be removed in a future PyTorch release. Use torch.scatter_reduce instead for more reduction options. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:227.)
+  out_feature = result.scatter_(index=indices.long(), src=features, dim=2, reduce='add')
+Point to the part you would use to pour. completed in 0.070s
+Point to the part used for pouring. completed in 0.032s
+Locate the region from which liquid is poured. completed in 0.032s
+Identify the pouring region. completed in 0.032s
+[
+  {
+    "name": "Original",
+    "aiou": 0.16423994634359612,
+    "auc": 0.910231982345659,
+    "sim": 0.47281378507614136,
+    "mae": 0.28366559743881226,
+    "iou_at_05": 0.0017730496453900709,
+    "recall_at_05": 0.0017761989342806395,
+    "false_positive_rate_at_05": 0.0006734006734006734,
+    "predicted_positive_points": 2,
+    "mean_target_score": 0.27720314264297485,
+    "mean_nontarget_score": 0.11718013137578964
+  },
+  {
+    "name": "Query 1",
+    "aiou": 0.18200425346909305,
+    "auc": 0.9118790031756282,
+    "sim": 0.4755135774612427,
+    "mae": 0.2836650013923645,
+    "iou_at_05": 0.014184397163120567,
+    "recall_at_05": 0.014209591474245116,
+    "false_positive_rate_at_05": 0.0006734006734006734,
+    "predicted_positive_points": 9,
+    "mean_target_score": 0.3095039129257202,
+    "mean_nontarget_score": 0.12942536175251007
+  },
+  {
+    "name": "Query 2",
+    "aiou": 0.13571629353897105,
+    "auc": 0.89748042891915,
+    "sim": 0.4712025225162506,
+    "mae": 0.2825778126716614,
+    "iou_at_05": 0.0,
+    "recall_at_05": 0.0,
+    "false_positive_rate_at_05": 0.0,
+    "predicted_positive_points": 0,
+    "mean_target_score": 0.2284282147884369,
+    "mean_nontarget_score": 0.09718816727399826
+  },
+  {
+    "name": "Query 3",
+    "aiou": 0.07792490168276218,
+    "auc": 0.5617525162818235,
+    "sim": 0.2937239706516266,
+    "mae": 0.35068196058273315,
+    "iou_at_05": 0.0,
+    "recall_at_05": 0.0,
+    "false_positive_rate_at_05": 0.0,
+    "predicted_positive_points": 0,
+    "mean_target_score": 0.1962612420320511,
+    "mean_nontarget_score": 0.17891699075698853
+  },
+  {
+    "name": "Ensemble",
+    "aiou": 0.12448230550089638,
+    "auc": 0.9168667133143154,
+    "sim": 0.40701618790626526,
+    "mae": 0.3056415915489197,
+    "iou_at_05": 0.0,
+    "recall_at_05": 0.0,
+    "false_positive_rate_at_05": 0.0,
+    "predicted_positive_points": 0,
+    "mean_target_score": 0.244731143116951,
+    "mean_nontarget_score": 0.13517683744430542
+  }
+]

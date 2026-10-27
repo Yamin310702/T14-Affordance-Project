@@ -1,0 +1,62 @@
+[
+  {
+    "file": "RESULTS.md",
+    "sha256": "144d16cec9cf8680c2d5e64e7a39102a88967ab925eacd69854faedfd9ec8800",
+    "bytes": 5188
+  },
+  {
+    "file": "operating_curve.png",
+    "sha256": "19cb23453f0d1d574507c17d5ed530015091c63257bbf7047da7cb85ecd5c0e2",
+    "bytes": 76799
+  },
+  {
+    "file": "operating_curves.csv",
+    "sha256": "30c690918953f007636d822013270590afcda2eab81030fe8698d305dda25c08",
+    "bytes": 21808
+  },
+  {
+    "file": "predictions.npz",
+    "sha256": "1832a897a6c6dddb7a2eb3bae09bd9a3ec8ac2874b2389ff533106095570b23d",
+    "bytes": 2618067
+  },
+  {
+    "file": "run.json",
+    "sha256": "eaff90106ce5084b87dacab18f37c914d8c985972e98f5455df4c687a9bb0f2a",
+    "bytes": 71557
+  },
+  {
+    "file": "run.log",
+    "sha256": "e1cd714f51c8a161718704323f674a7f1da209fc80732f381e210e5cb510d031",
+    "bytes": 3422
+  },
+  {
+    "file": "run_e16_operating_point.py",
+    "sha256": "2aaa08841b492c982bd0df8eb26b726fc13c541ee0d6c444105c13985280f6f5",
+    "bytes": 11182
+  },
+  {
+    "file": "summarize_e16_operating_point.py",
+    "sha256": "c57bef0889ff230df7146ba101532f6fdac3526e2e4184843f36299911e1ca4a",
+    "bytes": 7553
+  },
+  {
+    "file": "summary.csv",
+    "sha256": "8c2fcbb18e747e70f3380b2070306010c59becde0d0412d9e57bcda56f5d0582",
+    "bytes": 622
+  },
+  {
+    "file": "test_per_object.csv",
+    "sha256": "b3b6bbf81b0c2cbc720a73079f9f550bc2f8b82723c270d998046098e6ae0a3f",
+    "bytes": 12145
+  },
+  {
+    "file": "threshold_curve.csv",
+    "sha256": "3865efa85e7115cb27e873c50248f6e122cd360bfd243c74283537f33f178394",
+    "bytes": 8879
+  },
+  {
+    "file": "thresholds.csv",
+    "sha256": "555674e8a3252f6172c2b5f9de0aafb00d030f7cd9e9e135d3c6a02dd820a2ca",
+    "bytes": 192
+  }
+]

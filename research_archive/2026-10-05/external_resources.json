@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/checkpoints/best_model_openad_pn2_estimation.t7",
+    "bytes": 7230839,
+    "sha256": "c1afb889f70bb334fc91464fa989b80a5eb157443ed5c8a5a16dfc19fd2bdffc",
+    "type": "OpenAD checkpoint"
+  },
+  {
+    "path": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/checkpoints/best_model_openad_pn2_partial.t7",
+    "bytes": 7230839,
+    "sha256": "cbcfe9ff70448d97a7047f1ade817645a9be29dd2782fba57776792a8210f2ae",
+    "type": "OpenAD checkpoint"
+  },
+  {
+    "path": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/data",
+    "type": "OpenAD datasets; not copied"
+  },
+  {
+    "path": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/hf_cache",
+    "type": "Hugging Face model cache; revisions in E07 run.json; not copied"
+  },
+  {
+    "path": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso_env",
+    "type": "Isolated Espresso environment; not copied"
+  }
+]

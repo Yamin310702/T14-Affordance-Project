@@ -1,0 +1,17 @@
+{
+  "device": "mps",
+  "torch": "2.14.1",
+  "pretrained": false,
+  "points": 2048,
+  "parameters": 106890240,
+  "shape": [
+    1,
+    2048,
+    448
+  ],
+  "finite": true,
+  "status": "passed",
+  "decoder_with_synthetic_text": "passed",
+  "real_text_encoder_tested": false,
+  "seconds": 3.498575499979779
+}

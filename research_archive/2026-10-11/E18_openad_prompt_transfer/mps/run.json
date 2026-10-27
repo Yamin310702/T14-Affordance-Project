@@ -1,0 +1,460 @@
+{
+  "experiment": "E18_openad_prompt_transfer",
+  "status": "complete",
+  "protocol": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/research_archive/2026-10-11/E18_openad_prompt_transfer/PROTOCOL.md",
+  "model": "released OpenAD PN2 partial-view checkpoint; frozen",
+  "checkpoint": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/checkpoints/best_model_openad_pn2_partial.t7",
+  "device": "mps",
+  "mps_available": true,
+  "seed": 1,
+  "batching": "four partial views from one shape per shared geometry forward",
+  "data": "official OpenAD validation partial views; exclude every shape ID selected in E09-E13",
+  "prior_run_files_excluded": [
+    "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/research_archive/2026-10-08/E09_multobject_query_sensitivity/run.json",
+    "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/research_archive/2026-10-08/E10_heldout_query_sensitivity/run.json",
+    "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/research_archive/2026-10-11/E11_grab_query_sensitivity/run.json",
+    "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/research_archive/2026-10-11/E12_multiaffordance_prompt_study/run.json",
+    "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/research_archive/2026-10-11/E13_heldout_prompt_confirmation/run.json"
+  ],
+  "excluded_prior_prompt_study_shape_count": 344,
+  "canonical_heldout_vocabulary": [
+    "grab",
+    "accommodate",
+    "raise",
+    "unlock",
+    "rest",
+    "take a seat",
+    "bear",
+    "wrap",
+    "pour",
+    "reposition",
+    "demonstrate",
+    "push",
+    "drag",
+    "hear",
+    "clothe",
+    "thumb",
+    "slice",
+    "jab",
+    "none"
+  ],
+  "conditions": [
+    "canonical_word",
+    "original_sentence",
+    "selected_paraphrase"
+  ],
+  "prompts": {
+    "grab": {
+      "class_index": 0,
+      "original_sentence": "Point to the part you would grab.",
+      "selected_paraphrase": "Point to the part you would grasp."
+    },
+    "accommodate": {
+      "class_index": 1,
+      "original_sentence": "Point to the part of the object that can hold something.",
+      "selected_paraphrase": "Point to the part where you would place or keep something."
+    },
+    "unlock": {
+      "class_index": 3,
+      "original_sentence": "Point to the part you would use to unlock this object.",
+      "selected_paraphrase": "Point to the part you would operate to gain access."
+    },
+    "wrap": {
+      "class_index": 7,
+      "original_sentence": "Point to the part you can wrap your hand around.",
+      "selected_paraphrase": "Point to the region designed to be held by wrapping your hand around it."
+    },
+    "pour": {
+      "class_index": 8,
+      "original_sentence": "Point to the part you would use to pour.",
+      "selected_paraphrase": "Point to the part used for pouring."
+    }
+  },
+  "intervention": "For one target class at a time, replace only its canonical held-out word with either its original sentence or frozen E13 paraphrase; all other class text stays fixed.",
+  "primary_metric": "Global point-wise IoU per target class from the 19-way argmax across all retained views.",
+  "secondary_metrics": [
+    "positive-shape IoU",
+    "positive-shape ROC AUC when defined",
+    "negative-shape false-positive point fraction",
+    "negative-shape any-alarm rate"
+  ],
+  "uncertainty": "Paired shape-level bootstrap (10,000 resamples; seed 20261011), comparing selected paraphrase with original sentence.",
+  "claim_limit": "Held-out objects within the official validation split; exploratory cross-model transfer from Espresso prompt selection. Not an official test set or proof of unseen affordance generalization.",
+  "max_shapes_for_run": 0,
+  "checkpoint_sha256": "cbcfe9ff70448d97a7047f1ade817645a9be29dd2782fba57776792a8210f2ae",
+  "dataset_views": 9140,
+  "validation_shape_count": 2285,
+  "selected_shape_count": 1941,
+  "evaluated_views": 7764,
+  "positive_and_negative_shape_counts": {
+    "grab": {
+      "positive_shapes": 81,
+      "negative_shapes": 1860
+    },
+    "accommodate": {
+      "positive_shapes": 213,
+      "negative_shapes": 1728
+    },
+    "unlock": {
+      "positive_shapes": 198,
+      "negative_shapes": 1743
+    },
+    "wrap": {
+      "positive_shapes": 26,
+      "negative_shapes": 1915
+    },
+    "pour": {
+      "positive_shapes": 34,
+      "negative_shapes": 1907
+    }
+  },
+  "completed_shapes": 1941,
+  "elapsed_seconds": 569.216137249954,
+  "per_affordance_summary": [
+    {
+      "affordance": "grab",
+      "class_index": 0,
+      "canonical_heldout_query": "grab",
+      "conditions": {
+        "canonical_word": {
+          "global_iou": 0.013925343005393914,
+          "tp": 2987,
+          "fp": 11,
+          "fn": 211503,
+          "points": 15900672,
+          "positive_points": 214490,
+          "positive_shapes": 81,
+          "negative_shapes": 1860,
+          "mean_positive_shape_iou": 0.015425315175399523,
+          "mean_positive_shape_auc": 0.8159293234412412,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        },
+        "original_sentence": {
+          "global_iou": 0.0,
+          "tp": 0,
+          "fp": 11,
+          "fn": 214490,
+          "points": 15900672,
+          "positive_points": 214490,
+          "positive_shapes": 81,
+          "negative_shapes": 1860,
+          "mean_positive_shape_iou": 0.0,
+          "mean_positive_shape_auc": 0.7460825494708736,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        },
+        "selected_paraphrase": {
+          "global_iou": 0.0,
+          "tp": 0,
+          "fp": 7,
+          "fn": 214490,
+          "points": 15900672,
+          "positive_points": 214490,
+          "positive_shapes": 81,
+          "negative_shapes": 1860,
+          "mean_positive_shape_iou": 0.0,
+          "mean_positive_shape_auc": 0.608177621917369,
+          "mean_negative_false_positive_fraction": 6.56292002688172e-08,
+          "negative_shape_any_alarm_rate": 0.0005376344086021505
+        }
+      }
+    },
+    {
+      "affordance": "accommodate",
+      "class_index": 1,
+      "canonical_heldout_query": "accommodate",
+      "conditions": {
+        "canonical_word": {
+          "global_iou": 2.798925212718316e-06,
+          "tp": 1,
+          "fp": 4,
+          "fn": 357275,
+          "points": 15900672,
+          "positive_points": 357276,
+          "positive_shapes": 213,
+          "negative_shapes": 1728,
+          "mean_positive_shape_iou": 1.3106743944028962e-06,
+          "mean_positive_shape_auc": 0.6930727068810617,
+          "mean_negative_false_positive_fraction": 2.8257016782407406e-07,
+          "negative_shape_any_alarm_rate": 0.0011574074074074073
+        },
+        "original_sentence": {
+          "global_iou": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 357276,
+          "points": 15900672,
+          "positive_points": 357276,
+          "positive_shapes": 213,
+          "negative_shapes": 1728,
+          "mean_positive_shape_iou": 0.0,
+          "mean_positive_shape_auc": 0.6586502451554532,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        },
+        "selected_paraphrase": {
+          "global_iou": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 357276,
+          "points": 15900672,
+          "positive_points": 357276,
+          "positive_shapes": 213,
+          "negative_shapes": 1728,
+          "mean_positive_shape_iou": 0.0,
+          "mean_positive_shape_auc": 0.5867768478352291,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        }
+      }
+    },
+    {
+      "affordance": "unlock",
+      "class_index": 3,
+      "canonical_heldout_query": "unlock",
+      "conditions": {
+        "canonical_word": {
+          "global_iou": 0.03687804371931963,
+          "tp": 5687,
+          "fp": 7157,
+          "fn": 141367,
+          "points": 15900672,
+          "positive_points": 147054,
+          "positive_shapes": 198,
+          "negative_shapes": 1743,
+          "mean_positive_shape_iou": 0.02471143280843588,
+          "mean_positive_shape_auc": 0.8597252875440538,
+          "mean_negative_false_positive_fraction": 8.719308035714286e-05,
+          "negative_shape_any_alarm_rate": 0.004016064257028112
+        },
+        "original_sentence": {
+          "global_iou": 0.0009274616660461023,
+          "tp": 137,
+          "fp": 661,
+          "fn": 146917,
+          "points": 15900672,
+          "positive_points": 147054,
+          "positive_shapes": 198,
+          "negative_shapes": 1743,
+          "mean_positive_shape_iou": 0.001748358774148441,
+          "mean_positive_shape_auc": 0.8420415656791309,
+          "mean_negative_false_positive_fraction": 1.5617716401319564e-05,
+          "negative_shape_any_alarm_rate": 0.0034423407917383822
+        },
+        "selected_paraphrase": {
+          "global_iou": 0.12362147019538776,
+          "tp": 20917,
+          "fp": 22148,
+          "fn": 126137,
+          "points": 15900672,
+          "positive_points": 147054,
+          "positive_shapes": 198,
+          "negative_shapes": 1743,
+          "mean_positive_shape_iou": 0.08580985878294972,
+          "mean_positive_shape_auc": 0.8837678470563862,
+          "mean_negative_false_positive_fraction": 0.0003959056090433161,
+          "negative_shape_any_alarm_rate": 0.01606425702811245
+        }
+      }
+    },
+    {
+      "affordance": "wrap",
+      "class_index": 7,
+      "canonical_heldout_query": "wrap",
+      "conditions": {
+        "canonical_word": {
+          "global_iou": 0.07905889549108704,
+          "tp": 7238,
+          "fp": 7352,
+          "fn": 76962,
+          "points": 15900672,
+          "positive_points": 84200,
+          "positive_shapes": 26,
+          "negative_shapes": 1915,
+          "mean_positive_shape_iou": 0.08633192523865538,
+          "mean_positive_shape_auc": 0.7555773521630796,
+          "mean_negative_false_positive_fraction": 0.0002744191620430809,
+          "negative_shape_any_alarm_rate": 0.005744125326370757
+        },
+        "original_sentence": {
+          "global_iou": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 84200,
+          "points": 15900672,
+          "positive_points": 84200,
+          "positive_shapes": 26,
+          "negative_shapes": 1915,
+          "mean_positive_shape_iou": 0.0,
+          "mean_positive_shape_auc": 0.6545923038972699,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        },
+        "selected_paraphrase": {
+          "global_iou": 0.0009161389324691089,
+          "tp": 80,
+          "fp": 3123,
+          "fn": 84120,
+          "points": 15900672,
+          "positive_points": 84200,
+          "positive_shapes": 26,
+          "negative_shapes": 1915,
+          "mean_positive_shape_iou": 0.000526990334144659,
+          "mean_positive_shape_auc": 0.610360107089223,
+          "mean_negative_false_positive_fraction": 0.00011117003916449086,
+          "negative_shape_any_alarm_rate": 0.009921671018276762
+        }
+      }
+    },
+    {
+      "affordance": "pour",
+      "class_index": 8,
+      "canonical_heldout_query": "pour",
+      "conditions": {
+        "canonical_word": {
+          "global_iou": 0.08454967136486559,
+          "tp": 4721,
+          "fp": 2143,
+          "fn": 48973,
+          "points": 15900672,
+          "positive_points": 53694,
+          "positive_shapes": 34,
+          "negative_shapes": 1907,
+          "mean_positive_shape_iou": 0.05248563687255541,
+          "mean_positive_shape_auc": 0.7499850243997027,
+          "mean_negative_false_positive_fraction": 5.901878769008914e-05,
+          "negative_shape_any_alarm_rate": 0.001048767697954903
+        },
+        "original_sentence": {
+          "global_iou": 0.0,
+          "tp": 0,
+          "fp": 9,
+          "fn": 53694,
+          "points": 15900672,
+          "positive_points": 53694,
+          "positive_shapes": 34,
+          "negative_shapes": 1907,
+          "mean_positive_shape_iou": 0.0,
+          "mean_positive_shape_auc": 0.7698484401037567,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        },
+        "selected_paraphrase": {
+          "global_iou": 1.8624054829217416e-05,
+          "tp": 1,
+          "fp": 0,
+          "fn": 53693,
+          "points": 15900672,
+          "positive_points": 53694,
+          "positive_shapes": 34,
+          "negative_shapes": 1907,
+          "mean_positive_shape_iou": 1.0418620157946281e-05,
+          "mean_positive_shape_auc": 0.7679873018745912,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        }
+      }
+    }
+  ],
+  "paired_bootstrap": {
+    "grab:positive_shape_iou": {
+      "n_shapes": 81,
+      "mean_delta_paraphrase_minus_original": 0.0,
+      "bootstrap_95pct_ci": [
+        0.0,
+        0.0
+      ],
+      "fraction_improved": 0.0
+    },
+    "grab:negative_shape_false_positive_fraction": {
+      "n_shapes": 1860,
+      "mean_delta_paraphrase_minus_original": 6.56292002688172e-08,
+      "bootstrap_95pct_ci": [
+        0.0,
+        1.968876008064516e-07
+      ],
+      "fraction_improved": 0.0005376344086021505
+    },
+    "accommodate:positive_shape_iou": {
+      "n_shapes": 213,
+      "mean_delta_paraphrase_minus_original": 0.0,
+      "bootstrap_95pct_ci": [
+        0.0,
+        0.0
+      ],
+      "fraction_improved": 0.0
+    },
+    "accommodate:negative_shape_false_positive_fraction": {
+      "n_shapes": 1728,
+      "mean_delta_paraphrase_minus_original": 0.0,
+      "bootstrap_95pct_ci": [
+        0.0,
+        0.0
+      ],
+      "fraction_improved": 0.0
+    },
+    "unlock:positive_shape_iou": {
+      "n_shapes": 198,
+      "mean_delta_paraphrase_minus_original": 0.08406150000880129,
+      "bootstrap_95pct_ci": [
+        0.05690878728001136,
+        0.11418252632354722
+      ],
+      "fraction_improved": 0.31313131313131315
+    },
+    "unlock:negative_shape_false_positive_fraction": {
+      "n_shapes": 1743,
+      "mean_delta_paraphrase_minus_original": 0.00038028789264199655,
+      "bootstrap_95pct_ci": [
+        0.0001634485066381598,
+        0.000651540663210879
+      ],
+      "fraction_improved": 0.01606425702811245
+    },
+    "wrap:positive_shape_iou": {
+      "n_shapes": 26,
+      "mean_delta_paraphrase_minus_original": 0.000526990334144659,
+      "bootstrap_95pct_ci": [
+        0.0,
+        0.00123352104492513
+      ],
+      "fraction_improved": 0.11538461538461539
+    },
+    "wrap:negative_shape_false_positive_fraction": {
+      "n_shapes": 1915,
+      "mean_delta_paraphrase_minus_original": 0.00011117003916449086,
+      "bootstrap_95pct_ci": [
+        3.218927209122063e-05,
+        0.00021112108355091384
+      ],
+      "fraction_improved": 0.009921671018276762
+    },
+    "pour:positive_shape_iou": {
+      "n_shapes": 34,
+      "mean_delta_paraphrase_minus_original": 1.0418620157946281e-05,
+      "bootstrap_95pct_ci": [
+        0.0,
+        3.125586047383884e-05
+      ],
+      "fraction_improved": 0.029411764705882353
+    },
+    "pour:negative_shape_false_positive_fraction": {
+      "n_shapes": 1907,
+      "mean_delta_paraphrase_minus_original": 0.0,
+      "bootstrap_95pct_ci": [
+        0.0,
+        0.0
+      ],
+      "fraction_improved": 0.0
+    }
+  },
+  "output_files": [
+    "run.json",
+    "per_affordance_summary.csv",
+    "per_object_metrics.csv",
+    "object_manifest.csv",
+    "selected_test_shape_ids.txt",
+    "excluded_prior_shape_ids.txt"
+  ]
+}

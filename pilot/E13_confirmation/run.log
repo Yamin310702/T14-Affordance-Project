@@ -1,0 +1,229 @@
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/cuda/__init__.py:68: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+{
+  "status": "running",
+  "eligible": {
+    "grab": 137,
+    "pour": 114,
+    "wrap": 104,
+    "accommodate": 323,
+    "unlock": 295
+  },
+  "objects_per_affordance": 40,
+  "unique_E13_shapes": 200
+}
+/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/voxelization.py:17: UserWarning: The reduce argument of torch.scatter with Tensor src is deprecated and will be removed in a future PyTorch release. Use torch.scatter_reduce instead for more reduction options. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:227.)
+  out_feature = result.scatter_(index=indices.long(), src=features, dim=2, reduce='add')
+Completed grab 1/40: Hat, bfdcb0d592aa35698b3247ca9bcd5b10; GT points=737
+Completed grab 2/40: Knife, 6ca0db952c7e2169e2bb19fbad3e4596; GT points=308
+Completed grab 3/40: Bottle, fa44223c6f785c60e71da2487cb2ee5b; GT points=17
+Completed grab 4/40: Hat, 9bd54e0123d3cd70a52821bf1aa3b19a; GT points=418
+Completed grab 5/40: Scissors, f4897c9b20e811f1309c3ff4f31971fa; GT points=538
+Completed grab 6/40: Faucet, 8aebc9a91265216e843f813f752a5e35; GT points=370
+Completed grab 7/40: Knife, 95d6e8797064d09ea4dd752ddde80fb1; GT points=593
+Completed grab 8/40: Knife, 7048d3ea565fad8da737721d7c8987b; GT points=588
+Completed grab 9/40: Knife, 172b9a77462dcdeaed90ead9558ee6cb; GT points=502
+Completed grab 10/40: Knife, 77c55aef23f91604a4a0a1e78d057db4; GT points=106
+Completed grab 11/40: Hat, 591262ba071ebd196c8bf2a864894125; GT points=730
+Completed grab 12/40: Bag, 5afca35479b347786f0abe366609662; GT points=1088
+Completed grab 13/40: Hat, b9c7e3530d7128abf0d11ae402ef940e; GT points=321
+Completed grab 14/40: Faucet, f6b1ca2df0be11bdb362845c6edb57fc; GT points=643
+Completed grab 15/40: Bottle, 518f6867e5d38301fd3bf7a5792372cb; GT points=1417
+Completed grab 16/40: Bottle, 9d2d3a8d1dd877c1101343fb67a1d189; GT points=491
+Completed grab 17/40: Knife, 82ebc48a41abaad2e72c243118d89f07; GT points=293
+Completed grab 18/40: Faucet, d1a20d867c2b8f459cd6e2005048d293; GT points=1158
+Completed grab 19/40: Faucet, 804b09dad62f32653321831d2245cf06; GT points=892
+Completed grab 20/40: Hat, 47d13a0b345864a7f72b7502ead7387b; GT points=1417
+Completed grab 21/40: Knife, 76d4739797f4cec15d3426ee101e9f8e; GT points=673
+Completed grab 22/40: Mug, 46ed9dad0440c043d33646b0990bb4a; GT points=305
+Completed grab 23/40: Hat, 2c67d217a62c320ce4b96e37c6ed18f3; GT points=1865
+Completed grab 24/40: Earphone, a63fd0bb8451b9de957b6a4f3924d982; GT points=698
+Completed grab 25/40: Mug, 15bd6225c209a8e3654b0ce7754570c8; GT points=279
+Completed grab 26/40: Bottle, dc687759ea93d1b72cd6cd3dc3fb5dc2; GT points=918
+Completed grab 27/40: Knife, ee7ced71701c3e88b9e3f0d9deebf307; GT points=407
+Completed grab 28/40: Faucet, 13e1e13465fa1a67b362845c6edb57fc; GT points=1043
+Completed grab 29/40: Faucet, e45586f848a038243321831d2245cf06; GT points=1222
+Completed grab 30/40: Earphone, d0e1d4ff3c84902888a81847056b4708; GT points=485
+Completed grab 31/40: Hat, aa9fa261b2643eec750b99f712bb1b4; GT points=252
+Completed grab 32/40: Knife, 57795189a634e21fa0f8e9a2d8ead2d5; GT points=249
+Completed grab 33/40: Faucet, e6c895dfe3150772b7a867e9b35a1295; GT points=1011
+Completed grab 34/40: Bottle, 8aeb546f0381df6e97b6ee740552021c; GT points=492
+Completed grab 35/40: Faucet, 8fd048fe9a092189979c556124bee033; GT points=557
+Completed grab 36/40: Knife, 34cb3fade2a5de47ffb638a278d56097; GT points=1088
+Completed grab 37/40: Faucet, 28568aa9e333a421c36fb70296e45483; GT points=1064
+Completed grab 38/40: Mug, c34718bd10e378186c6c61abcbd83e5a; GT points=73
+Completed grab 39/40: Faucet, d799034e7a417a97b362845c6edb57fc; GT points=1540
+Completed grab 40/40: Hat, d0e084becd80d661a52821bf1aa3b19a; GT points=541
+Completed pour 1/40: Vase, 18b41cb029cf7f6c2b151d8b52c53b90; GT points=2
+Completed pour 2/40: TrashCan, b77e94ab409def2b72745b90f9692729; GT points=676
+Completed pour 3/40: Bowl, 98d3408054ab409fd261c3d31246fed3; GT points=1063
+Completed pour 4/40: Bowl, 594b22f21daf33ce6aea2f18ee404fd5; GT points=285
+Completed pour 5/40: Bowl, 1b4d7803a3298f8477bdcb8816a3fac9; GT points=1610
+Completed pour 6/40: Bowl, 678dd4a917738f835d366bc8bbf948bb; GT points=1691
+Completed pour 7/40: Bowl, e16e27d3670853b12d4e6b2984840098; GT points=1742
+Completed pour 8/40: Bowl, 4227b58665eadcefc0dc3ed657ab97f0; GT points=705
+Completed pour 9/40: Vase, ace45c3e1de6058ee694be5819d751ba; GT points=678
+Completed pour 10/40: Bottle, e017cd91e485756aef026123226f5519; GT points=124
+Completed pour 11/40: TrashCan, 7e1b27b8df1f9ae8ae868ec20dc7b43; GT points=1064
+Completed pour 12/40: Vase, 1168c9e9db2c1c5066639e628d6519b6; GT points=853
+Completed pour 13/40: Vase, 537670c883cc57f730612f5c0ef21eb8; GT points=254
+Completed pour 14/40: Bottle, 898101350771ff942ae40d06128938a1; GT points=103
+Completed pour 15/40: Vase, 3f9f732d2921e37781faebbdea6bd9be; GT points=1430
+Completed pour 16/40: Vase, d919a2a0e84382da148a76a78b10eb5d; GT points=1062
+Completed pour 17/40: Vase, 18387bda93f1b17e36b0f2a1430e993a; GT points=598
+Completed pour 18/40: Mug, 64a9d9f6774973ebc598d38a6a69ad2; GT points=180
+Completed pour 19/40: Bowl, 429a622eac559887bbe43d356df0e955; GT points=641
+Completed pour 20/40: Bowl, 5aad71b5e6cb3967674684c50f1db165; GT points=831
+Completed pour 21/40: Bottle, ed55f39e04668bf9837048966ef3fcb9; GT points=10
+Completed pour 22/40: Vase, c623808300139bc3beedb4c8fd29e2d1; GT points=644
+Completed pour 23/40: Vase, 93fa7a1e2aff0b84154dddaf2978e13f; GT points=161
+Completed pour 24/40: Bowl, 4722928c21d230ba77b98fdac17a3204; GT points=1062
+Completed pour 25/40: Bottle, d44472ef7086538676bb31db0358e9c6; GT points=81
+Completed pour 26/40: TrashCan, f8b6bcf0dcf240e567e4c36fcbad1d04; GT points=479
+Completed pour 27/40: Vase, 3c73f2f15c10d253f2665ed92bcd1166; GT points=135
+Completed pour 28/40: Vase, 79ee45aa6b0c86064725f67267e31c89; GT points=289
+Completed pour 29/40: TrashCan, f2ee002e961747032056b4bd5d870b47; GT points=83
+Completed pour 30/40: Bottle, f03f9704001d2055ab8a56962d772d13; GT points=262
+Completed pour 31/40: Vase, bfd7c0ba3d690291271666a0c21c3f2; GT points=125
+Completed pour 32/40: Vase, ce2508ec4476b2cbf51f77a6d7299806; GT points=493
+Completed pour 33/40: Bottle, d910d855fd179dc066c1a8ee69277898; GT points=48
+Completed pour 34/40: Vase, 6e8297cba6273bd172a90fe1ba02202a; GT points=580
+Completed pour 35/40: TrashCan, 3b4bc00820afb447ad5067eac75a07f7; GT points=153
+Completed pour 36/40: Vase, 81591729f0bac11821fbc1a8044f930b; GT points=616
+Completed pour 37/40: TrashCan, 5f14eed855c48a7f63b2acb037dfbcde; GT points=1003
+Completed pour 38/40: Bowl, 804092c488e7c8e420d3c05c08e26f; GT points=1154
+Completed pour 39/40: Bottle, 39d4723b8ac197d4dcc91b6bf08a2274; GT points=722
+Completed pour 40/40: Bowl, a98b76254bcd32c05481b689f582aa44; GT points=1643
+Completed wrap 1/40: Vase, 4c2eb778f9b6485480067e3fdc6db24c; GT points=494
+Completed wrap 2/40: Vase, 84fb2bea1b0b6701dd3adf3090c701f7; GT points=219
+Completed wrap 3/40: Vase, f74e2aa18622de8872652f4081ec5a77; GT points=1922
+Completed wrap 4/40: Vase, f232cafa6b5d570ac5beea20858a99d5; GT points=206
+Completed wrap 5/40: Vase, ed86685bc4a0711044c183864792bc2b; GT points=1267
+Completed wrap 6/40: Vase, d2fefb9c0ee02c2ca2c59a4d90e63212; GT points=909
+Completed wrap 7/40: Vase, bdbabbe2c21689fa3d382fe678ddae38; GT points=3
+Completed wrap 8/40: Bowl, e3e57a94be495771f54e1b6f41fdd78a; GT points=1006
+Completed wrap 9/40: Vase, 257cd060f1947fd336b0f2a1430e993a; GT points=1127
+Completed wrap 10/40: Vase, e7d1773d6278ba1ba2c59a4d90e63212; GT points=837
+Completed wrap 11/40: Vase, 8f0c5b50ea07f88e59c1c78579056df; GT points=1546
+Completed wrap 12/40: Vase, 97401d5d5b06df3cf470479da1b48414; GT points=1018
+Completed wrap 13/40: Vase, 3585601ea0abfdfb409421506a05b6e1; GT points=1051
+Completed wrap 14/40: Bottle, 20b7adb178ea2c71d8892a9c05c4aa0e; GT points=611
+Completed wrap 15/40: Bottle, dacc6638cd62d82f42ebc0504c999b; GT points=1427
+Completed wrap 16/40: Vase, 9eb7d0643394a33df633d7643fec578c; GT points=764
+Completed wrap 17/40: Bottle, 10f709cecfbb8d59c2536abb1e8e5eab; GT points=1074
+Completed wrap 18/40: Vase, 8111c4fa78c69d7925ebd1cd0b422e32; GT points=298
+Completed wrap 19/40: Bottle, 47ebee26ca51177ac3fdab075b98c5d8; GT points=1125
+Completed wrap 20/40: Vase, d090b33ac316a4b8bc7f58784fda27b5; GT points=1210
+Completed wrap 21/40: Bottle, 542223f09a872e973858be97087c26ec; GT points=742
+Completed wrap 22/40: Vase, 5e59e0970a6b05a5d67c0e209ce7200b; GT points=128
+Completed wrap 23/40: Vase, edb8e199485be4e968747a7f12307bdb; GT points=1028
+Completed wrap 24/40: Vase, dee4dc24ecc3067f44c183864792bc2b; GT points=1584
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/sklearn/metrics/_ranking.py:424: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/run_e13_confirmation.py:72: RuntimeWarning: Mean of empty slice.
+  results.append({'affordance':aff,'shape_id':sid,'category':cat,'condition':cond,'query':q,'gt_points':int(truth.sum()),'aiou':float(aiou),'auc':float(auc),'sim':float(sim),'mae':float(mae),'iou_at_05':float((mask&truth).sum()/(mask|truth).sum()),'recall_at_05':float(mask[truth].mean()),'false_positive_rate_at_05':float(mask[~truth].mean())})
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/sklearn/metrics/_ranking.py:424: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/run_e13_confirmation.py:72: RuntimeWarning: Mean of empty slice.
+  results.append({'affordance':aff,'shape_id':sid,'category':cat,'condition':cond,'query':q,'gt_points':int(truth.sum()),'aiou':float(aiou),'auc':float(auc),'sim':float(sim),'mae':float(mae),'iou_at_05':float((mask&truth).sum()/(mask|truth).sum()),'recall_at_05':float(mask[truth].mean()),'false_positive_rate_at_05':float(mask[~truth].mean())})
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Completed wrap 25/40: Vase, fa2f25665c561e7be4179a13aff1e10; GT points=2048
+Completed wrap 26/40: Vase, ae77abbf5ab4893da75d03186a0409e2; GT points=849
+Completed wrap 27/40: Vase, 8f45584aabfb17e9ffb8dd272bf2a810; GT points=419
+Completed wrap 28/40: Bowl, 91715fd996d83ffa664b3b9b23ddfcbc; GT points=1285
+Completed wrap 29/40: Bottle, 22249179e88b0502846564a8a219239b; GT points=1016
+Completed wrap 30/40: Vase, 5562563aa6a2f57ec8995c27271d380; GT points=384
+Completed wrap 31/40: Vase, 88160fcb6c1eef2c35ac4a6a37bb3b6; GT points=529
+Completed wrap 32/40: Vase, e538a79b42c8db6b2d7a27ffaafaaddb; GT points=602
+Completed wrap 33/40: Mug, ec846432f3ebedf0a6f32a8797e3b9e9; GT points=136
+Completed wrap 34/40: Vase, 1c4257c50d27388525ebd1cd0b422e32; GT points=490
+Completed wrap 35/40: Vase, bbaf380835e362d0de03ab2a27ba7531; GT points=823
+Completed wrap 36/40: Vase, 8ba355a47e0dd19c491effd0ae881ea; GT points=461
+Completed wrap 37/40: Bottle, fd0ccd09330865277602de57eab5e08f; GT points=1152
+Completed wrap 38/40: Bottle, 9a777a5f3701fb6b940806ade53ef2f; GT points=907
+Completed wrap 39/40: Vase, abf5f73c5440f78c20d37e3fe8c3f09; GT points=153
+Completed wrap 40/40: Vase, 6f43bf97b213b888ca2ed12df13a916a; GT points=1777
+Completed accommodate 1/40: Microwave, 7cf2f3a1a3de48fda23949c21eddef76; GT points=17
+Completed accommodate 2/40: StorageFurniture, b1bb6113dcdc8a65ffa51bfffbc09ebb; GT points=66
+Completed accommodate 3/40: StorageFurniture, ab7ad8afde03897aa52fef6f94fcc8a; GT points=173
+Completed accommodate 4/40: TrashCan, ae3257e7e0dca9a4fc8569054682bff9; GT points=6
+Completed accommodate 5/40: StorageFurniture, 6787698a1fbd9a6d44221bef0fa3c36b; GT points=3
+Completed accommodate 6/40: StorageFurniture, 13d5f9d6a7464e39f0f01f1432a517c3; GT points=36
+Completed accommodate 7/40: StorageFurniture, 5382680280ef5b57d0b36851d61b6fca; GT points=5
+Completed accommodate 8/40: StorageFurniture, 29c6f3ce118576724da5feafe6f1c8fc; GT points=106
+Completed accommodate 9/40: StorageFurniture, 1767bd876a8b8c6e4da5feafe6f1c8fc; GT points=1
+Completed accommodate 10/40: StorageFurniture, ccf7d017b67b51b7b9349bb36676bc81; GT points=1
+Completed accommodate 11/40: Bag, 2cf9dc107cf70f511f6736765dee4fa9; GT points=487
+Completed accommodate 12/40: StorageFurniture, 85b82499e3ce7aea3a5893ad04c930a0; GT points=155
+Completed accommodate 13/40: StorageFurniture, b8166cce2dc8ea4f8c58bec49e6e6862; GT points=652
+Completed accommodate 14/40: StorageFurniture, 87708c9ebd845c21854c6e2381cc9350; GT points=86
+Completed accommodate 15/40: StorageFurniture, 4dabd28be1615419546a56a24fdd418a; GT points=105
+Completed accommodate 16/40: StorageFurniture, acee69c7c5517899af4d0096b3f9aa03; GT points=37
+Completed accommodate 17/40: StorageFurniture, 5a2de91981d27ba3c59350d819542ec7; GT points=1
+Completed accommodate 18/40: StorageFurniture, 2f2e54607ea04be4c93bb8ae72b9da71; GT points=5
+Completed accommodate 19/40: StorageFurniture, 17ad636e45c233bef79e00aae9a7dcf8; GT points=20
+Completed accommodate 20/40: StorageFurniture, dbf34becc9a4e4c34c3aee8e9d3a6ffa; GT points=12
+Completed accommodate 21/40: StorageFurniture, 6e2beb63c61144f54da5feafe6f1c8fc; GT points=108
+Completed accommodate 22/40: StorageFurniture, efee783f896e804791c352d02061b3f7; GT points=1221
+Completed accommodate 23/40: StorageFurniture, 4417497ef6af4cad74555f58f0503de3; GT points=145
+Completed accommodate 24/40: StorageFurniture, 2d7bad601f84c83686d53ab0fe94e911; GT points=11
+Completed accommodate 25/40: Refrigerator, 3ab8bb866d7a6c6ed493bfe20f94b6ab; GT points=744
+Completed accommodate 26/40: StorageFurniture, 40209ed0c2a718bd82ef94da039e491f; GT points=41
+Completed accommodate 27/40: StorageFurniture, 203ef2b06c3ad6033fe047712e43e185; GT points=71
+Completed accommodate 28/40: StorageFurniture, 34128cd8b8ddbbedd92903da5c4b5ef6; GT points=956
+Completed accommodate 29/40: Vase, a886fcd1a2b625208d1dabf86742ec3c; GT points=1
+Completed accommodate 30/40: Refrigerator, 647a6a5abae8ab1ef4530ecc4d13db49; GT points=713
+Completed accommodate 31/40: StorageFurniture, 336fa11d8fe3dd2815dd7d7985e749c1; GT points=396
+Completed accommodate 32/40: StorageFurniture, 50f0ea68b77810121fbac718728a36d; GT points=133
+Completed accommodate 33/40: StorageFurniture, 6d42969890762ef2ec8eb53ffeeadc85; GT points=741
+Completed accommodate 34/40: Refrigerator, d18a3e3917bd8d446facfc0053fedfbe; GT points=262
+Completed accommodate 35/40: StorageFurniture, 7ed5c429313f20e079bb09dc5605a57; GT points=8
+Completed accommodate 36/40: StorageFurniture, c129e7434b33f3cf1b17743c18fb63dc; GT points=412
+Completed accommodate 37/40: Dishwasher, d95f6ea8-cda0-4d59-aa49-11309e3f0ce3; GT points=873
+Completed accommodate 38/40: StorageFurniture, 4669d272f690a18dc016d21df34cd8ce; GT points=12
+Completed accommodate 39/40: StorageFurniture, d1155a28ca74dac83c4f66791e25960f; GT points=131
+Completed accommodate 40/40: Dishwasher, 0dacd08b-26eb-4cbb-9bb7-0efec828d1ed; GT points=247
+Completed unlock 1/40: StorageFurniture, fcdd18edf5219ae6e7ecdbe73ef4323c; GT points=310
+Completed unlock 2/40: Door, 6fa3be2ac3e1cc7c2962d6cb797bc52e; GT points=3
+Completed unlock 3/40: StorageFurniture, a25ab4cc7a9df73a4c3aee8e9d3a6ffa; GT points=22
+Completed unlock 4/40: StorageFurniture, b38a8896aa33692098605fee62c12dfb; GT points=186
+Completed unlock 5/40: Faucet, 8cecc2d6db8756683321831d2245cf06; GT points=637
+Completed unlock 6/40: StorageFurniture, 4a914da1b8325f1fb2029d92310f4aeb; GT points=8
+Completed unlock 7/40: Faucet, a85bdfab2e46ae2ab7728045d0c829bc; GT points=195
+Completed unlock 8/40: StorageFurniture, 178529522942bd9e11fc2b865c2a185b; GT points=301
+Completed unlock 9/40: Door, f8dad5531f53a3008056145f48a8fba7; GT points=15
+Completed unlock 10/40: Dishwasher, u3ac99406-67e2-41b5-a172-1b674c9aa2e8; GT points=110
+Completed unlock 11/40: Refrigerator, 58c878d494ecbbd62835d3f06aeb6e0; GT points=30
+Completed unlock 12/40: StorageFurniture, 9c36412009d5311e64d8b0368afacc65; GT points=43
+Completed unlock 13/40: StorageFurniture, b30ee0cf13247fa7f51f77a6d7299806; GT points=12
+Completed unlock 14/40: StorageFurniture, 4edcf59d45bfff5a5b903ba10d2ec446; GT points=43
+Completed unlock 15/40: StorageFurniture, c06792fff0774954492d9da2668ec34c; GT points=156
+Completed unlock 16/40: Microwave, 3420e627144ab8bcba7ad9409a09b1a9; GT points=437
+Completed unlock 17/40: StorageFurniture, bdb118e2b6c9f4d712de5317fe5b354f; GT points=2
+Completed unlock 18/40: StorageFurniture, e0d37d661f26e9eb4b8710a3469971b1; GT points=167
+Completed unlock 19/40: StorageFurniture, 2b45de8320e0b2ca55d7f0828042fbd; GT points=812
+Completed unlock 20/40: StorageFurniture, 148ec8030e52671d44221bef0fa3c36b; GT points=918
+Completed unlock 21/40: Faucet, cef466a7a055ea8a15aea01a869de65; GT points=123
+Completed unlock 22/40: Door, 5ef7a6f3cf04e24c78c8381b988b6539; GT points=5
+Completed unlock 23/40: StorageFurniture, 7822a30ec2e5c57f59f8e31ca87c470e; GT points=10
+Completed unlock 24/40: Door, 6fe579a164778f347a5ca0cf7b9a302b; GT points=39
+Completed unlock 25/40: StorageFurniture, 329f11a156aee39ac59350d819542ec7; GT points=25
+Completed unlock 26/40: StorageFurniture, 2af2279b9331aa9916c6f599d5622764; GT points=5
+Completed unlock 27/40: Dishwasher, ud59ef7c5-0276-4477-a589-2f79d77b77a4; GT points=209
+Completed unlock 28/40: StorageFurniture, 93ee050394f3b15e3c8d0fdfb1cc2535; GT points=83
+Completed unlock 29/40: TrashCan, 658247fdcc33f379cb2a965e75be701c; GT points=563
+Completed unlock 30/40: StorageFurniture, fb25e1f798321c354a134d5eddec03d4; GT points=23
+Completed unlock 31/40: StorageFurniture, 30b75567780d84638ac5263758737a81; GT points=870
+Completed unlock 32/40: StorageFurniture, 8198c793defb5c1d55f9913e822d5318; GT points=315
+Completed unlock 33/40: StorageFurniture, c99ec52d66a6e89c3c8d0fdfb1cc2535; GT points=29
+Completed unlock 34/40: StorageFurniture, ed6e541f87d15abbe76bc197b3a3ffc0; GT points=6
+Completed unlock 35/40: StorageFurniture, a64be5342dd3c9f782ef94da039e491f; GT points=853
+Completed unlock 36/40: Faucet, f1d5eb645eada0c03321831d2245cf06; GT points=304
+Completed unlock 37/40: StorageFurniture, 785b58a111b0498b9572486e5a924845; GT points=564
+Completed unlock 38/40: StorageFurniture, 4a007c5263b36c35f51f77a6d7299806; GT points=44
+Completed unlock 39/40: StorageFurniture, 3ff6c9fb0941dab184df0a86512fde14; GT points=342
+Completed unlock 40/40: Microwave, 19362facbca806df178e7d331e641179; GT points=55
+Final status: complete

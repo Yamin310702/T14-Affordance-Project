@@ -1,0 +1,26 @@
+Set seed to 1
+Set seed to 1
+eval point avg class IoU: 0.144121
+eval point accuracy: 0.463089
+eval point avg class acc: 0.195370
+------- IoU --------
+class grab, IoU: 0.017 
+class accommodate, IoU: 0.001 
+class raise, IoU: 0.000 
+class unlock, IoU: 0.050 
+class rest, IoU: 0.200 
+class take a seat, IoU: 0.264 
+class bear, IoU: 0.000 
+class wrap, IoU: 0.178 
+class pour, IoU: 0.239 
+class reposition, IoU: 0.000 
+class demonstrate, IoU: 0.051 
+class push, IoU: 0.142 
+class drag, IoU: 0.000 
+class hear, IoU: 0.504 
+class clothe, IoU: 0.084 
+class thumb, IoU: 0.000 
+class slice, IoU: 0.556 
+class jab, IoU: 0.000 
+class none, IoU: 0.454 
+

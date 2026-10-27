@@ -1,0 +1,22 @@
+# Research archive — 2026-10-11
+
+- [Mac and MPS reproducibility audit](../MAC_MPS_REPRODUCIBILITY_AUDIT.md): current setup, device-check discrepancy, and next compute requirements.
+- [Proposal baseline audit](PROPOSAL_BASELINE_AUDIT.md) and [baseline table](OPENAD_PROPOSAL_BASELINE_TABLE.csv): organized OpenAD evidence and the remaining profile/split checks for the Week 7 proposal.
+- [Complete experiment-to-proposal evidence map](ALL_EXPERIMENTS_PROPOSAL_MAP.md): every completed, exploratory, aborted, teammate-generated, and not-yet-run item, with guidance on what belongs in the main talk versus appendix.
+- [Affostruction execution preflight](AFFOSTRUCTION_PREFLIGHT.md): environment and dependency checks; no inference/metric was produced because the released stack requires Linux x86_64/CUDA 12.4 and its checkpoint/data are unavailable locally.
+- [Affostruction practical run guide](AFFOSTRUCTION_RUN_GUIDE.md): recommended official partial-input pilot, exact commands for a compatible CUDA host, required records, and useful Mac-only preparation if no GPU is available.
+- [Proposal completion guide](PROPOSAL_COMPLETION_GUIDE.md): status of the four baseline-audit items, config-derived vocabulary mapping, and one recommended query-wording protocol based on the later exploratory results.
+- [T14 proposal slide outline](T14_PROPOSAL_SLIDE_OUTLINE.md): 10-slide, 8-minute structure and a falsifiable prompt-ensemble experiment plan based on the pilot findings.
+- [Seen-name vs held-out-query comparison](seen_query_comparison/RESULTS.md): complete paired CPU evaluation of the released OpenAD checkpoint on 9,140 partial views and 2,285 full shapes, with per-class and per-view outputs.
+- [Seen-name vs held-out-query MPS reproduction](seen_query_comparison_mps/DEVICE_COMPARISON.md): complete MPS reruns on the same 9,140 partial views and 2,285 full shapes; scores closely match the CPU outputs, supporting device reproducibility.
+- [E18 OpenAD prompt transfer](E18_openad_prompt_transfer/RESULTS.md): tests five frozen E13 paraphrases on 1,941 OpenAD validation shapes disjoint from earlier prompt studies; only the unlock paraphrase showed a substantial IoU gain, with false-alarm analysis.
+- [E18 MPS reproduction](E18_openad_prompt_transfer/mps/DEVICE_COMPARISON.md): reruns the full 1,941-shape prompt transfer on MPS; the unlock effect and false-alarm trade-off reproduce the CPU result.
+- [E11 grab-query sensitivity on 20 new objects](E11_grab_query_sensitivity/RESULTS.md): completed exploratory cross-dataset prompt test using Affogato-pretrained unofficial Espresso-3D on OpenAD partial views. Samples do not overlap E09/E10.
+- [E12 five-affordance prompt wording study](E12_multiaffordance_prompt_study/RESULTS.md): 20 selected fresh objects per affordance, evaluated on CPU with Affogato-pretrained unofficial Espresso-3D.
+- [E12 CPU–MPS comparison](E12_multiaffordance_prompt_study_mps/DEVICE_COMPARISON.md): same 100 object-affordance cases rerun on MPS; metrics match to displayed precision.
+- [E13 held-out prompt confirmation](E13_heldout_prompt_confirmation/RESULTS.md): 40 new objects per affordance; compares each E12-selected prompt against its original wording on MPS.
+- [E14 mixed-presence evaluation](E14_mixed_presence/RESULTS.md): stratified random positive/negative objects per affordance; includes localization and false-alarm analysis.
+- [E15 threshold calibration](E15_threshold_calibration/RESULTS.md): train-set cutoffs transferred to E14; the selected balanced-IoU thresholds collapse to empty predictions, exposing a calibration-objective problem.
+- [E16 accommodation operating-point test](E16_operating_point/RESULTS.md): fresh 20-positive/20-negative validation set; the predeclared 10% alarm cap yields no useful cutoff, while the paraphrase modestly improves threshold-averaged aIoU and greatly increases alarms at the diagnostic 0.5 cutoff.
+- [E16 same-device MPS rerun and CPU comparison](E16_operating_point_mps/RESULTS.md): MPS confirms the CPU result; score maps match within 1e-5 and the conclusion is unchanged.
+- [E16 full-five CPU attempt](E16_fullfive_cpu_attempt_aborted/NOTE.md): preserved partial run, stopped because MPS was unavailable and full CPU scoring was impractical; no result claimed.

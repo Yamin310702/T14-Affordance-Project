@@ -1,0 +1,10 @@
+# Documents and numerical evidence must remain byte-for-byte binary files.
+*.pdf binary
+*.pptx binary
+*.docx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.npz binary
+*.npy binary
+*.zip binary

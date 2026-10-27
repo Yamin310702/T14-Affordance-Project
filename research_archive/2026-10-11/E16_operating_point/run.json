@@ -1,0 +1,2288 @@
+{
+  "experiment": "E16",
+  "status": "complete",
+  "primary_affordance": "accommodate",
+  "model": "Unofficial Espresso-3D reimplementation with Affogato-pretrained weights",
+  "device": "cpu",
+  "mps_available": false,
+  "seed": 16,
+  "hypothesis": "The selected accommodation paraphrase may produce more false alarms than the original wording when scores are thresholded to the same pre-registered 10% calibration false-alarm budget.",
+  "rule": "For each prompt separately, among thresholds with <=10% calibration negative-object alarms, maximize macro per-positive-object point recall; ties prefer lower negative-object alarm rate then higher threshold.",
+  "calibration_design": "40 positive and 40 negative OpenAD train shapes for accommodate, matching E15 calibration IDs. Original-query score maps reused from E15; selected-paraphrase maps computed in E16.",
+  "test_design": "20 positive and 20 negative fresh OpenAD validation shapes, excluded from E09-E14 samples and disjoint from calibration IDs. Freeze prompt-specific cutoffs before scoring test shapes.",
+  "alarm_definition": "A negative object is flagged when any point score is >= its frozen cutoff.",
+  "sample_note": "Balanced stratified sample; not a natural-prevalence estimate. Current session reports MPS unavailable, so this run uses CPU. The model is fixed and was not fine-tuned on OpenAD; this is cross-dataset exploratory evaluation, not an official benchmark.",
+  "eligible_fresh_validation": {
+    "positive": 128,
+    "negative": 1638
+  },
+  "excluded_prior_validation_shape_ids": 519,
+  "calibration_objects": {
+    "positive": [
+      {
+        "index": 36508,
+        "shape_id": "c86f009c4d1e1d2941e1a63759e8b225",
+        "category": "StorageFurniture",
+        "gt_points": 424,
+        "selection_hash": "0011f665bc1b63ffea4412a9b81a834657fcf8965dfc4c021c5e025325a1d26b"
+      },
+      {
+        "index": 37412,
+        "shape_id": "f7e0a103c97469d5a168e247bb97e471",
+        "category": "Refrigerator",
+        "gt_points": 232,
+        "selection_hash": "0039762eabe3fa40d3de94dd1bffa7467ea12cbb029cfd598703211ae0c39e6a"
+      },
+      {
+        "index": 4528,
+        "shape_id": "fc17a3cffc86bdcae37f5a622d383617",
+        "category": "Vase",
+        "gt_points": 85,
+        "selection_hash": "007171cf8a00de127f900e2c420cc230a03449315612aa34c234ed31319dd850"
+      },
+      {
+        "index": 30828,
+        "shape_id": "cfd21967d9621f664e09ebaf49b0cb2f",
+        "category": "Microwave",
+        "gt_points": 7,
+        "selection_hash": "00922441858d61659234b32a67852268a204ea79cac1c3776a908f9bd7fb2725"
+      },
+      {
+        "index": 5084,
+        "shape_id": "4d637018815139ab97d540195229f372",
+        "category": "Vase",
+        "gt_points": 40,
+        "selection_hash": "009a3dbe7582c9a6f6a87e42e9c6dff59358bbfd68fc4027395c4dca3fee9136"
+      },
+      {
+        "index": 29636,
+        "shape_id": "ac7e1eed3c4ded7db3010b85c6cbc688",
+        "category": "Bottle",
+        "gt_points": 335,
+        "selection_hash": "00a561b82fe0c5f1d000680d5d599e22c9626457bd79a21bab2ac65db77ad30f"
+      },
+      {
+        "index": 31648,
+        "shape_id": "a268283b0fab6092eb835f4eccb92a70",
+        "category": "StorageFurniture",
+        "gt_points": 6,
+        "selection_hash": "00afa40412a253cb68a98be6bd62df6211e22c33e375fd97f494e5e075932fe1"
+      },
+      {
+        "index": 64216,
+        "shape_id": "caefb14d743df2d69c3870d54ab64b77",
+        "category": "TrashCan",
+        "gt_points": 421,
+        "selection_hash": "00ba7c2650e70a776e3770d131dae07756dcbfdc54d906609d80f48c3e7e2ed0"
+      },
+      {
+        "index": 37536,
+        "shape_id": "f0d238ad8378dfc996cfbe0c5bfcb5e3",
+        "category": "Refrigerator",
+        "gt_points": 245,
+        "selection_hash": "00be2489a52463d6550fa487e89e344af42d442ce590fd92742efd9937803993"
+      },
+      {
+        "index": 2432,
+        "shape_id": "a32e2da1-2821-494f-8f3e-61c236fb94a3",
+        "category": "Dishwasher",
+        "gt_points": 100,
+        "selection_hash": "00ca9550d298474b3fc8aa4932eb726061ddee3a591b13c989d5dedc0c255e2b"
+      },
+      {
+        "index": 32244,
+        "shape_id": "4cbb978cef36a5b9c60fe2650bbe2bf8",
+        "category": "StorageFurniture",
+        "gt_points": 209,
+        "selection_hash": "00cc791ec9c8d6c0188489d8f6e3e0fbeb352a2ef14225924e7731579a075bbd"
+      },
+      {
+        "index": 3888,
+        "shape_id": "72bea517f9d243808b80480f1020d2fe",
+        "category": "Vase",
+        "gt_points": 914,
+        "selection_hash": "00d9a58f881cf2fb9301262fa0c53aef8a851d51dc7bbd13fe1796d8989e2ea1"
+      },
+      {
+        "index": 36968,
+        "shape_id": "75c26ffff01ea7063ab3dfa44f5fab01",
+        "category": "StorageFurniture",
+        "gt_points": 14,
+        "selection_hash": "00ebb348b14551464fcc3a367d4e5da7465e2907a72f45417f231926688e6d33"
+      },
+      {
+        "index": 30496,
+        "shape_id": "3861b002979703fbed4f86beca49f32",
+        "category": "Bottle",
+        "gt_points": 1465,
+        "selection_hash": "010f88357c2bafecb2a388cdb3a9a774817c3c608070a199a317f669da8c2c88"
+      },
+      {
+        "index": 34580,
+        "shape_id": "d9e69e6cd318d34380d6227ff9b21190",
+        "category": "StorageFurniture",
+        "gt_points": 694,
+        "selection_hash": "01240e324a81a0510b8f035e5a89f8f568b6495951d439275aab3035b35e5dcc"
+      },
+      {
+        "index": 33360,
+        "shape_id": "6754e64c37f7318c824662341ce2b233",
+        "category": "StorageFurniture",
+        "gt_points": 21,
+        "selection_hash": "0137e3f6799e6127afe5faaf86e3ea03d952d998ffdb08e2f59287c31dfbf6ea"
+      },
+      {
+        "index": 5640,
+        "shape_id": "8d2c6ce685eb1fd9368b14e48c164a6e",
+        "category": "Vase",
+        "gt_points": 679,
+        "selection_hash": "013fae162196e0d0cd29f49a07957657095cf1b680928a306c993eab2c3ef862"
+      },
+      {
+        "index": 63720,
+        "shape_id": "10839d0dc35c94fcf4fb4dee5181bee",
+        "category": "TrashCan",
+        "gt_points": 273,
+        "selection_hash": "01589d06ca29220599678f1b1758d67ecf5c824567e5e0dcbd771cf24f9aae08"
+      },
+      {
+        "index": 35392,
+        "shape_id": "6b4a0b4d90640e45c78621ab7e0ef193",
+        "category": "StorageFurniture",
+        "gt_points": 4,
+        "selection_hash": "019acd9d2a31af6357f68bea3baeb470bafb8869555b2fdfc6a46a00568b7508"
+      },
+      {
+        "index": 3516,
+        "shape_id": "24f615dd07dab76cc6040c0e6de6a84d",
+        "category": "Vase",
+        "gt_points": 410,
+        "selection_hash": "01bf4610f085ab1a98bce9b0f54b664bce43b37ad6ef69366d76fad185762797"
+      },
+      {
+        "index": 2344,
+        "shape_id": "8d891762-b88d-4e86-bfd2-3df97eda2d54",
+        "category": "Dishwasher",
+        "gt_points": 193,
+        "selection_hash": "01ccfedf860b3265e262775c78b52b25212416cb016f725bd10f07465086fd70"
+      },
+      {
+        "index": 64212,
+        "shape_id": "7a931ec996edbfeacb2a965e75be701c",
+        "category": "TrashCan",
+        "gt_points": 36,
+        "selection_hash": "01cf3f3bc8bec5f635650bee485dfc63a5d571733d2cc2d99fdcf75e56320031"
+      },
+      {
+        "index": 34468,
+        "shape_id": "5634cbd9ad6317b444221bef0fa3c36b",
+        "category": "StorageFurniture",
+        "gt_points": 3,
+        "selection_hash": "01ea40e6b239097f1779d614e50f9fb8f217b17053f56cc9a36c90bb2893512c"
+      },
+      {
+        "index": 33224,
+        "shape_id": "1e454ec01708c3b24c62bee40dcdc539",
+        "category": "StorageFurniture",
+        "gt_points": 12,
+        "selection_hash": "022cb5e29ae841fe8b0ceedf3f29c039cb82d9297333e6f7b9c85c8366b353b0"
+      },
+      {
+        "index": 3408,
+        "shape_id": "ea473a79fd2c98e5789eafad9d8a9394",
+        "category": "Vase",
+        "gt_points": 282,
+        "selection_hash": "0231fdd8b89aefc2a01249078d8da28372d3a0d38f2955258489dd7ef682d831"
+      },
+      {
+        "index": 37228,
+        "shape_id": "60a120d9fd6d2e6afa910dff05693976",
+        "category": "StorageFurniture",
+        "gt_points": 676,
+        "selection_hash": "0245ec3a37aa4dca97db2a3a226c8a40d4ded9b739919e65387b3eb65c8adb02"
+      },
+      {
+        "index": 30616,
+        "shape_id": "2fa757f584a3be31a7ceedb2540a32b0",
+        "category": "Bottle",
+        "gt_points": 306,
+        "selection_hash": "0267207ee4858cb8cb247b3b7b39434a8672eb4fc6d3985af35b6bc57bb22820"
+      },
+      {
+        "index": 4292,
+        "shape_id": "82806d655bf46d8793b839ea777587eb",
+        "category": "Vase",
+        "gt_points": 463,
+        "selection_hash": "026adaacf9d9b8019b15b3354fe6ba86c9aa6568e9e64b69f89250beeb06e975"
+      },
+      {
+        "index": 63780,
+        "shape_id": "91a4d060d380409c2056b4bd5d870b47",
+        "category": "TrashCan",
+        "gt_points": 9,
+        "selection_hash": "027a0e3db7e97d3656a5a6220af94689e09463e0605eba8b7869d0372c927b9b"
+      },
+      {
+        "index": 31512,
+        "shape_id": "3332c4ac1fd931d01586ac387fea1cf9",
+        "category": "StorageFurniture",
+        "gt_points": 41,
+        "selection_hash": "029a57ab9e1265aaad19a92a5513a23141c9d7277f11dd34350c943c8521b4bf"
+      },
+      {
+        "index": 4264,
+        "shape_id": "3fd59dd13de9ccfd703ecb6aac9c5d3c",
+        "category": "Vase",
+        "gt_points": 121,
+        "selection_hash": "02a47950c4e83814fc4267833bd6a1d05dbbd9fc29a10cca670b79befe6047d7"
+      },
+      {
+        "index": 31108,
+        "shape_id": "1f50be38c10cc2201c8302bff3c63802",
+        "category": "Microwave",
+        "gt_points": 4,
+        "selection_hash": "02d485ebfa9c2f5d155f3a35234d72069ab2fb6d1d2b620a620015620ed77af3"
+      },
+      {
+        "index": 30076,
+        "shape_id": "908e85e13c6fbde0a1ca08763d503f0e",
+        "category": "Bottle",
+        "gt_points": 804,
+        "selection_hash": "02da4f97cba521d1508836b3d2e55b98f8640820b38b7280760e495017f3dec5"
+      },
+      {
+        "index": 33116,
+        "shape_id": "5357cb17dad20db549d28b1865273fb2",
+        "category": "StorageFurniture",
+        "gt_points": 1068,
+        "selection_hash": "02f00c23a5bfcd163a94a71cbbaa79cf02f3bfdbe7660564526c24726d7d3852"
+      },
+      {
+        "index": 33052,
+        "shape_id": "7e5e0372dbccecb244221bef0fa3c36b",
+        "category": "StorageFurniture",
+        "gt_points": 2,
+        "selection_hash": "0340a077032f06ff737b3e9ac3645d3ee0ae978216d31dc95f5a8393e00cc9cc"
+      },
+      {
+        "index": 34860,
+        "shape_id": "34d5923ee8b8a6333bb4a1304fe504d3",
+        "category": "StorageFurniture",
+        "gt_points": 349,
+        "selection_hash": "034829b3795af4f23508cb1138c8f03f4a63c1827063d43bc6324b432228e5d9"
+      },
+      {
+        "index": 5252,
+        "shape_id": "2352c917dd760e515510d59f3ab1ed64",
+        "category": "Vase",
+        "gt_points": 620,
+        "selection_hash": "0349674bf29015903a5c989baeb4bb486bd2b36323f931faddba4df75070f3be"
+      },
+      {
+        "index": 37724,
+        "shape_id": "1a6d518f153b42bdabb564bb0657e0d6",
+        "category": "Refrigerator",
+        "gt_points": 305,
+        "selection_hash": "034d16b700665fd3e6b7804f1efe22861c88ed07b2f80dad63ad28321e2eaade"
+      },
+      {
+        "index": 34640,
+        "shape_id": "3efeb00eeba8a6fa2db3e9b673557fcd",
+        "category": "StorageFurniture",
+        "gt_points": 14,
+        "selection_hash": "0363849beb6cf97c8a81e20db68f983f98badedd40f0d55ff920b5d365f56f72"
+      },
+      {
+        "index": 38208,
+        "shape_id": "403fb4eb4fc6235adf0c7dbe7f8f4c8e",
+        "category": "Mug",
+        "gt_points": 305,
+        "selection_hash": "0383e6f58a8b612d03e06aa0eb5c19dac2fb7545e673325bee5f54fba5ab2691"
+      }
+    ],
+    "negative": [
+      {
+        "index": 57988,
+        "shape_id": "92c68ae13848ef32c3bd24f986301745",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "000ab75340dc56e0dc45dcbc648818cd9311c81280d338f3cd90c18ac6ddf64c"
+      },
+      {
+        "index": 18288,
+        "shape_id": "83d3b40a6ff6a04af4b6538438a0b930",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "000df0f6bc5a1a9ecb9f6c1a4e8454ffdd129174fe9b162cef5ef7af3d8c9d5d"
+      },
+      {
+        "index": 11268,
+        "shape_id": "b9ef07b9ea14f4fb1dc17d595f9add09",
+        "category": "Display",
+        "gt_points": 0,
+        "selection_hash": "00118a56b98b241c6592a2b207f036d9798d9441068951ffac45839edd8d0e7e"
+      },
+      {
+        "index": 60428,
+        "shape_id": "9a3194d78a592039a95110eea24f99c6",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "0021e8e153bf0831c1a0901e0e6e531a4f1568f9d77e6a3170b9c3a45884e36f"
+      },
+      {
+        "index": 7964,
+        "shape_id": "482e8134a2d5461b14b35a7d7cea7130",
+        "category": "Faucet",
+        "gt_points": 0,
+        "selection_hash": "0028c54220274922bb29e575b561c7c519fb658c0be4ba346ef5567715468668"
+      },
+      {
+        "index": 51564,
+        "shape_id": "33e0b076b1dfd411654495ddff111d98",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "002a3a40840e77a25d987c48f33e857ebaf689f57d273f4fd0348531ac2c10da"
+      },
+      {
+        "index": 59864,
+        "shape_id": "f741f1bb6a7ef8ff7916bf6f8da94ee5",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "0038298d00f060f2fe81fb56f7f7172c31be9922e9ae2506549a79917a25a179"
+      },
+      {
+        "index": 10344,
+        "shape_id": "ffc9068c8de1fe46d9869786ff7f6a46",
+        "category": "Display",
+        "gt_points": 0,
+        "selection_hash": "0045ed080924739cfb6aa1ce2c34556440b622f01fa81a1a35846759a21d9cec"
+      },
+      {
+        "index": 44552,
+        "shape_id": "e67046b9860feedeec7cbf3284585a40",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "0046aedf5e05c1473793e3cdf62fe21663f49988c0b8e18ef56429499aec0e7b"
+      },
+      {
+        "index": 40956,
+        "shape_id": "5a61158cfba0bb6a80360680c1602c7d",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "004925d1de415a38c17a00e90efa2751560d9d5a32b43da76a0e8f98b0cc76b3"
+      },
+      {
+        "index": 55640,
+        "shape_id": "23d68e01b77089ae76ad4f5e7c7020eb",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "004c509a63f134b6c2f464f5028a6120dcf5eceb77c0eba22bbe08c6815251e1"
+      },
+      {
+        "index": 40716,
+        "shape_id": "d151d9f45d8b14536cd661fb5fd95741",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "00548b0d7af1cd2ba1efecc94765326bbe4ae3c693e071a955580d4d4a8d99c2"
+      },
+      {
+        "index": 50996,
+        "shape_id": "3e0b229e646595261a719e2a845bdada",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "005a4c00f488dfddf504a6fdb814e1106337efb1c8abbbae3b017d241d852100"
+      },
+      {
+        "index": 36772,
+        "shape_id": "391d1f98ffc6f8cf4da5feafe6f1c8fc",
+        "category": "StorageFurniture",
+        "gt_points": 0,
+        "selection_hash": "005d7039bc680060cb10dad1c8d2558edf92d881da454628d2020fd7fca01b44"
+      },
+      {
+        "index": 3264,
+        "shape_id": "ae81dc3d42c59e8c500158c23c4c5a8e",
+        "category": "Vase",
+        "gt_points": 0,
+        "selection_hash": "006188c63a878c0e7c7ef50aaa9697dccabbf0bc9c79c6b94e8a726729a4f318"
+      },
+      {
+        "index": 11056,
+        "shape_id": "70dacf62da510868a5ff93a193b16554",
+        "category": "Display",
+        "gt_points": 0,
+        "selection_hash": "006b58c43a6ba86a12005721f4499943be5e6ccd732b060dc08d8176b15cc991"
+      },
+      {
+        "index": 26828,
+        "shape_id": "9b82e2d4714b97827eaeab1f0c9120b7",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "007412a86b4cca630d88474712a63d7a8bc7666a033399bf08e3587eb05076b0"
+      },
+      {
+        "index": 22460,
+        "shape_id": "cbbf0aacb76a1ed17b20cb946bceb58f",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "007c86301718333185e2f93d03714bbec281729b5f44071b160ebc8bb6f6e589"
+      },
+      {
+        "index": 8124,
+        "shape_id": "b58fbcabbdf942515e861292bc046f7f",
+        "category": "Faucet",
+        "gt_points": 0,
+        "selection_hash": "0086dc9d0cbb890587ecb947f3c755b66c28cd8c30f5fcf5be2925ff4220c2e5"
+      },
+      {
+        "index": 16868,
+        "shape_id": "2f1a67cdabe2a70c492d9da2668ec34c",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "008880e2056d9c50428000aae57df0d6123c82347dc5566005258a40d6bfec44"
+      },
+      {
+        "index": 56228,
+        "shape_id": "993ce4314e32140f38454b411e0edc29",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "0088aa81dbb02436249e742ab281fa5eaa21649cb84785e5e02d360185061a7e"
+      },
+      {
+        "index": 43144,
+        "shape_id": "511cf6bce918c6738e0afce805a277dc",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "008e51fc4c86d0b5b74213b7ab739541d85be281c3db82d22776f5b7c3b27893"
+      },
+      {
+        "index": 59016,
+        "shape_id": "b5529f6f5679d705c8b2ff62b26cb42",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "009460b3475e9de9a7f0c98a631e8a8d1c0c69945e12d0a1ccdc4cdcfc41b639"
+      },
+      {
+        "index": 44224,
+        "shape_id": "26305aa1754510f79b3e1be3524f72f",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "0098d2591adabd6ada08281663c93d591b4cdc2d7ef00fa39160c7ea6d69e41d"
+      },
+      {
+        "index": 20124,
+        "shape_id": "e67c305a676930b123c95a77265c8dd",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "00a1e270ac5e63c6ac5a73ecc0d5ec04b43bb1e39564d3c20319d7d5d81bce71"
+      },
+      {
+        "index": 11708,
+        "shape_id": "9de3c0365edd0c0b3e487c876d55197b",
+        "category": "Display",
+        "gt_points": 0,
+        "selection_hash": "00a20feb62fef360cae8f98470df0ead9645a48d8e940f1514b5afea3490fbc8"
+      },
+      {
+        "index": 58980,
+        "shape_id": "387b1c9a2f50ec314b3c42e318f3affc",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "00ad226dfd6a2c01a7bfa938c55aea2d17f5509b9b550439c4bafd542351f534"
+      },
+      {
+        "index": 14172,
+        "shape_id": "79c5542f068830463002bb98777d6df5",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "00b00b348cf681bca73a5f844e70ad807337299a56c220abc8b8475080f38588"
+      },
+      {
+        "index": 46876,
+        "shape_id": "9b77e481163e91214038d588fd1342f",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "00b9ddbfa24ad0a7602977a845e985f6c270b6c3fb8e7d823705f3f55e405f49"
+      },
+      {
+        "index": 6424,
+        "shape_id": "13d183a44f143ca8c842482418ab083d",
+        "category": "Knife",
+        "gt_points": 0,
+        "selection_hash": "00ba56bb6b5e7e9115637052f9c4396523d66d462cf5dab03582605ca5faffe4"
+      },
+      {
+        "index": 24684,
+        "shape_id": "bfb71bd97fdedc6c48ff063e62e02115",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "00bdbb239d2396bb52c27ec847c6f8ef0d405b09febdb7d5c6bbe740e79965d9"
+      },
+      {
+        "index": 62592,
+        "shape_id": "25192ef0befdd75d291d2d0d560233f4",
+        "category": "Laptop",
+        "gt_points": 0,
+        "selection_hash": "00c25f936ece43af1cdbecab60a1ed2ef6d10fc81e99a816306293e885110e02"
+      },
+      {
+        "index": 57136,
+        "shape_id": "1ee0509358dc8bcae19134c8fbb91f2",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "00c351d7a8b921636ee2c0c9e0c1f1b42c955b41c8e7f15bf8a9f5e703f60c63"
+      },
+      {
+        "index": 27284,
+        "shape_id": "28bbb851dd01a162a5615d35d4766b93",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "00ca9c961b01e906e19f7d2ab1868551cd6a78f3f22ce1328a9e1de54c95aef6"
+      },
+      {
+        "index": 54184,
+        "shape_id": "1a1223b411a9cf92e7c7920f6a65a54d",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "00d646e5d7fe1c1444596dbe2cfefaec38e8ea83c261c6267f7b9ed5258b1ee5"
+      },
+      {
+        "index": 38584,
+        "shape_id": "3e91cf7c47c6bb4a0a7b8ecc42036d5",
+        "category": "Keyboard",
+        "gt_points": 0,
+        "selection_hash": "00dec0b37dbae6e5123bbe8b70b1145dc80f1fc0214760909894fac5eae8272f"
+      },
+      {
+        "index": 42324,
+        "shape_id": "c2c36909e461e10adaaaeef365d8f6e5",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "00df8c6ec423ad99c96ceb3c63c06d85fafc285cb45e0596c6dffc69439760e3"
+      },
+      {
+        "index": 40624,
+        "shape_id": "4c51b04b1b32ddcc4ef96d1bb8be503c",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "00e5bd47cc1012532ebfa64e4caef3f031cd0da9f0d64e3ca5c8217b2574eeb6"
+      },
+      {
+        "index": 22180,
+        "shape_id": "4fe364b3390d3e158afe76b3d612e00b",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "00ea0c07d4814294a67c850ae44070ecba5fc46007983a98ea894c8b1fc3d0bc"
+      },
+      {
+        "index": 53892,
+        "shape_id": "1aba52edddfad70d1bf0233e4c77d163",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "00ef98d128644186b241c3b132dfa1b988fa6f915c08fa9c9f24feeca5f9f4e9"
+      }
+    ]
+  },
+  "test_objects": {
+    "positive": [
+      {
+        "index": 4484,
+        "shape_id": "53b396d2ff7af087d01673c7c57450c9",
+        "category": "StorageFurniture",
+        "gt_points": 48,
+        "selection_hash": "001cc02c6a9f2ea7190780de949cfe5aef9a4fd064cb53e36d72901556853089"
+      },
+      {
+        "index": 4724,
+        "shape_id": "7d95374a9110157c7d8c689e1315827b",
+        "category": "StorageFurniture",
+        "gt_points": 58,
+        "selection_hash": "009983c6ccd2d7c0b6a7766c62ac513a8f4896263727147255091e27ff9235b0"
+      },
+      {
+        "index": 4604,
+        "shape_id": "fae333fdef97b004193e4b893d21eb4c",
+        "category": "StorageFurniture",
+        "gt_points": 764,
+        "selection_hash": "0101230799d61bf61ffc23adbe985b10e971b6a37d359eff1264edfab43525d1"
+      },
+      {
+        "index": 4812,
+        "shape_id": "217d29a61745991f7aa75dfc74adc93f",
+        "category": "StorageFurniture",
+        "gt_points": 23,
+        "selection_hash": "02790173a1aa9421f5d78efe8b92188c200a3d8abc22745f093da0c5ac51c30f"
+      },
+      {
+        "index": 5156,
+        "shape_id": "c462e3b75f570a3b42227a2ba4dff5ab",
+        "category": "StorageFurniture",
+        "gt_points": 645,
+        "selection_hash": "02e06f5317c821842270537bfd027d87ecd5f2f25d33b3331a84e074243c80ca"
+      },
+      {
+        "index": 5048,
+        "shape_id": "72b84b9b53fee78c664b3b9b23ddfcbc",
+        "category": "StorageFurniture",
+        "gt_points": 692,
+        "selection_hash": "02e3898222fca5741710d419a9a2cfe121b9b48592d06d7c2aa42a07a8e93b83"
+      },
+      {
+        "index": 5120,
+        "shape_id": "8fba7de21910dcfc4c3aee8e9d3a6ffa",
+        "category": "StorageFurniture",
+        "gt_points": 18,
+        "selection_hash": "0424980a8eea2f6d3a6ac3395e0614e83d389e7bd476caa7cea325ef2ad2c2a9"
+      },
+      {
+        "index": 304,
+        "shape_id": "b187206fe6ed4228a805114916841d69",
+        "category": "Dishwasher",
+        "gt_points": 351,
+        "selection_hash": "05a399897b9c246bc63b115aaf1f1cdc19d24ce598205071ac036f9fb9de4cde"
+      },
+      {
+        "index": 5304,
+        "shape_id": "c3615a091971ed0e9941e769880462e7",
+        "category": "Refrigerator",
+        "gt_points": 148,
+        "selection_hash": "0642aed920a479dac14dcf3fe23f8c6b6fbe2ee134517f698558f55c01fee234"
+      },
+      {
+        "index": 4768,
+        "shape_id": "49b69d5e4330ae2457b1c0b6d5084bcf",
+        "category": "StorageFurniture",
+        "gt_points": 5,
+        "selection_hash": "0678f493695bee6b8711b190cb643285483f7960c0509274ce3ba47ee12167d9"
+      },
+      {
+        "index": 4940,
+        "shape_id": "6f46c38f86fa961ed2f1945599cd5176",
+        "category": "StorageFurniture",
+        "gt_points": 847,
+        "selection_hash": "0a9d83cda4fdcb9598ea9a0cbeaffb1c22e28b63137a3d923190853eb3685fe1"
+      },
+      {
+        "index": 9020,
+        "shape_id": "c2d6739b7d2b6cadad5067eac75a07f7",
+        "category": "TrashCan",
+        "gt_points": 92,
+        "selection_hash": "0b901d543bf56592f14e47fa1bd08fe56d6e9267ad199df52897266b07971be3"
+      },
+      {
+        "index": 4828,
+        "shape_id": "7a48b295d6c3956fa96fd0f479def5ab",
+        "category": "StorageFurniture",
+        "gt_points": 8,
+        "selection_hash": "0f47db719b09c5a215264a2c80d2a9ab50a54ebe2e22ff93a1b0a3f94b4d4c52"
+      },
+      {
+        "index": 5128,
+        "shape_id": "11b8fd945de0ee99642f6fb37a230b5e",
+        "category": "StorageFurniture",
+        "gt_points": 383,
+        "selection_hash": "0f6f502e58998d4c7e3a352d445bb4b6626f86c4988dfacb04ef614af0349cc5"
+      },
+      {
+        "index": 5100,
+        "shape_id": "dca2cd661bece47bd810b14a81e12eca",
+        "category": "StorageFurniture",
+        "gt_points": 1549,
+        "selection_hash": "10f60cc1377c9249877b04ea3408b1f3e8ce6ce42782452e3d5ceb35236fa068"
+      },
+      {
+        "index": 4800,
+        "shape_id": "93ea6a4c9068dd65ba5b64592e406eca",
+        "category": "StorageFurniture",
+        "gt_points": 1428,
+        "selection_hash": "11e449752e6572593ff5baf6d2dfc65baad9a779f1c6f83566b29a900705eff4"
+      },
+      {
+        "index": 4344,
+        "shape_id": "21c7f1ff67976e7c29cb7aca40b7cd0",
+        "category": "Microwave",
+        "gt_points": 5,
+        "selection_hash": "16657b232a2441ab31e2f865239d500ea4c21abbeb97fb309f7a55c5c411754c"
+      },
+      {
+        "index": 4780,
+        "shape_id": "9e6434ba1ad59fa611fc2b865c2a185b",
+        "category": "StorageFurniture",
+        "gt_points": 283,
+        "selection_hash": "19eb6041ac437b2f4f6c51f8aecce7d365577614fd000d2563a4e6f74f458bcd"
+      },
+      {
+        "index": 4640,
+        "shape_id": "ea48a2a501942eedde650492e45fb14f",
+        "category": "StorageFurniture",
+        "gt_points": 8,
+        "selection_hash": "1a0562cca28e5de16bc86f9449ac563ef3efdc9a76f652d8148aefac78da36ac"
+      },
+      {
+        "index": 308,
+        "shape_id": "uc9c77d51-a8f3-45c2-a9cd-5a992b8796ef",
+        "category": "Dishwasher",
+        "gt_points": 198,
+        "selection_hash": "1a42ff7fbb36926b0a4c79ba6df49a29fc9bfbfbb64cef5ac484c399956470e1"
+      }
+    ],
+    "negative": [
+      {
+        "index": 8288,
+        "shape_id": "de46aee11f397e1c5af597c14b093f6",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "0000415cc0a31af44c6632cdc527a99ecfc1cf31f11d4b04a970824fd1cdae63"
+      },
+      {
+        "index": 7648,
+        "shape_id": "24d1d32aa33c38716a97150bb2a72733",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "0012a493941cf3bc2cfa47cdc0efcc634261f48e6fc35a2d5e58bef00a6bb9fb"
+      },
+      {
+        "index": 5504,
+        "shape_id": "96aff91d7898cb1358df8eeaf3dad1c",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "0016e7d08d30f2c39f9a862bc1f47dac191b196f94a3c53fb5420cec4873159e"
+      },
+      {
+        "index": 7460,
+        "shape_id": "3dd217a06e76292b372b6139ac78b39e",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "0058bbc6dbf6ed362eff6a6f1e4890a2d47843fd65646bae60a8eeb7c89d40cc"
+      },
+      {
+        "index": 7036,
+        "shape_id": "a1efc57eedf9a2e93c8311d2f6bcff87",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "006354683f4a779d0fea06630eee2ddbf56068479027e67bc065bbe4b494bc66"
+      },
+      {
+        "index": 1688,
+        "shape_id": "eaad54605e6dfee6d862787d0e1b892b",
+        "category": "Display",
+        "gt_points": 0,
+        "selection_hash": "008b5edbf47dd3ad6450ac7f78a65a1a8e26ad9eb64e416a5202e9087f8a4351"
+      },
+      {
+        "index": 4052,
+        "shape_id": "7a617f62ec5bb2075e7faf7f49c2907a",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "00c27165458aa6b429702825f3790af36319589705101bd4bee5f77003403387"
+      },
+      {
+        "index": 6248,
+        "shape_id": "36770c30c74a32e16dbc8927361b2733",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "00c3fdc26400279294cfc3b622033aaefa66b1e6190b1b2daf053800baf81842"
+      },
+      {
+        "index": 2752,
+        "shape_id": "329ec98f10af7214ac6962daa1b6ab91",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "00da09ec7defba325f9cfed6ae942d2f2d18dd6130e94f9f2440542a6d52c886"
+      },
+      {
+        "index": 3816,
+        "shape_id": "90dddd5e4aa586bf14513156cf2b8d0d",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "014e82dcc837f0d6fb607cb4442d77eb685f541c576dff5c0235c2808ab87599"
+      },
+      {
+        "index": 2944,
+        "shape_id": "a4da5746b99209f85da16758ae613576",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "0163f3ff41652c3b40ddc46d061b1faaf0cd07d74d163f12214d03f159b421f9"
+      },
+      {
+        "index": 3716,
+        "shape_id": "d29445f24bbf1b1814c05b481f895c37",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "01ab8e9d87bd39560778f2d3d7e6026c4bbf4425776374278ac7d6ee3a1438b8"
+      },
+      {
+        "index": 2000,
+        "shape_id": "53d88f50e3abc2888dcbe86402c7c15",
+        "category": "Chair",
+        "gt_points": 0,
+        "selection_hash": "01cebd1d5052b82a2ec5a00483637ef6b7dbe0d132b7db44c9d8a8b132a6fc43"
+      },
+      {
+        "index": 5704,
+        "shape_id": "75fb953aaa9924d1f28b9459ae3635d3",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "0260d615386f3f261b126d5a60c19a4be20cc9cf9e59c361528afb80a90e462f"
+      },
+      {
+        "index": 8380,
+        "shape_id": "df166b0407fef7ae4b3c42e318f3affc",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "02a148d6bce33f492fb72a5e107b90791d216750549005cb3bebcde3ebc90b78"
+      },
+      {
+        "index": 1420,
+        "shape_id": "898073ee0a493fed4c58a7782e1dd690",
+        "category": "Display",
+        "gt_points": 0,
+        "selection_hash": "02dd89bcc57f6e146ae4132b65fa0145d8a010ae2a5626fda75c752b3544f704"
+      },
+      {
+        "index": 7860,
+        "shape_id": "2e8a4184f4067657f2cf6a9bef44d625",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "02e55a0fb565bcf159dc5812868aa436c4bd0fcedb69d0fe8a3e4047b5fd9560"
+      },
+      {
+        "index": 7328,
+        "shape_id": "18fef71ad80139a2af02521b7ec8a38e",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "02edbf6ebe0e57efe7fca5d39155bd16f971e6117b4e89b8b4eff838c731eba0"
+      },
+      {
+        "index": 8824,
+        "shape_id": "58951c10aaeeff2afe8474bfd438f6d8",
+        "category": "Hat",
+        "gt_points": 0,
+        "selection_hash": "0307a61c2d5997102dbb3b62063c2acaa8976409b5739b629d61f6faecd7a6b3"
+      },
+      {
+        "index": 6308,
+        "shape_id": "1acc3dae512b56b01f8b303c0da5108d",
+        "category": "Table",
+        "gt_points": 0,
+        "selection_hash": "030f0c14067c7b24b7a053329ba4a2ae36b8737ade97a24f0c535f2df1f6e4f1"
+      }
+    ]
+  },
+  "prompts": {
+    "original": "Point to the part of the object that can hold something.",
+    "selected_paraphrase": "Point to the part where you would place or keep something."
+  },
+  "elapsed_seconds": 298.6854784579482,
+  "calibrated_thresholds": [
+    {
+      "condition": "original",
+      "threshold": 1.0,
+      "cal_positive_object_macro_recall": 0.0,
+      "cal_negative_object_alarm_rate": 0.0,
+      "n_positive": 40,
+      "n_negative": 40,
+      "alarm_cap": 0.1
+    },
+    {
+      "condition": "selected_paraphrase",
+      "threshold": 1.0,
+      "cal_positive_object_macro_recall": 0.0,
+      "cal_negative_object_alarm_rate": 0.0,
+      "n_positive": 40,
+      "n_negative": 40,
+      "alarm_cap": 0.1
+    }
+  ],
+  "test_metrics": [
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "53b396d2ff7af087d01673c7c57450c9",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.22804418206214905,
+      "max_score": 0.4700621962547302
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "7d95374a9110157c7d8c689e1315827b",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.18715569376945496,
+      "max_score": 0.28829097747802734
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "fae333fdef97b004193e4b893d21eb4c",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.20806984603405,
+      "max_score": 0.3895067274570465
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "217d29a61745991f7aa75dfc74adc93f",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.18263158202171326,
+      "max_score": 0.4155644476413727
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "c462e3b75f570a3b42227a2ba4dff5ab",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.331674188375473,
+      "max_score": 0.5382739305496216
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "72b84b9b53fee78c664b3b9b23ddfcbc",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.12359225749969482,
+      "max_score": 0.29623252153396606
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "8fba7de21910dcfc4c3aee8e9d3a6ffa",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.21311505138874054,
+      "max_score": 0.3663836121559143
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "b187206fe6ed4228a805114916841d69",
+      "category": "Dishwasher",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.18199340999126434,
+      "max_score": 0.3098563253879547
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "c3615a091971ed0e9941e769880462e7",
+      "category": "Refrigerator",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.17220348119735718,
+      "max_score": 0.4473627805709839
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "49b69d5e4330ae2457b1c0b6d5084bcf",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.17989884316921234,
+      "max_score": 0.4199676215648651
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "6f46c38f86fa961ed2f1945599cd5176",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.14690491557121277,
+      "max_score": 0.4157333970069885
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "c2d6739b7d2b6cadad5067eac75a07f7",
+      "category": "TrashCan",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.15217408537864685,
+      "max_score": 0.3764953017234802
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "7a48b295d6c3956fa96fd0f479def5ab",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.2013462334871292,
+      "max_score": 0.34192392230033875
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "11b8fd945de0ee99642f6fb37a230b5e",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.16172686219215393,
+      "max_score": 0.30044230818748474
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "dca2cd661bece47bd810b14a81e12eca",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.19120363891124725,
+      "max_score": 0.44477924704551697
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "93ea6a4c9068dd65ba5b64592e406eca",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.13252505660057068,
+      "max_score": 0.4163977801799774
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "21c7f1ff67976e7c29cb7aca40b7cd0",
+      "category": "Microwave",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.1899249255657196,
+      "max_score": 0.2924763858318329
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "9e6434ba1ad59fa611fc2b865c2a185b",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.15310822427272797,
+      "max_score": 0.34088394045829773
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "ea48a2a501942eedde650492e45fb14f",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.19354048371315002,
+      "max_score": 0.28777042031288147
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "positive",
+      "shape_id": "uc9c77d51-a8f3-45c2-a9cd-5a992b8796ef",
+      "category": "Dishwasher",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.23270851373672485,
+      "max_score": 0.42396625876426697
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "de46aee11f397e1c5af597c14b093f6",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.21482470631599426,
+      "max_score": 0.36651527881622314
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "24d1d32aa33c38716a97150bb2a72733",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.14047780632972717,
+      "max_score": 0.42815813422203064
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "96aff91d7898cb1358df8eeaf3dad1c",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.4109260141849518,
+      "max_score": 0.6265177726745605
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "3dd217a06e76292b372b6139ac78b39e",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.2424556314945221,
+      "max_score": 0.37095361948013306
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "a1efc57eedf9a2e93c8311d2f6bcff87",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.13335639238357544,
+      "max_score": 0.5874595642089844
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "eaad54605e6dfee6d862787d0e1b892b",
+      "category": "Display",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.21994662284851074,
+      "max_score": 0.4873499274253845
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "7a617f62ec5bb2075e7faf7f49c2907a",
+      "category": "Chair",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.12416155636310577,
+      "max_score": 0.5323347449302673
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "36770c30c74a32e16dbc8927361b2733",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.2347780168056488,
+      "max_score": 0.6561115384101868
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "329ec98f10af7214ac6962daa1b6ab91",
+      "category": "Chair",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.15173083543777466,
+      "max_score": 0.3623836040496826
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "90dddd5e4aa586bf14513156cf2b8d0d",
+      "category": "Chair",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.11778955161571503,
+      "max_score": 0.37224727869033813
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "a4da5746b99209f85da16758ae613576",
+      "category": "Chair",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.09814765304327011,
+      "max_score": 0.4636702835559845
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "d29445f24bbf1b1814c05b481f895c37",
+      "category": "Chair",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.12375058233737946,
+      "max_score": 0.39191463589668274
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "53d88f50e3abc2888dcbe86402c7c15",
+      "category": "Chair",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.15727202594280243,
+      "max_score": 0.280188649892807
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "75fb953aaa9924d1f28b9459ae3635d3",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.2500530183315277,
+      "max_score": 0.3752957582473755
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "df166b0407fef7ae4b3c42e318f3affc",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.24023881554603577,
+      "max_score": 0.39071252942085266
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "898073ee0a493fed4c58a7782e1dd690",
+      "category": "Display",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.18057367205619812,
+      "max_score": 0.4565789997577667
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "2e8a4184f4067657f2cf6a9bef44d625",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.16820195317268372,
+      "max_score": 0.27534162998199463
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "18fef71ad80139a2af02521b7ec8a38e",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.14371848106384277,
+      "max_score": 0.35820648074150085
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "58951c10aaeeff2afe8474bfd438f6d8",
+      "category": "Hat",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.20250573754310608,
+      "max_score": 0.3433886170387268
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "original",
+      "group": "negative",
+      "shape_id": "1acc3dae512b56b01f8b303c0da5108d",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.20579379796981812,
+      "max_score": 0.3728776276111603
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "53b396d2ff7af087d01673c7c57450c9",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.24971438944339752,
+      "max_score": 0.579369068145752
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "7d95374a9110157c7d8c689e1315827b",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.18163913488388062,
+      "max_score": 0.3541274666786194
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "fae333fdef97b004193e4b893d21eb4c",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.1962936520576477,
+      "max_score": 0.4671333134174347
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "217d29a61745991f7aa75dfc74adc93f",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.2204587161540985,
+      "max_score": 0.3745238780975342
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "c462e3b75f570a3b42227a2ba4dff5ab",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.5519561767578125,
+      "max_score": 0.9270144104957581
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "72b84b9b53fee78c664b3b9b23ddfcbc",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.1146300882101059,
+      "max_score": 0.3139902651309967
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "8fba7de21910dcfc4c3aee8e9d3a6ffa",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.23718376457691193,
+      "max_score": 0.4946894943714142
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "b187206fe6ed4228a805114916841d69",
+      "category": "Dishwasher",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.18525353074073792,
+      "max_score": 0.47201091051101685
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "c3615a091971ed0e9941e769880462e7",
+      "category": "Refrigerator",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.1461639702320099,
+      "max_score": 0.536313533782959
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "49b69d5e4330ae2457b1c0b6d5084bcf",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.17475078999996185,
+      "max_score": 0.6200825572013855
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "6f46c38f86fa961ed2f1945599cd5176",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.1274004876613617,
+      "max_score": 0.3821766674518585
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "c2d6739b7d2b6cadad5067eac75a07f7",
+      "category": "TrashCan",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.16738644242286682,
+      "max_score": 0.6098629236221313
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "7a48b295d6c3956fa96fd0f479def5ab",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.23981229960918427,
+      "max_score": 0.5429542064666748
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "11b8fd945de0ee99642f6fb37a230b5e",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.1620349884033203,
+      "max_score": 0.4240938127040863
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "dca2cd661bece47bd810b14a81e12eca",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.227055624127388,
+      "max_score": 0.43340614438056946
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "93ea6a4c9068dd65ba5b64592e406eca",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.12242750823497772,
+      "max_score": 0.28859439492225647
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "21c7f1ff67976e7c29cb7aca40b7cd0",
+      "category": "Microwave",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.21221114695072174,
+      "max_score": 0.47316911816596985
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "9e6434ba1ad59fa611fc2b865c2a185b",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.16889715194702148,
+      "max_score": 0.40602123737335205
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "ea48a2a501942eedde650492e45fb14f",
+      "category": "StorageFurniture",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.19941002130508423,
+      "max_score": 0.5376639366149902
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "positive",
+      "shape_id": "uc9c77d51-a8f3-45c2-a9cd-5a992b8796ef",
+      "category": "Dishwasher",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": 0.0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.20402245223522186,
+      "max_score": 0.6537261009216309
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "de46aee11f397e1c5af597c14b093f6",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.35000357031822205,
+      "max_score": 0.7703395485877991
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "24d1d32aa33c38716a97150bb2a72733",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.2917640209197998,
+      "max_score": 0.827085018157959
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "96aff91d7898cb1358df8eeaf3dad1c",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.4352206289768219,
+      "max_score": 0.834476888179779
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "3dd217a06e76292b372b6139ac78b39e",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.4188303053379059,
+      "max_score": 0.6579468846321106
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "a1efc57eedf9a2e93c8311d2f6bcff87",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.5768513679504395,
+      "max_score": 0.8962869644165039
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "eaad54605e6dfee6d862787d0e1b892b",
+      "category": "Display",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.2830018997192383,
+      "max_score": 0.5156989097595215
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "7a617f62ec5bb2075e7faf7f49c2907a",
+      "category": "Chair",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.3052417039871216,
+      "max_score": 0.8760109543800354
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "36770c30c74a32e16dbc8927361b2733",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.3028728663921356,
+      "max_score": 0.787298858165741
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "329ec98f10af7214ac6962daa1b6ab91",
+      "category": "Chair",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.27512532472610474,
+      "max_score": 0.865154504776001
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "90dddd5e4aa586bf14513156cf2b8d0d",
+      "category": "Chair",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.26073598861694336,
+      "max_score": 0.8075023889541626
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "a4da5746b99209f85da16758ae613576",
+      "category": "Chair",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.10512863099575043,
+      "max_score": 0.41571077704429626
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "d29445f24bbf1b1814c05b481f895c37",
+      "category": "Chair",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.14814618229866028,
+      "max_score": 0.6794713139533997
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "53d88f50e3abc2888dcbe86402c7c15",
+      "category": "Chair",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.18503662943840027,
+      "max_score": 0.5557411909103394
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "75fb953aaa9924d1f28b9459ae3635d3",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.30900564789772034,
+      "max_score": 0.6040570735931396
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "df166b0407fef7ae4b3c42e318f3affc",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.2658323645591736,
+      "max_score": 0.5549086928367615
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "898073ee0a493fed4c58a7782e1dd690",
+      "category": "Display",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.29380419850349426,
+      "max_score": 0.5105143189430237
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "2e8a4184f4067657f2cf6a9bef44d625",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.23111166059970856,
+      "max_score": 0.5652931928634644
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "18fef71ad80139a2af02521b7ec8a38e",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.2455175220966339,
+      "max_score": 0.6594712734222412
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "58951c10aaeeff2afe8474bfd438f6d8",
+      "category": "Hat",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.2617315649986267,
+      "max_score": 0.6823529005050659
+    },
+    {
+      "affordance": "accommodate",
+      "condition": "selected_paraphrase",
+      "group": "negative",
+      "shape_id": "1acc3dae512b56b01f8b303c0da5108d",
+      "category": "Table",
+      "threshold": 1.0,
+      "object_alarm": false,
+      "aiou": null,
+      "recall": null,
+      "precision": 0.0,
+      "positive_point_fraction": 0.0,
+      "point_fpr": 0.0,
+      "mean_score": 0.4041817784309387,
+      "max_score": 0.7002401351928711
+    }
+  ],
+  "paired_results": {
+    "positive": {
+      "metric": "aiou",
+      "original_mean": 0.0,
+      "paraphrase_mean": 0.0,
+      "delta": 0.0,
+      "paired_object_bootstrap_95pct_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "negative": {
+      "metric": "object_alarm",
+      "original_mean": 0.0,
+      "paraphrase_mean": 0.0,
+      "delta": 0.0,
+      "paired_object_bootstrap_95pct_ci": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "threshold_free_test_summary": [
+    {
+      "split": "fresh_validation",
+      "condition": "original",
+      "threshold": 1.0,
+      "positive_macro_recall_at_threshold": 0.0,
+      "negative_object_alarm_rate": null,
+      "positive_operating_aiou": 0.0,
+      "ranking_aiou": 0.03639501664866611,
+      "auc": 0.38423893510848606,
+      "sim": 0.16604417390190065,
+      "mae": 0.3124340236186981
+    },
+    {
+      "split": "fresh_validation",
+      "condition": "selected_paraphrase",
+      "threshold": 1.0,
+      "positive_macro_recall_at_threshold": 0.0,
+      "negative_object_alarm_rate": null,
+      "positive_operating_aiou": 0.0,
+      "ranking_aiou": 0.05993669348069418,
+      "auc": 0.4236595593442803,
+      "sim": 0.18976562642783393,
+      "mae": 0.3093871116638184
+    }
+  ],
+  "paired_threshold_free_effects": {
+    "ranking_aiou": {
+      "original_mean": 0.03639501664866611,
+      "paraphrase_mean": 0.05993669348069418,
+      "delta": 0.023541676832028072,
+      "paired_object_bootstrap_95pct_ci": [
+        0.0026064614928527434,
+        0.05329720274851897
+      ],
+      "n_positive_objects": 20
+    },
+    "operating_point_recall": {
+      "original_mean": 0.0,
+      "paraphrase_mean": 0.0,
+      "delta": 0.0,
+      "paired_object_bootstrap_95pct_ci": [
+        0.0,
+        0.0
+      ],
+      "n_positive_objects": 20
+    }
+  },
+  "calibration_operating_diagnostics": [
+    {
+      "split": "calibration",
+      "condition": "original",
+      "threshold": 1.0,
+      "positive_macro_recall_at_threshold": 0.0,
+      "negative_object_alarm_rate": 0.0
+    },
+    {
+      "split": "calibration",
+      "condition": "selected_paraphrase",
+      "threshold": 1.0,
+      "positive_macro_recall_at_threshold": 0.0,
+      "negative_object_alarm_rate": 0.0
+    }
+  ],
+  "fixed_05_diagnostic": {
+    "original": {
+      "positive": {
+        "flagged": 1,
+        "n": 20
+      },
+      "negative": {
+        "flagged": 4,
+        "n": 20
+      }
+    },
+    "selected_paraphrase": {
+      "positive": {
+        "flagged": 8,
+        "n": 20
+      },
+      "negative": {
+        "flagged": 19,
+        "n": 20
+      }
+    }
+  },
+  "calibration_device_note": "Original-query calibration maps reused from E15 (MPS); selected-paraphrase calibration maps computed on CPU; fresh validation test maps computed on CPU because MPS was unavailable in this session. Earlier E12 CPU-MPS aggregate metrics matched to displayed precision, but E16 calibration was not fully same-device; treat exact cutoff as exploratory."
+}

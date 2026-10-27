@@ -1,0 +1,125 @@
+{
+  "eligible_objects": 95,
+  "selected": [
+    {
+      "index": 541,
+      "shape_id": "bfd7c0ba3d690291271666a0c21c3f2",
+      "view_id": "view_1",
+      "gt_points": 118
+    },
+    {
+      "index": 458,
+      "shape_id": "ce2508ec4476b2cbf51f77a6d7299806",
+      "view_id": "view_2",
+      "gt_points": 257
+    },
+    {
+      "index": 762,
+      "shape_id": "18b41cb029cf7f6c2b151d8b52c53b90",
+      "view_id": "view_2",
+      "gt_points": 438
+    },
+    {
+      "index": 771,
+      "shape_id": "5d123380371637c330b9e09efbedfc98",
+      "view_id": "view_3",
+      "gt_points": 108
+    },
+    {
+      "index": 691,
+      "shape_id": "a16e051fe5507ae2396ca3dd50467ab",
+      "view_id": "view_3",
+      "gt_points": 230
+    },
+    {
+      "index": 607,
+      "shape_id": "1e42e5b37a46fd9c3202f7933a14e59b",
+      "view_id": "view_3",
+      "gt_points": 127
+    },
+    {
+      "index": 597,
+      "shape_id": "ee490d76aac9cf342f2318fdd66be40a",
+      "view_id": "view_1",
+      "gt_points": 22
+    },
+    {
+      "index": 623,
+      "shape_id": "8f45584aabfb17e9ffb8dd272bf2a810",
+      "view_id": "view_3",
+      "gt_points": 345
+    },
+    {
+      "index": 583,
+      "shape_id": "23dd0031ba0db00d1a08ef511bce5615",
+      "view_id": "view_3",
+      "gt_points": 292
+    },
+    {
+      "index": 460,
+      "shape_id": "8111c4fa78c69d7925ebd1cd0b422e32",
+      "view_id": "view_0",
+      "gt_points": 1750
+    },
+    {
+      "index": 475,
+      "shape_id": "5b5fc2f78d935628479e6e44e41a0562",
+      "view_id": "view_3",
+      "gt_points": 38
+    },
+    {
+      "index": 667,
+      "shape_id": "c6ff7725e2e3832835b3d63776480dcf",
+      "view_id": "view_3",
+      "gt_points": 247
+    },
+    {
+      "index": 722,
+      "shape_id": "e7d1773d6278ba1ba2c59a4d90e63212",
+      "view_id": "view_2",
+      "gt_points": 114
+    },
+    {
+      "index": 854,
+      "shape_id": "e744d9040133cbf4bf9296aa16dd149d",
+      "view_id": "view_2",
+      "gt_points": 269
+    },
+    {
+      "index": 485,
+      "shape_id": "aa7d667a7b5c67642b151d8b52c53b90",
+      "view_id": "view_1",
+      "gt_points": 239
+    },
+    {
+      "index": 575,
+      "shape_id": "e0a62f7d9bb5cfea36b0f2a1430e993a",
+      "view_id": "view_3",
+      "gt_points": 158
+    },
+    {
+      "index": 755,
+      "shape_id": "add11329471685d6beceb95982284736",
+      "view_id": "view_3",
+      "gt_points": 215
+    },
+    {
+      "index": 798,
+      "shape_id": "c2e11c90827c10a559f9892433e1b1f4",
+      "view_id": "view_2",
+      "gt_points": 259
+    },
+    {
+      "index": 703,
+      "shape_id": "c623808300139bc3beedb4c8fd29e2d1",
+      "view_id": "view_3",
+      "gt_points": 148
+    },
+    {
+      "index": 492,
+      "shape_id": "d090b33ac316a4b8bc7f58784fda27b5",
+      "view_id": "view_0",
+      "gt_points": 636
+    }
+  ]
+}

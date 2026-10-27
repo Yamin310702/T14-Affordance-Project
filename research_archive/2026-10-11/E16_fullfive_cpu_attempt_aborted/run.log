@@ -1,0 +1,182 @@
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/cuda/__init__.py:68: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+{
+  "status": "running",
+  "device": "cpu",
+  "MPS available": false,
+  "calibration_shapes": 395,
+  "test_shapes": 400,
+  "eligible_test": {
+    "grab": {
+      "positive": 1357,
+      "negative": 14330
+    },
+    "pour": {
+      "positive": 1276,
+      "negative": 14331
+    },
+    "wrap": {
+      "positive": 1093,
+      "negative": 14434
+    },
+    "accommodate": {
+      "positive": 2753,
+      "negative": 12694
+    },
+    "unlock": {
+      "positive": 2334,
+      "negative": 13033
+    }
+  }
+}
+/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/voxelization.py:17: UserWarning: The reduce argument of torch.scatter with Tensor src is deprecated and will be removed in a future PyTorch release. Use torch.scatter_reduce instead for more reduction options. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:227.)
+  out_feature = result.scatter_(index=indices.long(), src=features, dim=2, reduce='add')
+Calibration paraphrase scores: grab positive done
+Calibration paraphrase scores: grab negative done
+Test predictions: grab positive 1/40: f705e6e60a4d9ff576c18e71fd49c4dc
+Test predictions: grab positive 2/40: 591153135f8571a69fc36bc06f1db2fa
+Test predictions: grab positive 3/40: 89c6acb3635f9a85c15cf6e5ad80f2da
+Test predictions: grab positive 4/40: a05ea45d396c86784e52b614e584a543
+Test predictions: grab positive 5/40: a4bb5d2f36b1319f50da8b99982a3057
+Test predictions: grab positive 6/40: 6b23fe58eecdc1946048f75ed36a5ac0
+Test predictions: grab positive 7/40: dc3e5c0457defe87a52821bf1aa3b19a
+Test predictions: grab positive 8/40: 832cd41e86b6820869a59c3b42f34f2
+Test predictions: grab positive 9/40: f281fcae895f6b2ea52821bf1aa3b19a
+Test predictions: grab positive 10/40: 3b0f81cd74875acbb196d563c325e416
+Test predictions: grab positive 11/40: 2559df6172ff5b1a840312071e438eeb
+Test predictions: grab positive 12/40: 701ea218827f9a7a733657da4b6687f4
+Test predictions: grab positive 13/40: f3e5ec75a719c3efb5f4a9188bfa0ef6
+Test predictions: grab positive 14/40: f639cff54b955a9b39c78a1e40e247f3
+Test predictions: grab positive 15/40: d196cee1204df9027bd9558057bfa0b3
+Test predictions: grab positive 16/40: uc3fef767-1059-452c-9627-80e65369844b
+Test predictions: grab positive 17/40: 6ebe74793197919e93f2361527e0abe5
+Test predictions: grab positive 18/40: 554749f9-e242-401b-848f-f856f2c75177
+Test predictions: grab positive 19/40: 6ebe2a22b8d9d70862a95b942081dfee
+Test predictions: grab positive 20/40: 774fcae246e7ad25c8724d5673a063a6
+Test predictions: grab positive 21/40: 050bac4c-3704-4aac-bed1-ac01bcd2b830
+Test predictions: grab positive 22/40: bb2ea6e44847055d59a6208793b9dfca
+Test predictions: grab positive 23/40: f0c7d88a8ee66e2ec36fb70296e45483
+Test predictions: grab positive 24/40: 883ace957dbb32e7846564a8a219239b
+Test predictions: grab positive 25/40: 6f2fcfb9f844979f87dd60af81c93a3c
+Test predictions: grab positive 26/40: 5979870763de5ced4c8b72e8da0e65c5
+Test predictions: grab positive 27/40: 22b7d6fa819d62aefc69b7db9c6d5ad9
+Test predictions: grab positive 28/40: 719b4249339e7eb4c030d1f2c16e4c51
+Test predictions: grab positive 29/40: d309d5f8038df4121198791a5b8655c
+Test predictions: grab positive 30/40: c297a977dba85f9fb362845c6edb57fc
+Test predictions: grab positive 31/40: 8adc0ce79962ac2021072d05c97a5e0a
+Test predictions: grab positive 32/40: 3dec0d851cba045fbf444790f25ea3db
+Test predictions: grab positive 33/40: fee3c970d7e854103f5881eaf72c4aa0
+Test predictions: grab positive 34/40: a205f01fec2d4c78c1cc4ae0ecf50bf4
+Test predictions: grab positive 35/40: 80b9619326f25bac3321831d2245cf06
+Test predictions: grab positive 36/40: 1ae1ba5dfb2a085247df6165146d5bbd
+Test predictions: grab positive 37/40: 7ae63b6abb0eb0f4b362845c6edb57fc
+Test predictions: grab positive 38/40: ae7744b9e5bb5a11e9ff7117715adddb
+Test predictions: grab positive 39/40: 6f954843bec713b6c36fb70296e45483
+Test predictions: grab positive 40/40: 157fa29bcf6b890d76bb31db0358e9c6
+Test predictions: grab negative 1/40: 69689176b53be82df51f77a6d7299806
+Test predictions: grab negative 2/40: a5e061fc25bff768623d10a210f40a3f
+Test predictions: grab negative 3/40: 54cbe81983534dc153b10fab8d9d7b30
+Test predictions: grab negative 4/40: d95fe848b19c277a1fd3f440755dada6
+Test predictions: grab negative 5/40: b3ef15af53eff822423da7f4f4231bf7
+Test predictions: grab negative 6/40: 921afad0f119509c4e09ebaf49b0cb2f
+Test predictions: grab negative 7/40: 6581edd8565321685512673aa47c7e3d
+Test predictions: grab negative 8/40: 94b39e206f1bd77c69e31bb722067900
+Test predictions: grab negative 9/40: 70f57047512c2eb84104b1c5cb7f9280
+Test predictions: grab negative 10/40: f0482a9b7084c6f8c83b51ded97d6038
+Test predictions: grab negative 11/40: 707e9078bd63a41af7fd77472e77581e
+Test predictions: grab negative 12/40: 906608e3146548e6a4e733e4e18a6d05
+Test predictions: grab negative 13/40: 2a5f29019fea4513dc0970d34db41136
+Test predictions: grab negative 14/40: 132185edbe4f2c5fb4c161851ed2b4e4
+Test predictions: grab negative 15/40: 38e83df89967420b876b399a99a15c0f
+Test predictions: grab negative 16/40: dbf2123ee206a81b8b00eeaf68a1358
+Test predictions: grab negative 17/40: 19117e74b575cdca82555f4c45537277
+Test predictions: grab negative 18/40: 7348ec0e16e99fe1ad484915511ccff6
+Test predictions: grab negative 19/40: 429536832f2f4e1abfbd6f1ce8dfb216
+Test predictions: grab negative 20/40: aaa87a2a3a5b8ab4a156590b19c3013b
+Test predictions: grab negative 21/40: 9b4d530487df4aa94b3c42e318f3affc
+Test predictions: grab negative 22/40: 5d6d578faeeb4e5aad130a35b52f3be4
+Test predictions: grab negative 23/40: 8d70fb6adc63e21eb7e0383b9609fa5
+Test predictions: grab negative 24/40: c3134ae6fd6691d7db039d8689a74349
+Test predictions: grab negative 25/40: fcf0e9c2aed826c7fdb2052f1980b788
+Test predictions: grab negative 26/40: a1f712dcaf82b4773c251003e92f664e
+Test predictions: grab negative 27/40: 34df750af2640f576d616bfd695eec80
+Test predictions: grab negative 28/40: 817e119f087cf8f8f44880b8ee951142
+Test predictions: grab negative 29/40: 59bd57fe0389e7831f7c97814eaf956d
+Test predictions: grab negative 30/40: 5a53b727ad62dbb98c11ab042675af8e
+Test predictions: grab negative 31/40: 26c9e85dfa18af9fcf004563556ddb36
+Test predictions: grab negative 32/40: 5ef0c3e89d51eda2d62069fe2138d0b8
+Test predictions: grab negative 33/40: 72669be1815b2bb81e4fe86c4ad3ec90
+Test predictions: grab negative 34/40: 8ea7ca2c8b48eb68ab610b0c94236463
+Test predictions: grab negative 35/40: 4bbac921678eb957614319d7d997614c
+Test predictions: grab negative 36/40: a02a1255256fbe01c9292f26f73f6538
+Test predictions: grab negative 37/40: 1a01c2d7705193b4917cb569753af492
+Test predictions: grab negative 38/40: 641affca2294fe1879368d1198f406e7
+Test predictions: grab negative 39/40: a95828fa4607295674c8eb7e4d6198a5
+Test predictions: grab negative 40/40: f3573756e64259f2b29d280b4e59c527
+Calibration paraphrase scores: pour positive done
+Calibration paraphrase scores: pour negative done
+Test predictions: pour positive 1/40: 10433e5bd8fa2a337b00c7b93209c459
+Test predictions: pour positive 2/40: b2b0dd16870742a2fc41e59f3518733
+Test predictions: pour positive 3/40: 3ce3a0a7adbaaa518e43a810a63361f0
+Test predictions: pour positive 4/40: 8a0320b2be22e234d0d131ea6d955bf0
+Test predictions: pour positive 5/40: 8b7933b0376cea4a1efe98244cb8c300
+Test predictions: pour positive 6/40: 9307ad32b595cd82cb2a965e75be701c
+Test predictions: pour positive 7/40: d2f113f579d2c4c9b7e6746928016c6b
+Test predictions: pour positive 8/40: 2037531c43448c3016329cbc378d2a2
+Test predictions: pour positive 9/40: a3223c8dd57ff46e1118b641f14b480d
+Test predictions: pour positive 10/40: 5566f264a6fa08cd2a68e506fbd6eecf
+Test predictions: pour positive 11/40: 22f7580ee1819eb7fc435963bd99e667
+Test predictions: pour positive 12/40: 7d71fc51ce793a44befd8bfd61b07f5
+Test predictions: pour positive 13/40: 61e5f9b2abfe02ac93271d2223fe04be
+Test predictions: pour positive 14/40: d3e31e11258926104d38ef17af2f7d70
+Test predictions: pour positive 15/40: 26795095a52c788f664b3b9b23ddfcbc
+Test predictions: pour positive 16/40: d32cd77c6630b77de47c0353c18d58e
+Test predictions: pour positive 17/40: baa4d6ca9521a55b51d6f7c8e810987e
+Test predictions: pour positive 18/40: 5c1128439ea33c8398910e50f05b8001
+Final status: running
+Traceback (most recent call last):
+  File "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/run_e16_operating_point.py", line 124, in <module>
+    x=torch.from_numpy(xyz).unsqueeze(0).to(DEVICE); feat=model.vision(x)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/espresso/model.py", line 78, in forward
+    planes = self.triplane_transformer(planes)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/triplane.py", line 324, in forward
+    tokens = self.forward_transformer(downsampled_triplanes)
+  File "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/triplane.py", line 295, in forward_transformer
+    x = self.transformer(x)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/triplane.py", line 180, in forward
+    x = self.forward_layer(layer, x, cond)
+  File "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/triplane.py", line 170, in forward_layer
+    return layer(x)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/triplane.py", line 92, in forward
+    x = x + self.mlp(self.norm2(x))
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+KeyboardInterrupt

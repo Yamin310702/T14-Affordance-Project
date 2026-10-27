@@ -1,0 +1,7 @@
+split,condition,threshold,positive_macro_recall,negative_object_alarm_rate,positive_operating_aiou,ranking_aiou,auc,sim,mae,negative_objects_flagged,n_negative
+calibration,original,1.0,0.0,0.0,,,,,,,
+fresh_validation,original,1.0,0.0,,0.0,0.03639501664866611,0.3842388057289436,0.16604413880268112,0.312434147298336,,
+fresh_validation,original,1.0,,0.0,,,,,,0,20
+calibration,selected_paraphrase,1.0,0.0,0.0,,,,,,,
+fresh_validation,selected_paraphrase,1.0,0.0,,0.0,0.05993669348069418,0.423659881961657,0.18976561506278813,0.30938706174492836,,
+fresh_validation,selected_paraphrase,1.0,,0.0,,,,,,0,20

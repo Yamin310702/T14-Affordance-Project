@@ -1,0 +1,11 @@
+{
+  "per_object_metrics.csv": "a904c43a9a602a8b8c1c076eb9903dd4970886b263610233025c642b002a5811",
+  "RESULTS.md": "ee182e766c1e17afa766c6234aba3fa571ef50969d82ec806a33fec81c59f52c",
+  "summarize_heldout_query_sensitivity.py": "3c42be57a20cb3a5b6b7b81754f7e4970cf25ecf0969032dd3572330901a5d77",
+  "per_object_aiou.png": "d96f935b372b0586171932cbf0b40a21d260aaadbe41017379ef929fe4e58c53",
+  "per_object_heatmaps.npz": "fc675c54aade3b8d3b1650aeac9f399d9b3eeb9b90d904d5329bc60b1ad8f4ac",
+  "run.json": "9422c2234a63e217d33f685295dddf87cd86824c38581489105949866653733d",
+  "mean_metrics.csv": "e2cb809710169ee3b518b5cb9d1bfbf58f432d338e214e7d726d54b75a6f343b",
+  "run_heldout_query_sensitivity.py": "96ccc3182edfbb8cdd3609a3408c73a6daf8d6fa3536339b74557c095df051ce",
+  "heldout_query_sensitivity.log": "4e462030bee7bb2040fc4c1f1e65101a96d389ec61516205a2e73b21a98f47c4"
+}

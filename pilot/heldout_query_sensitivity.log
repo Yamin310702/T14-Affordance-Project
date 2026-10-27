@@ -1,0 +1,186 @@
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/cuda/__init__.py:68: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+{
+  "experiment": "E10",
+  "status": "running",
+  "model": "Unofficial Espresso-3D; Affogato-pretrained weights",
+  "device": "mps",
+  "seed": 1,
+  "scope": "Held-out exploratory evaluation, partial-view point clouds, pour affordance only",
+  "query_conditions": [
+    "Point to the part used for pouring.",
+    "Locate the region from which liquid is poured.",
+    "Identify the pouring region."
+  ],
+  "ensemble": "Arithmetic mean of the three sigmoid score maps, pointwise",
+  "sample_selection": "For each shape ID, take first partial view with any GT pour points; sort eligible IDs by SHA256(\"E09-pour:\"+shape_id); next 20 after the E09 development set, excluding its 10 IDs. Selection uses GT availability only, not prediction outcomes.",
+  "metric": "Affogato/Espresso source sample_metrics; aIoU 20 thresholds [0,1], AUC, SIM, MAE",
+  "claim_limit": "Development set selected for positive pour labels; held-out from E09 development objects, but still a small pilot rather than a definitive benchmark.",
+  "dataset_samples": 9140,
+  "eligible_unique_objects": 193,
+  "objects": [
+    {
+      "index": 840,
+      "shape_id": "127b3453b1f73505a2c59a4d90e63212",
+      "category": "Vase",
+      "gt_pour_points": 974,
+      "selection_hash": "0e0ad69d80c86bc6793f95960a56cad5552533ad10d05a0c3514d3ebae6ffbf4"
+    },
+    {
+      "index": 9112,
+      "shape_id": "48aca9c3a4006a5163b2acb037dfbcde",
+      "category": "TrashCan",
+      "gt_pour_points": 897,
+      "selection_hash": "11bf261291037f2e1df553dd951035a7c796e2b278c97a3bfc9194a0529bcb00"
+    },
+    {
+      "index": 9108,
+      "shape_id": "b401be1a08b87882f4fb4dee5181bee",
+      "category": "TrashCan",
+      "gt_pour_points": 5,
+      "selection_hash": "11d5053fae1726396ebbbfada09588e172b5ed2c0353e6af6727f97b8bea59f3"
+    },
+    {
+      "index": 4180,
+      "shape_id": "6444875e3217bf891f5f48a891d827bd",
+      "category": "Bottle",
+      "gt_pour_points": 27,
+      "selection_hash": "1266c92e88f37affc7ce2b27ce2c4b816e5c7006df987ed2bfe5019e8de1de2c"
+    },
+    {
+      "index": 640,
+      "shape_id": "82298657eaa980d323a295070ca176a0",
+      "category": "Vase",
+      "gt_pour_points": 771,
+      "selection_hash": "126ead0bd440fbd12dabd8d8898fb23974d8c1556573b2b89af583c2ad6e1f74"
+    },
+    {
+      "index": 5416,
+      "shape_id": "9737c77d3263062b8ca7a0a01bcd55b6",
+      "category": "Mug",
+      "gt_pour_points": 305,
+      "selection_hash": "12ce3ea04bed3d68b780cd0b35ce9526d0aee23072e3d6501b0ff871c6f72258"
+    },
+    {
+      "index": 5412,
+      "shape_id": "8b1dca1414ba88cb91986c63a4d7a99a",
+      "category": "Mug",
+      "gt_pour_points": 1011,
+      "selection_hash": "1709e9c87602112d65f838f9ab7a7e1838b63387196c8a4ea75f81f59d24b5cc"
+    },
+    {
+      "index": 512,
+      "shape_id": "6998db7278a59310beedb4c8fd29e2d1",
+      "category": "Vase",
+      "gt_pour_points": 1038,
+      "selection_hash": "1987953865381aa720275bc686f20a9c0ad529fff43330c6c9d0a88e21c066a2"
+    },
+    {
+      "index": 604,
+      "shape_id": "1e42e5b37a46fd9c3202f7933a14e59b",
+      "category": "Vase",
+      "gt_pour_points": 30,
+      "selection_hash": "1a05482422ea3aa9c71fa55d05b28e5a128d1a2f399e7d655dbe19ca8e75ea8d"
+    },
+    {
+      "index": 596,
+      "shape_id": "ee490d76aac9cf342f2318fdd66be40a",
+      "category": "Vase",
+      "gt_pour_points": 23,
+      "selection_hash": "1b6846a856471e4d85d9f128112d2387c96b3363f0082756b2cb2d623eb5d372"
+    },
+    {
+      "index": 5420,
+      "shape_id": "a3cd44bbd3ba5b019a4cbf5d3b79df06",
+      "category": "Mug",
+      "gt_pour_points": 455,
+      "selection_hash": "1b6dd567b8a342e5b15d31180953324124584f6170d4ec4680dd45b170f1974c"
+    },
+    {
+      "index": 860,
+      "shape_id": "2f06f66740e65248ba6cf6cbb9f4c2bb",
+      "category": "Vase",
+      "gt_pour_points": 1159,
+      "selection_hash": "1b9e0f6daf9bd0022cb0d8debb8da70457d3e717d7b570dd4b777d9c71177d38"
+    },
+    {
+      "index": 464,
+      "shape_id": "7fe9e595c5eb7d04bb4fd842f8631c2b",
+      "category": "Vase",
+      "gt_pour_points": 185,
+      "selection_hash": "1c8369165b1e9b7e7fed83d9229bdc1a23e53c1bda97406696b85e2a2101c8eb"
+    },
+    {
+      "index": 5380,
+      "shape_id": "c7ddd93b15e30faae180a52fd2be32",
+      "category": "Mug",
+      "gt_pour_points": 711,
+      "selection_hash": "1d15f82f18617a1a4f832dea2dd99f6c969fb633234c96acce85cfb2a0130775"
+    },
+    {
+      "index": 812,
+      "shape_id": "8d87b950d8e192f5f51f77a6d7299806",
+      "category": "Vase",
+      "gt_pour_points": 1299,
+      "selection_hash": "1d787ec5b194eb8ec188b954b0bf2ce99109814973efd1ca65074ce0c5861e02"
+    },
+    {
+      "index": 988,
+      "shape_id": "e3095ecacc36080cb398a1cfd1079875",
+      "category": "Bowl",
+      "gt_pour_points": 821,
+      "selection_hash": "1e2f78bb163c38cf7c7440e9d098c9709bf9e1b9614c48ae034d8951f563cad5"
+    },
+    {
+      "index": 792,
+      "shape_id": "16e6fbacfbbc4bcf9aec59741c69cf7",
+      "category": "Vase",
+      "gt_pour_points": 653,
+      "selection_hash": "224ab9009d874324d3346c6fba03d87fc0faaa9c5c97fd34059f896707825c85"
+    },
+    {
+      "index": 752,
+      "shape_id": "add11329471685d6beceb95982284736",
+      "category": "Vase",
+      "gt_pour_points": 129,
+      "selection_hash": "224bf2cf57468924b36e0bfd117dd41afa1a7e51f64ed2b68790bc7efd973a9b"
+    },
+    {
+      "index": 804,
+      "shape_id": "b8f273f071041f694c6c80caaf15808d",
+      "category": "Vase",
+      "gt_pour_points": 1528,
+      "selection_hash": "22a06bccb40f267caacdbea61999ce9d9ed49c5ddea0c77b911303b114730301"
+    },
+    {
+      "index": 756,
+      "shape_id": "d56098d4d83f5976a2c59a4d90e63212",
+      "category": "Vase",
+      "gt_pour_points": 1045,
+      "selection_hash": "2367480d98a1481ada739387993a939a3beab9208ea8be4e973f22116bd6208f"
+    }
+  ]
+}
+/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/voxelization.py:17: UserWarning: The reduce argument of torch.scatter with Tensor src is deprecated and will be removed in a future PyTorch release. Use torch.scatter_reduce instead for more reduction options. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:227.)
+  out_feature = result.scatter_(index=indices.long(), src=features, dim=2, reduce='add')
+Completed object 1/10: Vase, 127b3453b1f73505a2c59a4d90e63212; GT pour points=974
+Completed object 2/10: TrashCan, 48aca9c3a4006a5163b2acb037dfbcde; GT pour points=897
+Completed object 3/10: TrashCan, b401be1a08b87882f4fb4dee5181bee; GT pour points=5
+Completed object 4/10: Bottle, 6444875e3217bf891f5f48a891d827bd; GT pour points=27
+Completed object 5/10: Vase, 82298657eaa980d323a295070ca176a0; GT pour points=771
+Completed object 6/10: Mug, 9737c77d3263062b8ca7a0a01bcd55b6; GT pour points=305
+Completed object 7/10: Mug, 8b1dca1414ba88cb91986c63a4d7a99a; GT pour points=1011
+Completed object 8/10: Vase, 6998db7278a59310beedb4c8fd29e2d1; GT pour points=1038
+Completed object 9/10: Vase, 1e42e5b37a46fd9c3202f7933a14e59b; GT pour points=30
+Completed object 10/10: Vase, ee490d76aac9cf342f2318fdd66be40a; GT pour points=23
+Completed object 11/10: Mug, a3cd44bbd3ba5b019a4cbf5d3b79df06; GT pour points=455
+Completed object 12/10: Vase, 2f06f66740e65248ba6cf6cbb9f4c2bb; GT pour points=1159
+Completed object 13/10: Vase, 7fe9e595c5eb7d04bb4fd842f8631c2b; GT pour points=185
+Completed object 14/10: Mug, c7ddd93b15e30faae180a52fd2be32; GT pour points=711
+Completed object 15/10: Vase, 8d87b950d8e192f5f51f77a6d7299806; GT pour points=1299
+Completed object 16/10: Bowl, e3095ecacc36080cb398a1cfd1079875; GT pour points=821
+Completed object 17/10: Vase, 16e6fbacfbbc4bcf9aec59741c69cf7; GT pour points=653
+Completed object 18/10: Vase, add11329471685d6beceb95982284736; GT pour points=129
+Completed object 19/10: Vase, b8f273f071041f694c6c80caaf15808d; GT pour points=1528
+Completed object 20/10: Vase, d56098d4d83f5976a2c59a4d90e63212; GT pour points=1045
+Final status: complete

@@ -1,0 +1,596 @@
+[
+  {
+    "file": "E01_openad_original_baselines/full_shape_baseline_result.log",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/full_shape_baseline_result.log",
+    "sha256": "9a7b8a5716bcd5320487d7b949fdacfd0cd734959ce34315dd04a5653c91d6d2",
+    "bytes": 639
+  },
+  {
+    "file": "E01_openad_original_baselines/partial_view_baseline_result.log",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/partial_view_baseline_result.log",
+    "sha256": "9d23f11153bdb32263b4b757839676ec54b5a1385be55e10991033c4ad7cc439",
+    "bytes": 625
+  },
+  {
+    "file": "E02_openad_selected_failures/figures/failure_clothe.png",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/failure_visualizations/failure_clothe.png",
+    "sha256": "baf91c033f23d7cd8be118ba290aa96056233292705ab7a96f374a3cee3b9df7",
+    "bytes": 762893
+  },
+  {
+    "file": "E02_openad_selected_failures/figures/failure_pour.png",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/failure_visualizations/failure_pour.png",
+    "sha256": "563cd70c8de3df27138c9f6eff9dc17d4d709af6c6228650ca1e9613e9af1bdd",
+    "bytes": 937150
+  },
+  {
+    "file": "E02_openad_selected_failures/figures/failure_wrap.png",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/failure_visualizations/failure_wrap.png",
+    "sha256": "157fb3ed9414a8da85844d10b210a1e7b4437642f0ea342544ce86d2d9bb7354",
+    "bytes": 1129452
+  },
+  {
+    "file": "E02_openad_selected_failures/analyze_failure_scores.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/analyze_failure_scores.py",
+    "sha256": "1e10db370f3301ab491f6dcdf9ac9c4aab9b996fb99ce72b38d16758b0d59456",
+    "bytes": 3726
+  },
+  {
+    "file": "E02_openad_selected_failures/visualize_failure.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/visualize_failure.py",
+    "sha256": "9772e546375e5e24195a5acf6ea80cd82e4c97e8678acd076819a04e27fdc6dc",
+    "bytes": 6761
+  },
+  {
+    "file": "E02_openad_selected_failures/user_reported_progress.txt",
+    "source": "/Users/yaminmyataung/.codex/attachments/cd9bb815-f0bb-4cf3-a7d5-1f1af39e1384/Pasted text.txt",
+    "sha256": "8be41eef5380f0b59ea1222496eccfe0889e99db2c12b4d254795824112fe449",
+    "bytes": 29986
+  },
+  {
+    "file": "E03_openad_cpu_check/aggregates.npz",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot_scores/aggregates.npz",
+    "sha256": "600b83fa2be1c5987643ae64332b3560e7fcaae9cfdbc6488bf54d697a9b1c05",
+    "bytes": 6734
+  },
+  {
+    "file": "E03_openad_cpu_check/confusion_counts.csv",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot_scores/confusion_counts.csv",
+    "sha256": "32ea077f285e11a3177ef94558da11a24b8576c0907ff144256a347b6f707dde",
+    "bytes": 1023
+  },
+  {
+    "file": "E03_openad_cpu_check/per_affordance.csv",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot_scores/per_affordance.csv",
+    "sha256": "2016bdea5ba701448608f65796989452c55e0bcedb2ed2ed79e7c0f214907bab",
+    "bytes": 962
+  },
+  {
+    "file": "E03_openad_cpu_check/sample_regions.csv",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot_scores/sample_regions.csv",
+    "sha256": "95ffec2692e569814f23f4ebd83ee8e232b8f5731deede93ac680b67b36f64c8",
+    "bytes": 488
+  },
+  {
+    "file": "E03_openad_cpu_check/summary.json",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot_scores/summary.json",
+    "sha256": "9af6b08f80a4bd218de9d4525b79e1887ee3e9a593a461e503594260f90f73f3",
+    "bytes": 1625
+  },
+  {
+    "file": "E04_openad_mps_check/aggregates.npz",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot_scores_mps/aggregates.npz",
+    "sha256": "67736104ff5af7f7f2df737e39af6b3fd6a64afcad1748871d8152910b095842",
+    "bytes": 6734
+  },
+  {
+    "file": "E04_openad_mps_check/confusion_counts.csv",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot_scores_mps/confusion_counts.csv",
+    "sha256": "32ea077f285e11a3177ef94558da11a24b8576c0907ff144256a347b6f707dde",
+    "bytes": 1023
+  },
+  {
+    "file": "E04_openad_mps_check/per_affordance.csv",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot_scores_mps/per_affordance.csv",
+    "sha256": "821f3c37c093318ea5e271ac2d8e05ed7424d8b46e19ec35b005351e2aa6c838",
+    "bytes": 958
+  },
+  {
+    "file": "E04_openad_mps_check/sample_regions.csv",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot_scores_mps/sample_regions.csv",
+    "sha256": "8be4599c4c8d6b5afb141a3094bfc22661f3870c6555f1cc28421a5717171c9e",
+    "bytes": 490
+  },
+  {
+    "file": "E04_openad_mps_check/summary.json",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot_scores_mps/summary.json",
+    "sha256": "9b0c911c480a08ae8dd4330412d59eb23d0e43f7915686e6be5df2a0bc4fc21a",
+    "bytes": 1625
+  },
+  {
+    "file": "E05_openad_dataset_analysis/aggregates.npz",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/partial_dataset_scores/aggregates.npz",
+    "sha256": "1a5b76c4c1ba6b8ce8d80881d6edf4e39b0ebce4473f4e9cd4d02df8a1e0f1ad",
+    "bytes": 6734
+  },
+  {
+    "file": "E05_openad_dataset_analysis/confusion_counts.csv",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/partial_dataset_scores/confusion_counts.csv",
+    "sha256": "af3bd07af0ccc90ff1f04e53d2790d615e90bfa32b3d681d1b06bcf20be9c572",
+    "bytes": 1279
+  },
+  {
+    "file": "E05_openad_dataset_analysis/per_affordance.csv",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/partial_dataset_scores/per_affordance.csv",
+    "sha256": "9dfa01335bda6c5a3aa11135786db4b20ececce5fbeac8205acc3f6b3a917fb8",
+    "bytes": 3267
+  },
+  {
+    "file": "E05_openad_dataset_analysis/sample_regions.csv",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/partial_dataset_scores/sample_regions.csv",
+    "sha256": "b8a161415197d538833ff16177db017e16bad9c38373c78cc11139dc655cdc06",
+    "bytes": 2844318
+  },
+  {
+    "file": "E05_openad_dataset_analysis/summary.json",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/partial_dataset_scores/summary.json",
+    "sha256": "965975a1e059c88b68c823345ea5209d1042c4ce0f90d9c134fcae292c8c21ce",
+    "bytes": 1626
+  },
+  {
+    "file": "E07_espresso_pretrained_single_case/heatmap.npy",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso_real/heatmap.npy",
+    "sha256": "50a461b89fe441f0a93365efdfb03aad0e69418538e48845980a8a643c18e6be",
+    "bytes": 8320
+  },
+  {
+    "file": "E07_espresso_pretrained_single_case/input.npz",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso_real/input.npz",
+    "sha256": "31e2a4f6b613282945c1fa3c0ba716139d5d30ade78e0df7b38cddb7d89b95a2",
+    "bytes": 33272
+  },
+  {
+    "file": "E07_espresso_pretrained_single_case/prediction.png",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso_real/prediction.png",
+    "sha256": "1307ee92a36c41d679179aafb291ee809880a3f8e1469f207537f0608a73d8a4",
+    "bytes": 707483
+  },
+  {
+    "file": "E07_espresso_pretrained_single_case/run.json",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso_real/run.json",
+    "sha256": "2c076c8a1ea80e0dda780e0950aff3f1689ebfd847c44292249fa93bda9353f0",
+    "bytes": 1089
+  },
+  {
+    "file": "E05_openad_dataset_analysis/run.log",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/partial_dataset_analysis.log",
+    "sha256": "46ddfc47ce549a92b6c0b14200432f8d60b6204d23329dd63a8de7e9a6b47dde",
+    "bytes": 15577
+  },
+  {
+    "file": "code/analyze_dataset_scores.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/analyze_dataset_scores.py",
+    "sha256": "01882b8b05ec92294352669a66465ab105d173fa725faa94ccc8bb8905da61ed",
+    "bytes": 5538
+  },
+  {
+    "file": "E06_espresso_compatibility/test_espresso_device.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/test_espresso_device.py",
+    "sha256": "cb579d41840e8f31ffc6aafc65d6fd22d62dd3eb51de7e834c06d9e594e5e374",
+    "bytes": 1878
+  },
+  {
+    "file": "E06_espresso_compatibility/espresso_cpu_check.json",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso_cpu_check.json",
+    "sha256": "0597c63ca2cc13adfb0550e0d9a63dc603a4ec7bbcea8ff6a6440d125c7f03f6",
+    "bytes": 225
+  },
+  {
+    "file": "E06_espresso_compatibility/espresso_mps_check.json",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso_mps_check.json",
+    "sha256": "917be447b8f8746d5297ce784b54ac00d8dab033a42fa785776cba5c2df2db5e",
+    "bytes": 305
+  },
+  {
+    "file": "E06_espresso_compatibility/ESPRESSO_MAC_AUDIT.md",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/ESPRESSO_MAC_AUDIT.md",
+    "sha256": "552771dbf712b489a674251d29e5adc0ca80bfb970d052c902a419a49f4abd73",
+    "bytes": 4174
+  },
+  {
+    "file": "E07_espresso_pretrained_single_case/run_espresso_real.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/run_espresso_real.py",
+    "sha256": "3d07b7e96bf0efbac6504adf086d05ed529e296a7af6aefb85216d68287a0141",
+    "bytes": 2467
+  },
+  {
+    "file": "E07_espresso_pretrained_single_case/plot_espresso_real.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/plot_espresso_real.py",
+    "sha256": "a44cf634bbba6e5d576094f56709afe210a93481d352aabbdd059c85c18d2aa0",
+    "bytes": 881
+  },
+  {
+    "file": "E07_espresso_pretrained_single_case/espresso_environment.txt",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso_environment.txt",
+    "sha256": "891486108ca967a267a14bce7bfa8652c6e9335600058822979a46fe30418c37",
+    "bytes": 360
+  },
+  {
+    "file": "E07_espresso_pretrained_single_case/espresso_real.log",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso_real.log",
+    "sha256": "1127925d440f907461351fc2a57a76e7f58b9eafb0108b7d466bf632d155eb48",
+    "bytes": 2023
+  },
+  {
+    "file": "P01_three_model_pilot_not_run/README.md",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/README.md",
+    "sha256": "d1c6498d1e4446710b0c662406d0e93bebfae193e94e020c3db02a84c2d25f62",
+    "bytes": 6076
+  },
+  {
+    "file": "P01_three_model_pilot_not_run/pilot_manifest.json",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/pilot_manifest.json",
+    "sha256": "a953627104d095865aaf64ba391e40c8793c990c222e4ecb94fabbd327d3c6cc",
+    "bytes": 6950
+  },
+  {
+    "file": "P01_three_model_pilot_not_run/prepare_manifest.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/prepare_manifest.py",
+    "sha256": "5b35c857d75a9610b440df65985285bfc98c737d4d376a84ee4d6b692e6642f6",
+    "bytes": 1478
+  },
+  {
+    "file": "planning/T14_next_experiment.md",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/T14_next_experiment.md",
+    "sha256": "5ff975bdd2a5edf724c14c12cf90728fc8721c1227da3b45e8022109651b9e7c",
+    "bytes": 5143
+  },
+  {
+    "file": "code/openad/models/__init__.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/models/__init__.py",
+    "sha256": "ac1752ebfe36c8491c6ea65f12fd4a2da3d2664301bf415caf948ad6c4381199",
+    "bytes": 194
+  },
+  {
+    "file": "code/openad/models/openad_dgcnn.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/models/openad_dgcnn.py",
+    "sha256": "181bd236af20fc639ba5e91573ecf922d9a58e9b15047da55f5ac08f5998d0e0",
+    "bytes": 10487
+  },
+  {
+    "file": "code/openad/models/openad_dgcnn.py.backup",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/models/openad_dgcnn.py.backup",
+    "sha256": "61cb35ac2234ec6698493e834d98903feb88767f628ea3dfae0c020bc37be6ba",
+    "bytes": 10312
+  },
+  {
+    "file": "code/openad/models/openad_pn2.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/models/openad_pn2.py",
+    "sha256": "3a16da4fc278a392e5535e69786b013f9b0e7ddba87c2df5099ad7cc2f8fcb50",
+    "bytes": 3556
+  },
+  {
+    "file": "code/openad/models/openad_pn2.py.backup",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/models/openad_pn2.py.backup",
+    "sha256": "4d9d49af71b42c11494b9da8057f30b7c374c3d56799e682917388084d8a7287",
+    "bytes": 3434
+  },
+  {
+    "file": "code/openad/models/pointnet_util.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/models/pointnet_util.py",
+    "sha256": "6b2ff37d5b1a1c56cb82273e6ac3f4bdd0ca67d423f45c5e9504905de377ad41",
+    "bytes": 11167
+  },
+  {
+    "file": "code/openad/models/weights_init.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/models/weights_init.py",
+    "sha256": "5eb43d6feacdf6b3cd0183842f511b6a23f7ca20cb910a2826aa7bae096c8be5",
+    "bytes": 487
+  },
+  {
+    "file": "code/openad/dataset/AffordanceNet.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/dataset/AffordanceNet.py",
+    "sha256": "4fd1584bf82725fd9fa382668d34fc4f394539899c6b40271a128473a97e0e56",
+    "bytes": 2540
+  },
+  {
+    "file": "code/openad/dataset/__init__.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/dataset/__init__.py",
+    "sha256": "8df8d0fe3934b4e056bcc9c80a0ce482a7572d9e8a2a42675f0c17eb6223ade8",
+    "bytes": 104
+  },
+  {
+    "file": "code/openad/utils/__init__.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/utils/__init__.py",
+    "sha256": "39364a05c8d355beb269fb51db79791dd006b6e68363e781358044413164ddd9",
+    "bytes": 566
+  },
+  {
+    "file": "code/openad/utils/builder.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/utils/builder.py",
+    "sha256": "9749efc42bcf70902c173ef4259e99d8f37d77168e77939b70bc3918ee06a81c",
+    "bytes": 3062
+  },
+  {
+    "file": "code/openad/utils/eval.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/utils/eval.py",
+    "sha256": "2d081a7fa736f2847627c22ce96fc3454ce5245d9adb596b6068b69e911ba4a8",
+    "bytes": 2184
+  },
+  {
+    "file": "code/openad/utils/eval.py.backup",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/utils/eval.py.backup",
+    "sha256": "2d081a7fa736f2847627c22ce96fc3454ce5245d9adb596b6068b69e911ba4a8",
+    "bytes": 2184
+  },
+  {
+    "file": "code/openad/utils/provider.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/utils/provider.py",
+    "sha256": "ebbb79d4bd8ee654b1b508fb8d995bb74e7f6679da0f0ceaa951e60d7322c448",
+    "bytes": 11030
+  },
+  {
+    "file": "code/openad/utils/trainer.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/utils/trainer.py",
+    "sha256": "83c04ad375792e0ea467fb887d7b7c848880355acf15e66bb594f2e51cdc6ccf",
+    "bytes": 3598
+  },
+  {
+    "file": "code/openad/utils/utils.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/utils/utils.py",
+    "sha256": "e25b3b018d2bab183a70f2b30665082ed10c74eec6e71e94038d9fad7c7a7ab0",
+    "bytes": 1410
+  },
+  {
+    "file": "code/openad/config/.DS_Store",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/config/.DS_Store",
+    "sha256": "ad3a419f8ce1fce3b7ed01263b509f05a39e8ad9d9cf69a4ad53418153133456",
+    "bytes": 6148
+  },
+  {
+    "file": "code/openad/config/openad_dgcnn/full_shape_cfg.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/config/openad_dgcnn/full_shape_cfg.py",
+    "sha256": "3d77e568739a7c842a1736e0dbb554eb08143f544f11253a79bc2ae216010a7d",
+    "bytes": 1530
+  },
+  {
+    "file": "code/openad/config/openad_dgcnn/full_shape_open_vocab_cfg.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/config/openad_dgcnn/full_shape_open_vocab_cfg.py",
+    "sha256": "1b68ec9148e982daf676f681c5c931ec3b2ff999d568971913d2d4664c5c0810",
+    "bytes": 1537
+  },
+  {
+    "file": "code/openad/config/openad_dgcnn/partial_view_cfg.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/config/openad_dgcnn/partial_view_cfg.py",
+    "sha256": "c939a1914e6e22f0c28893763819051292fb79b121f6d160bacb52698161bac0",
+    "bytes": 1543
+  },
+  {
+    "file": "code/openad/config/openad_dgcnn/partial_view_open_vocab_cfg.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/config/openad_dgcnn/partial_view_open_vocab_cfg.py",
+    "sha256": "0e59bd50fce8f9f43ff2059f167c58cf0ba19d13ae5d7ab269a43865bd707e79",
+    "bytes": 1541
+  },
+  {
+    "file": "code/openad/config/openad_pn2/full_shape_cfg.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/config/openad_pn2/full_shape_cfg.py",
+    "sha256": "45a2d1f98462602aa73dc1098603f5f70b6ded762edc7af0d55c357bd26dfc0f",
+    "bytes": 1764
+  },
+  {
+    "file": "code/openad/config/openad_pn2/full_shape_open_vocab_cfg.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/config/openad_pn2/full_shape_open_vocab_cfg.py",
+    "sha256": "bf9195b41424601f6552ac13f6f90fa00aa374285fcb975ee5b03bff664e02fb",
+    "bytes": 1762
+  },
+  {
+    "file": "code/openad/config/openad_pn2/partial_view_cfg.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/config/openad_pn2/partial_view_cfg.py",
+    "sha256": "7a2f6fc6d12cb8957a89240018cf1ec805e240d88fef2c01e2b187d73ea7f30a",
+    "bytes": 1761
+  },
+  {
+    "file": "code/openad/config/openad_pn2/partial_view_open_vocab_cfg.py",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/config/openad_pn2/partial_view_open_vocab_cfg.py",
+    "sha256": "e0544f6921e1a15337c42f90a2fdb10043f8d63e8e78d6fcacf6fbaaa0a036e1",
+    "bytes": 1766
+  },
+  {
+    "file": "code/openad/LICENSE",
+    "source": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/LICENSE",
+    "sha256": "942adea556d53cb1dc677315b582dbb69cf394684d5e0397d4cf9c3a99325b95",
+    "bytes": 1067
+  },
+  {
+    "file": "code/espresso_unofficial/espresso/__init__.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/espresso/__init__.py",
+    "sha256": "f91511f0e9a0858cbc2e34f226fde280ff98b3198b1fda8adaae4ca1cbfb2d7f",
+    "bytes": 161
+  },
+  {
+    "file": "code/espresso_unofficial/espresso/data.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/espresso/data.py",
+    "sha256": "7ee98cca4c3a9d8c3891e23373ff685d1d5b2f0c90703db4685086e37f54e1c6",
+    "bytes": 6842
+  },
+  {
+    "file": "code/espresso_unofficial/espresso/metrics.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/espresso/metrics.py",
+    "sha256": "780791e19d3993494df15e30f95d301a0d551d99ed15a07656bdbcb6d85a93d2",
+    "bytes": 3180
+  },
+  {
+    "file": "code/espresso_unofficial/espresso/model.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/espresso/model.py",
+    "sha256": "7e7454851b2de98d0396d26185d0e9756154f48a188f1c6ea0d2144dcbc300c7",
+    "bytes": 12779
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/LICENSE",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/LICENSE",
+    "sha256": "7f4e09294a6846de26b25c477f2ae42d38777f2332d14812aa0a26be3b1a1ff5",
+    "bytes": 4061
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/NOTICE.md",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/NOTICE.md",
+    "sha256": "555f0528f0841932b629f790df08d7bc9b3dd2bd9df11c95fa8c839b8a63a671",
+    "bytes": 923
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/__init__.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/__init__.py",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/__init__.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/__init__.py",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/conv_pointnet.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/conv_pointnet.py",
+    "sha256": "8eb6309d3d88e221e65b33307604cbb1d4dd82adda5b57f519cff99d48c235ff",
+    "bytes": 9064
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/encoder_pc.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/encoder_pc.py",
+    "sha256": "2588b7118c23f9323893ef3f5d8e8a02f870237be86b5b4f1a7762a9868430d9",
+    "bytes": 10135
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/pc_encoder.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pc_encoder.py",
+    "sha256": "fc93e205ae71fa3165b3167a8c37722e7fd76f32aa341ba0bf224367d404b373",
+    "bytes": 4002
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/pv_module/__init__.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/__init__.py",
+    "sha256": "0eb50d8a91378f32bf48c9f614eb3fce697e2874d4c8f94038a6329045fb0de7",
+    "bytes": 60
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/pv_module/ball_query.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/ball_query.py",
+    "sha256": "d72fc31507d1c284f4c7590531f2ca9bebf1cc74205eafcbf29ce50226f75795",
+    "bytes": 1403
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/pv_module/frustum.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/frustum.py",
+    "sha256": "d5577debd0bcef13d6617e9c8fb2bd74541e3c43aa82af4ba5af542830d18d97",
+    "bytes": 7376
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/pv_module/functional/__init__.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/functional/__init__.py",
+    "sha256": "ea57f2053618b7bd5d2fc1feabef13ae65ba070fba8468a088745702774d4bfb",
+    "bytes": 49
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/pv_module/functional/devoxelization.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/functional/devoxelization.py",
+    "sha256": "54be21354cca9d2c8c883294995e9dc1c51b3f4c3bca73d5f95a23b10b090502",
+    "bytes": 426
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/pv_module/loss.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/loss.py",
+    "sha256": "55ad82211de424e9596ccb57004a1389dffce3e65cd7213422acffe61d76c217",
+    "bytes": 162
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/pv_module/pointnet.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/pointnet.py",
+    "sha256": "12b95d0e8f6e2ca2267af4de4846cd0eda3e83cce1f473f545edb25bf7b82d6e",
+    "bytes": 4596
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/pv_module/pvconv.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/pvconv.py",
+    "sha256": "5fe451cb38e1d15c9dbb18f6cd725ce9e9c9a792fd232c1db89efe37e3780f6b",
+    "bytes": 1709
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/pv_module/shared_mlp.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/shared_mlp.py",
+    "sha256": "3f7012170788ae88af23296202e86a0e1c3dc18461dec771cd7a0606c309076c",
+    "bytes": 1057
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/pv_module/voxelization.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/voxelization.py",
+    "sha256": "b1089977eaa50afeda7e3f17a5dba9673f162b8dc6f712d9380989e1a5057555",
+    "bytes": 2102
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/PVCNN/unet_3daware.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/unet_3daware.py",
+    "sha256": "4d4b30b98ff216407bc775a4f58fe11e84702d52792bac3a368682b202ad3434",
+    "bytes": 14502
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/UNet/__init__.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/UNet/__init__.py",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/UNet/buildingblocks.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/UNet/buildingblocks.py",
+    "sha256": "a0d0c0f0ebb90696d41eacaf29c64261edccca591f014f7e5720a964b2210eff",
+    "bytes": 24413
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/UNet/model.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/UNet/model.py",
+    "sha256": "4476f40dcb5a422b8fc45bcd31536513c09c3e36ca74fbd85ba071ba0b0d5e3f",
+    "bytes": 8973
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/__init__.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/__init__.py",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/model_utils.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/model_utils.py",
+    "sha256": "0207c00f96ec979b217d40cc2541abc919d092ab9d620f45824d684784ca7da3",
+    "bytes": 1938
+  },
+  {
+    "file": "code/espresso_unofficial/partfield/model/triplane.py",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/triplane.py",
+    "sha256": "11341f2675568cd6180f6f8731a311bb344b6b91243ce244f60168b45eabca42",
+    "bytes": 13833
+  },
+  {
+    "file": "code/espresso_unofficial/LICENSE",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/LICENSE",
+    "sha256": "209f09507f332bba7e04fa567d36ea21cd8c4028f35a8ad88fe3b66b049b87a2",
+    "bytes": 1254
+  },
+  {
+    "file": "P01_three_model_pilot_not_run/official_manifests/README.md",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/Affostruction/manifests/README.md",
+    "sha256": "b1c45ae8bd6f60434ec28e636b0f0b68d985ce6766bd3beb1f2d84bc9332d986",
+    "bytes": 733
+  },
+  {
+    "file": "P01_three_model_pilot_not_run/official_manifests/affogato_test.txt",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/Affostruction/manifests/affogato_test.txt",
+    "sha256": "6d3d284126e691eb0d6640d9228f9371fe517e6db098595b32cc3bb2cf55e832",
+    "bytes": 98000
+  },
+  {
+    "file": "P01_three_model_pilot_not_run/official_manifests/toys4k_test.txt",
+    "source": "/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/Affostruction/manifests/toys4k_test.txt",
+    "sha256": "64060edca46a3857d73b7c79d23d29fd503eacf5ee5e3811cb9eb258ed6e78a0",
+    "bytes": 81250
+  }
+]

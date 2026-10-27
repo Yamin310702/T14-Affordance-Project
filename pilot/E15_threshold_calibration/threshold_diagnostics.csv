@@ -1,0 +1,6 @@
+affordance,threshold,train_balanced_macro_iou,train_positive_objects_detected,train_positive_point_recall,train_negative_objects_flagged,test_max_original_score,test_max_paraphrase_score,test_positive_original_iou,test_positive_paraphrase_iou,test_positive_original_detected,test_positive_paraphrase_detected,test_negative_original_flagged,test_negative_paraphrase_flagged
+grab,0.8200000000000001,0.5,0,0.0,0,0.6940216422080994,0.8280869126319885,0.0,0.00022935779816513763,0,1,0,0
+pour,0.8300000000000001,0.5,0,0.0,0,0.607103705406189,0.632707953453064,0.0,0.0,0,0,0,0
+wrap,0.73,0.5,0,0.0,0,0.7184655070304871,0.756883978843689,0.0,0.0,0,2,1,1
+accommodate,0.73,0.5,0,0.0,0,0.5440851449966431,0.7852110862731934,0.0,0.0,0,1,2,4
+unlock,0.75,0.5040137614678899,1,0.008027522935779817,0,0.6151819825172424,0.45930296182632446,0.0,0.0,0,0,0,0

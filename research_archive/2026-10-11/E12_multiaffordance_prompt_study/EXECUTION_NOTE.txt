@@ -1,0 +1,1 @@
+E12 completed successfully on CPU. The environment reported MPS unavailable during this run. The official run status and elapsed time are in run.json. An initial launch that required MPS exited before model inference and was superseded by the successful CPU run.

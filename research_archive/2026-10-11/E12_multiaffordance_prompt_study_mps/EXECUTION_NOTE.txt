@@ -1,0 +1,1 @@
+MPS run completed on Apple M3 Pro. torch.backends.mps.is_available() was false within the restricted Codex shell, so the run was launched directly outside that shell, where MPS was available. Identical selection, prompts, checkpoint, and ground-truth data were confirmed against the CPU run.

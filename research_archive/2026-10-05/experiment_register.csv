@@ -1,0 +1,9 @@
+ID,experiment,status,result,limitation
+E01,OpenAD original baselines,completed; existing logs,Full mIoU 0.144121; partial mIoU 0.124964,No rerun; original logs retained
+E02,OpenAD selected failures,completed; figures and user report,clothe/wrap/pour selected cases,Original score stdout not found; values in user report are not newly verified
+E03,OpenAD CPU one-sample check,completed,Sample 452,Compatibility/diagnostic check only
+E04,OpenAD MPS one-sample check,completed,Sample 452,Fixed-seed scores differ from original selected-case run
+E05,OpenAD partial dataset diagnostic,completed,9140 views; mIoU 0.1253635702,Batch 1; point-weighted across repeated views
+E06,Espresso component compatibility,completed,CPU encoder; MPS encoder and synthetic-text decoder,Random weights; not semantic evaluation
+E07,Unofficial Espresso pretrained inference,completed,Vase 452; 2048 scores; 1.643 s,One out-of-protocol case; no comparative accuracy claim
+P01,Three-model pilot / Affostruction,"planned, not run",10 selected object IDs,No Affostruction predictions; pilot assets missing

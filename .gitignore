@@ -1,0 +1,49 @@
+# Operating-system and editor files
+.DS_Store
+._*
+~$*
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Credentials and local agent configuration
+.env
+.env.*
+!.env.example
+.aws/
+.codex/
+.agents/
+*.pem
+*.key
+
+# Python environments, installed dependencies, and model downloads
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+pilot/espresso_env/
+pilot/python_deps/
+pilot/hf_cache/
+*.ckpt
+*.pth
+*.pt
+*.safetensors
+*.bin
+
+# Separate upstream checkouts (archived adapted sources remain included)
+pilot/Affostruction/
+pilot/espresso-3d-reimplementation/
+
+# Generated presentation builds and render previews
+/tmp/
+/proposal_build/
+
+# Duplicate compressed and extracted sharing packages
+/research_archive/*.zip
+/research_archive/T14_teammate_compact_package_*/
+
+# Future local downloads of complete datasets
+/data/
+/datasets/
+/checkpoints/

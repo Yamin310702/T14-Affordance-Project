@@ -1,0 +1,67 @@
+[
+  {
+    "file": "DEVICE_COMPARISON.md",
+    "sha256": "d78386430d20530498e120b10bff580eaa600f660fc0e6274c7a6763563586ef",
+    "bytes": 974
+  },
+  {
+    "file": "RESULTS.md",
+    "sha256": "f3c52c467192e7efac72fb5a7d19bd65a1490e2dbeea4c7492bac45abb6b9edc",
+    "bytes": 4678
+  },
+  {
+    "file": "operating_curve.png",
+    "sha256": "19cb23453f0d1d574507c17d5ed530015091c63257bbf7047da7cb85ecd5c0e2",
+    "bytes": 76799
+  },
+  {
+    "file": "operating_curves.csv",
+    "sha256": "5c362c6c4817a55fdbfbdde328ca290ac88f50ab4f9444eedee354e951884ef0",
+    "bytes": 21801
+  },
+  {
+    "file": "predictions.npz",
+    "sha256": "78be3e7922ca8760aff38f15e45a21813b29e00d9b1aaa6bc117b0156297223c",
+    "bytes": 2618121
+  },
+  {
+    "file": "run.json",
+    "sha256": "1f0f65298d73fe6b28fec7deb258df3bf6d2bc9ce11021b40cb8846b6e01a89f",
+    "bytes": 71259
+  },
+  {
+    "file": "run_e16_operating_point.py",
+    "sha256": "2aaa08841b492c982bd0df8eb26b726fc13c541ee0d6c444105c13985280f6f5",
+    "bytes": 11182
+  },
+  {
+    "file": "summarize_e16_operating_point.py",
+    "sha256": "c57bef0889ff230df7146ba101532f6fdac3526e2e4184843f36299911e1ca4a",
+    "bytes": 7553
+  },
+  {
+    "file": "summary.csv",
+    "sha256": "c11e6c033d81cb33647393000864350a9890589e10ffc2b48582a5344ab6c2d4",
+    "bytes": 607
+  },
+  {
+    "file": "summary.log",
+    "sha256": "28b058effbd06aba088e426332f623bb3d52101f70f30e63ae89d9fe35375168",
+    "bytes": 2443
+  },
+  {
+    "file": "test_per_object.csv",
+    "sha256": "14d78def3119de5d86b0c12126422da14ebbc9bd3aa1ab5ad085b64ee37175f5",
+    "bytes": 12138
+  },
+  {
+    "file": "threshold_curve.csv",
+    "sha256": "3865efa85e7115cb27e873c50248f6e122cd360bfd243c74283537f33f178394",
+    "bytes": 8879
+  },
+  {
+    "file": "thresholds.csv",
+    "sha256": "555674e8a3252f6172c2b5f9de0aafb00d030f7cd9e9e135d3c6a02dd820a2ca",
+    "bytes": 192
+  }
+]

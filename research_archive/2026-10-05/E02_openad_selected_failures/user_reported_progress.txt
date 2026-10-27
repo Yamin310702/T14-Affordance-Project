@@ -1,0 +1,1548 @@
+# T14: 3D Affordance Prediction — Research Progress
+
+**Course:** CSE 59358-01 3D Machine Intelligence  
+**Semester:** Fall 2026  
+**Research Topic:** T14 — 3D Affordance Prediction  
+**Baseline:** OpenAD — Open-Vocabulary Affordance Detection in 3D Point Clouds  
+**Current Platform:** Apple M3 Pro, macOS, 18 GB unified memory  
+**Framework:** PyTorch / MPS  
+**Dataset:** 3D-AffordanceNet  
+
+---
+
+# 1. Research Topic
+
+My self-research topic is **T14: 3D Affordance Prediction**.
+
+The goal of 3D affordance prediction is to predict what actions can be performed on different parts of a 3D object.
+
+For example:
+
+- a handle may support **grasping**
+- a chair seat may support **sitting**
+- a button may support **pressing**
+- a container may support **pouring**
+
+The input is a 3D point cloud representing an object.
+
+The output is a point-wise affordance prediction.
+
+Conceptually:
+
+```text
+3D Point Cloud
+      +
+Affordance Text
+      ↓
+3D Affordance Model
+      ↓
+Affordance prediction
+for each point
+```
+
+For this project, I use **OpenAD** as the main executable baseline.
+
+---
+
+# 2. Baseline: OpenAD
+
+OpenAD performs open-vocabulary affordance detection on 3D point clouds.
+
+The PointNet++ version of OpenAD contains two important parts:
+
+```text
+3D Point Cloud
+      ↓
+PointNet++
+      ↓
+512-D point features
+      │
+      │ similarity
+      ↓
+CLIP text features
+      ↑
+Affordance text
+```
+
+For each 3D point, OpenAD compares the learned point feature with CLIP text features representing affordance names.
+
+The model then predicts which affordance best matches each point.
+
+---
+
+# 3. OpenAD Model Architecture
+
+The baseline used in this project is:
+
+```text
+OpenAD + PointNet++
+```
+
+From `models/openad_pn2.py`, PointNet++ first extracts point features using Set Abstraction layers:
+
+```text
+Input XYZ
+   ↓
+SA1
+   ↓
+SA2
+   ↓
+SA3
+```
+
+Feature Propagation layers then recover point-level features:
+
+```text
+SA3
+ ↓
+FP3
+ ↓
+FP2
+ ↓
+FP1
+ ↓
+Conv1D
+ ↓
+512-D point feature
+```
+
+The model also encodes affordance text using CLIP.
+
+The final prediction is based on cosine similarity between point and text features.
+
+The relevant operation is conceptually:
+
+```text
+point feature · text feature
+--------------------------------
+||point feature|| ||text feature||
+```
+
+A learned `logit_scale` is applied, followed by:
+
+```python
+F.log_softmax(x, dim=1)
+```
+
+Therefore, the final output contains log-probabilities over affordance classes for every point.
+
+---
+
+# 4. Computing Environment
+
+The original OpenAD repository is mainly designed for CUDA/NVIDIA environments.
+
+My machine is:
+
+```text
+Computer: Apple MacBook Pro
+Chip: Apple M3 Pro
+Architecture: arm64
+Memory: 18 GB unified memory
+OS: macOS
+```
+
+I therefore used Apple's **MPS backend** instead of CUDA.
+
+The Conda environment is:
+
+```text
+Environment: openad
+Python: 3.10.21
+PyTorch: 2.14.1
+Device: MPS
+```
+
+MPS was verified successfully:
+
+```python
+torch.backends.mps.is_built()
+# True
+
+torch.backends.mps.is_available()
+# True
+```
+
+---
+
+# 5. Repository Setup
+
+The OpenAD repository is located at:
+
+```text
+~/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds
+```
+
+The Conda environment used for the project is:
+
+```bash
+conda activate openad
+```
+
+Several dependencies required by the original repository were installed.
+
+Additional packages needed during setup included:
+
+```text
+six
+opencv-python
+matplotlib
+```
+
+---
+
+# 6. macOS / MPS Compatibility Changes
+
+Because the original code expects CUDA, I made several small compatibility changes.
+
+The goal was **not to change the OpenAD algorithm**, but only to make inference run on my Apple M3 Pro.
+
+## 6.1 Gorilla NVML problem
+
+The Gorilla utility package tried to initialize NVIDIA NVML.
+
+This produced an error because the Mac does not have an NVIDIA GPU.
+
+The import:
+
+```python
+from .gpu import (get_free_gpu, set_cuda_visible_devices)
+```
+
+was disabled in Gorilla's `utils/__init__.py`.
+
+A backup of the original file was kept.
+
+A remaining warning about `pynvml` is harmless for the current experiment.
+
+---
+
+## 6.2 Device selection
+
+The original CUDA-specific model setup was changed to:
+
+```python
+device = torch.device(
+    "mps" if torch.backends.mps.is_available()
+    else "cpu"
+)
+```
+
+The model is then loaded using:
+
+```python
+model = build_model(cfg).to(device)
+```
+
+---
+
+## 6.3 Checkpoint loading
+
+Checkpoint loading was changed to use the selected device:
+
+```python
+model.load_state_dict(
+    torch.load(
+        args.checkpoint,
+        map_location=device
+    )
+)
+```
+
+---
+
+## 6.4 Evaluation device
+
+CUDA-specific evaluation code was replaced by:
+
+```python
+device = next(model.parameters()).device
+
+data = data.float().to(device)
+label = label.float().to(device)
+```
+
+This allowed evaluation to run correctly using MPS.
+
+---
+
+## 6.5 CLIP device
+
+The CLIP text encoder was also changed to use MPS when available:
+
+```python
+self.device = torch.device(
+    "mps"
+    if torch.backends.mps.is_available()
+    else "cuda"
+    if torch.cuda.is_available()
+    else "cpu"
+)
+```
+
+The same compatibility change was applied to both:
+
+```text
+models/openad_pn2.py
+models/openad_dgcnn.py
+```
+
+---
+
+# 7. Dataset
+
+The experiment uses the **3D-AffordanceNet** data distributed for the OpenAD experiments.
+
+Both full-shape and partial-view data were prepared.
+
+Available files:
+
+```text
+data/full_shape_train_data.pkl
+data/full_shape_val_data.pkl
+
+data/partial_view_train_data.pkl
+data/partial_view_val_data.pkl
+```
+
+Approximate file sizes:
+
+```text
+full_shape_train_data.pkl      631 MB
+full_shape_val_data.pkl         90 MB
+
+partial_view_train_data.pkl    2.5 GB
+partial_view_val_data.pkl      358 MB
+```
+
+---
+
+# 8. Dataset Loading
+
+`AffordNetDataset` loads either full or partial point clouds.
+
+For full shapes:
+
+```python
+full_shape_%s_data.pkl
+```
+
+is used.
+
+For partial views:
+
+```python
+partial_view_%s_data.pkl
+```
+
+is used.
+
+Each dataset item returns:
+
+```python
+datas, datas, targets, modelid, modelcat
+```
+
+where:
+
+```text
+datas    = normalized XYZ coordinates
+targets  = point-wise affordance labels
+modelid  = object/shape ID
+modelcat = semantic object category
+```
+
+Point clouds are normalized before entering the model.
+
+---
+
+# 9. Partial-View Dataset Structure
+
+Partial objects can contain several views.
+
+The loader iterates over:
+
+```python
+info["partial"]
+```
+
+and creates a dataset sample for each available view.
+
+Therefore:
+
+```text
+One 3D object
+     ↓
+multiple partial observations
+     ↓
+multiple validation samples
+```
+
+The partial validation dataset contains:
+
+```text
+9,140 samples
+```
+
+---
+
+# 10. Official Checkpoints
+
+Two official PointNet++ OpenAD checkpoints were prepared.
+
+```text
+checkpoints/
+├── best_model_openad_pn2_estimation.t7
+└── best_model_openad_pn2_partial.t7
+```
+
+Both are approximately:
+
+```text
+6.9 MB
+```
+
+The full-shape checkpoint was inspected using `torch.load`.
+
+It contained an `OrderedDict` with 176 entries, including parameters for:
+
+```text
+sa1
+sa2
+sa3
+fp1
+fp2
+fp3
+conv1
+bn1
+logit_scale
+```
+
+This confirmed that the checkpoint contained the expected PointNet++ OpenAD weights.
+
+---
+
+# 11. Validation Affordances
+
+The validation affordance vocabulary contains 19 labels:
+
+```text
+0  grab
+1  accommodate
+2  raise
+3  unlock
+4  rest
+5  take a seat
+6  bear
+7  wrap
+8  pour
+9  reposition
+10 demonstrate
+11 push
+12 drag
+13 hear
+14 clothe
+15 thumb
+16 slice
+17 jab
+18 none
+```
+
+The training and validation vocabulary use related but different expressions.
+
+Examples include:
+
+```text
+Training       Validation
+
+grasp       → grab
+contain     → accommodate
+lift        → raise
+openable    → unlock
+layable     → rest
+sittable    → take a seat
+support     → bear
+wrap_grasp  → wrap
+pourable    → pour
+move        → reposition
+display     → demonstrate
+pull        → drag
+listen      → hear
+wear        → clothe
+press       → thumb
+cut         → slice
+stab        → jab
+```
+
+This vocabulary difference is important because OpenAD uses CLIP text embeddings to support open-vocabulary transfer.
+
+---
+
+# 12. Full-Shape Baseline
+
+The full-shape baseline was executed using:
+
+```bash
+python3 test_open_vocab.py \
+  --config ./config/openad_pn2/full_shape_open_vocab_cfg.py \
+  --checkpoint ./checkpoints/best_model_openad_pn2_estimation.t7
+```
+
+The experiment successfully ran on the Apple M3 Pro using MPS.
+
+The resulting point-wise IoUs were:
+
+| Affordance | IoU |
+|---|---:|
+| grab | 0.017 |
+| accommodate | 0.001 |
+| raise | 0.000 |
+| unlock | 0.050 |
+| rest | 0.200 |
+| take a seat | 0.264 |
+| bear | 0.000 |
+| wrap | 0.178 |
+| pour | 0.239 |
+| reposition | 0.000 |
+| demonstrate | 0.051 |
+| push | 0.142 |
+| drag | 0.000 |
+| hear | 0.504 |
+| clothe | 0.084 |
+| thumb | 0.000 |
+| slice | 0.556 |
+| jab | 0.000 |
+| none | 0.454 |
+
+The approximate mean over the 19 reported classes is:
+
+```text
+Full-shape mean IoU ≈ 0.144
+```
+
+The result was saved as:
+
+```text
+full_shape_baseline_result.log
+```
+
+---
+
+# 13. Partial-View Baseline
+
+The partial-view baseline was executed using:
+
+```bash
+python3 test_open_vocab.py \
+  --config ./config/openad_pn2/partial_view_open_vocab_cfg.py \
+  --checkpoint ./checkpoints/best_model_openad_pn2_partial.t7
+```
+
+This also ran successfully using MPS.
+
+The resulting IoUs were:
+
+| Affordance | IoU |
+|---|---:|
+| grab | 0.011 |
+| accommodate | 0.000 |
+| raise | 0.000 |
+| unlock | 0.041 |
+| rest | 0.149 |
+| take a seat | 0.266 |
+| bear | 0.000 |
+| wrap | 0.100 |
+| pour | 0.170 |
+| reposition | 0.000 |
+| demonstrate | 0.008 |
+| push | 0.118 |
+| drag | 0.000 |
+| hear | 0.523 |
+| clothe | 0.004 |
+| thumb | 0.000 |
+| slice | 0.540 |
+| jab | 0.000 |
+| none | 0.444 |
+
+The approximate mean over the 19 reported classes is:
+
+```text
+Partial-view mean IoU ≈ 0.125
+```
+
+The result was saved as:
+
+```text
+partial_view_baseline_result.log
+```
+
+---
+
+# 14. Full Shape vs Partial View
+
+The main comparison so far is:
+
+```text
+Full shape      ≈ 0.144
+Partial view    ≈ 0.125
+```
+
+The absolute decrease is approximately:
+
+```text
+0.019
+```
+
+which corresponds to roughly a 13% relative decrease from the full-shape mean.
+
+Per-class comparison:
+
+| Affordance | Full | Partial | Change |
+|---|---:|---:|---:|
+| grab | 0.017 | 0.011 | -0.006 |
+| accommodate | 0.001 | 0.000 | -0.001 |
+| raise | 0.000 | 0.000 | 0.000 |
+| unlock | 0.050 | 0.041 | -0.009 |
+| rest | 0.200 | 0.149 | -0.051 |
+| take a seat | 0.264 | 0.266 | +0.002 |
+| bear | 0.000 | 0.000 | 0.000 |
+| wrap | 0.178 | 0.100 | -0.078 |
+| pour | 0.239 | 0.170 | -0.069 |
+| reposition | 0.000 | 0.000 | 0.000 |
+| demonstrate | 0.051 | 0.008 | -0.043 |
+| push | 0.142 | 0.118 | -0.024 |
+| drag | 0.000 | 0.000 | 0.000 |
+| hear | 0.504 | 0.523 | +0.019 |
+| clothe | 0.084 | 0.004 | -0.080 |
+| thumb | 0.000 | 0.000 | 0.000 |
+| slice | 0.556 | 0.540 | -0.016 |
+| jab | 0.000 | 0.000 | 0.000 |
+| none | 0.454 | 0.444 | -0.010 |
+
+One interesting observation is that partial observation does not affect every affordance equally.
+
+The largest decreases include:
+
+```text
+clothe        -0.080
+wrap          -0.078
+pour          -0.069
+rest          -0.051
+demonstrate   -0.043
+```
+
+At the same time:
+
+```text
+hear           +0.019
+take a seat    +0.002
+```
+
+did not become worse.
+
+Therefore, the effect of partial observation appears to be **affordance-dependent**.
+
+---
+
+# 15. Initial Research Idea: Geometry Smoothing
+
+At first, I considered using **k-nearest-neighbor score propagation**.
+
+The idea was that partial observations might produce fragmented predictions.
+
+For each point \(i\), a smoothed affordance score could be calculated using nearby points:
+
+```text
+new score =
+original score
++
+neighbor information
+```
+
+Conceptually:
+
+\[
+s'_i =
+(1-\alpha)s_i
++
+\alpha
+\frac{1}{k}
+\sum_{j\in N_k(i)}s_j
+\]
+
+Possible experiments could vary:
+
+```text
+k = 3, 5, 10, 20
+```
+
+and different values of:
+
+```text
+alpha
+```
+
+However, before implementing this method, I decided to inspect the actual OpenAD failures.
+
+This was important because k-NN smoothing would only make sense if the prediction errors were spatially fragmented.
+
+---
+
+# 16. Failure Visualization
+
+The original OpenAD repository did not contain a visualization script suitable for this analysis.
+
+I therefore created:
+
+```text
+visualize_failure.py
+```
+
+The script:
+
+1. loads the partial-view configuration,
+2. loads the official partial OpenAD checkpoint,
+3. loads the same validation dataset used by the baseline,
+4. selects samples containing a target affordance,
+5. calculates sample-level IoU,
+6. finds low-IoU examples,
+7. visualizes:
+   - partial point cloud,
+   - ground truth,
+   - OpenAD prediction.
+
+Generated figures are stored in:
+
+```text
+failure_visualizations/
+```
+
+---
+
+# 17. Failure Example 1 — `clothe`
+
+The first analyzed affordance was:
+
+```text
+clothe
+```
+
+Its aggregate IoU changed from:
+
+```text
+Full shape:   0.084
+Partial view: 0.004
+```
+
+The selected failure was:
+
+```text
+Dataset index: 8763
+Shape ID: df0dad9aa5876de3af81f84c1d08b8a2
+Category: Hat
+Affordance: clothe
+Sample IoU: 0.000
+```
+
+There were:
+
+```text
+930
+```
+
+ground-truth `clothe` points.
+
+The visualization showed a large coherent ground-truth `clothe` region.
+
+However, OpenAD predicted essentially no points as `clothe`.
+
+Therefore, this example was **not simply a fragmented prediction**.
+
+---
+
+# 18. Failure Example 2 — `wrap`
+
+The second affordance was:
+
+```text
+wrap
+```
+
+Its aggregate IoU changed from:
+
+```text
+Full shape:   0.178
+Partial view: 0.100
+```
+
+The selected example was:
+
+```text
+Dataset index: 448
+Shape ID: e4a868a10e10dda4befcf48d5b3e17b5
+Category: Vase
+Affordance: wrap
+Sample IoU: 0.000
+```
+
+The ground truth contained:
+
+```text
+1,539
+```
+
+`wrap` points.
+
+Again, OpenAD predicted essentially no points as the target affordance.
+
+---
+
+# 19. Failure Example 3 — `pour`
+
+The third affordance was:
+
+```text
+pour
+```
+
+Its aggregate IoU changed from:
+
+```text
+Full shape:   0.239
+Partial view: 0.170
+```
+
+The selected example was:
+
+```text
+Dataset index: 452
+Shape ID: edb8e199485be4e968747a7f12307bdb
+Category: Vase
+Affordance: pour
+Sample IoU: 0.000
+```
+
+The ground truth contained:
+
+```text
+563
+```
+
+`pour` points.
+
+Once again, OpenAD predicted essentially no target points.
+
+---
+
+# 20. Why k-NN Smoothing Became Less Convincing
+
+The three visualized failures did not show the expected pattern:
+
+```text
+correct prediction
+   ↓
+fragment
+   ↓
+fragment
+   ↓
+missing gap
+```
+
+Instead, the target affordance disappeared completely after the final classification.
+
+This suggested that simple spatial smoothing might not address the main problem.
+
+If no neighboring points are predicted as the target class, there may be little useful target signal for k-NN to propagate.
+
+Therefore, I paused the k-NN idea instead of implementing it immediately.
+
+---
+
+# 21. Raw Prediction Score Analysis
+
+The visualization only showed the final `argmax` prediction.
+
+However, a missing target prediction does not necessarily mean OpenAD has no target signal.
+
+For example:
+
+```text
+none   = 0.43
+clothe = 0.40
+```
+
+would still produce:
+
+```text
+prediction = none
+```
+
+even though the model has a strong `clothe` response.
+
+To investigate this, I created:
+
+```text
+analyze_failure_scores.py
+```
+
+The script examines OpenAD probabilities **before the final argmax decision**.
+
+For ground-truth target points, it calculates:
+
+- mean probability for every affordance,
+- ranking of the correct affordance,
+- winning argmax class,
+- mean correct-target probability,
+- maximum correct-target probability,
+- percentage of correctly classified target points.
+
+---
+
+# 22. Score Analysis — `clothe`
+
+For the Hat example:
+
+```text
+Ground-truth target points: 930
+```
+
+Average probabilities on the GT `clothe` region:
+
+| Rank | Class | Mean Probability |
+|---:|---|---:|
+| 1 | none | 0.432180 |
+| 2 | clothe | 0.255278 |
+| 3 | bear | 0.063169 |
+| 4 | grab | 0.046843 |
+| 5 | accommodate | 0.027059 |
+
+The correct `clothe` class was therefore **ranked second**.
+
+However:
+
+```text
+none = argmax for 930 / 930 points
+```
+
+or:
+
+```text
+100%
+```
+
+Target statistics:
+
+```text
+Mean clothe probability:    0.255278
+Maximum clothe probability: 0.305815
+Correct target points:      0
+Correct percentage:         0%
+```
+
+This was an important result.
+
+OpenAD did not completely fail to recognize the semantic concept `clothe`.
+
+Instead, `clothe` had a substantial response, but `none` consistently had a larger score.
+
+---
+
+# 23. Score Analysis — `wrap`
+
+For the Vase `wrap` example:
+
+```text
+Ground-truth target points: 1,539
+```
+
+The leading probabilities were:
+
+| Rank | Class | Mean Probability |
+|---:|---|---:|
+| 1 | none | 0.636428 |
+| 2 | wrap | 0.072706 |
+| 3 | pour | 0.051331 |
+| 4 | accommodate | 0.037168 |
+| 5 | grab | 0.029055 |
+
+Again:
+
+```text
+Correct target rank = #2
+```
+
+but:
+
+```text
+none = argmax for 1,539 / 1,539 points
+```
+
+Target statistics:
+
+```text
+Mean wrap probability:    0.072706
+Maximum wrap probability: 0.194365
+Correct target points:    0
+Correct percentage:       0%
+```
+
+---
+
+# 24. Score Analysis — `pour`
+
+For the Vase `pour` example:
+
+```text
+Ground-truth target points: 563
+```
+
+The leading probabilities were:
+
+| Rank | Class | Mean Probability |
+|---:|---|---:|
+| 1 | none | 0.644002 |
+| 2 | pour | 0.058368 |
+| 3 | wrap | 0.044430 |
+| 4 | accommodate | 0.043234 |
+| 5 | demonstrate | 0.033686 |
+
+Again:
+
+```text
+Correct target rank = #2
+```
+
+but:
+
+```text
+none = argmax for 563 / 563 points
+```
+
+Target statistics:
+
+```text
+Mean pour probability:    0.058368
+Maximum pour probability: 0.124520
+Correct target points:    0
+Correct percentage:       0%
+```
+
+---
+
+# 25. Current Observed Failure Pattern
+
+The three inspected partial-view zero-IoU examples show a consistent pattern.
+
+| Target | Object | GT Target Points | `none` Mean | Target Mean | Target Rank | `none` Argmax |
+|---|---|---:|---:|---:|---:|---:|
+| clothe | Hat | 930 | 0.432 | 0.255 | #2 | 100% |
+| wrap | Vase | 1,539 | 0.636 | 0.073 | #2 | 100% |
+| pour | Vase | 563 | 0.644 | 0.058 | #2 | 100% |
+
+The interesting observation is:
+
+```text
+Correct affordance is not random.
+Correct affordance is ranked #2 in all three examples.
+
+BUT
+
+"none" consistently wins.
+```
+
+Therefore, my current description of the observed failure is:
+
+> **Target–background (`none`) confusion in selected partial-view OpenAD failures.**
+
+This is more precise than simply saying that OpenAD cannot recognize the affordance.
+
+---
+
+# 26. Important Limitation of the Current Failure Analysis
+
+The three examples were intentionally selected from low-IoU samples.
+
+Therefore, I should **not** conclude yet that:
+
+> OpenAD generally predicts `none` for partial point clouds.
+
+The current evidence only supports the narrower statement:
+
+> In three inspected zero-IoU partial-view failures (`clothe`, `wrap`, and `pour`), the `none` class dominated the correct affordance on all ground-truth target points, even though the correct target was the second-highest class on average.
+
+A dataset-level analysis is still required.
+
+---
+
+# 27. Current Research Direction
+
+Initially, I considered a geometry-based method:
+
+```text
+k-NN score propagation
+```
+
+because I expected partial-view predictions to become spatially fragmented.
+
+However, the observed examples do not strongly support that explanation.
+
+The current evidence instead suggests investigating the **text/semantic representation** used by OpenAD.
+
+A possible lightweight modification is **prompt ensembling**.
+
+Original OpenAD may represent an affordance using a short label such as:
+
+```text
+clothe
+```
+
+A richer representation could use several semantically related descriptions.
+
+Conceptually:
+
+```text
+Prompt 1 ─┐
+Prompt 2 ─┤
+Prompt 3 ─┼─→ CLIP embeddings → average → affordance representation
+Prompt 4 ─┤
+Prompt 5 ─┘
+```
+
+The resulting text embedding can then be compared against the same point features.
+
+This changes only the text representation while keeping the main OpenAD model and checkpoint fixed.
+
+---
+
+# 28. Provisional Research Question
+
+My current provisional research question is:
+
+> **Can richer text prompts reduce target–background (`none`) confusion in OpenAD for partial-view 3D affordance prediction?**
+
+This research question is still provisional.
+
+Before finalizing it, I plan to perform dataset-level failure analysis to determine whether `none` dominance is common across partial-view validation samples.
+
+---
+
+# 29. Provisional Hypothesis
+
+My current hypothesis is:
+
+> **Averaging CLIP embeddings from multiple semantically equivalent affordance prompts will increase the correct affordance score relative to the `none` class and improve point-wise IoU on partial-view data compared with OpenAD's original single-word text representation.**
+
+This hypothesis is falsifiable.
+
+For example, it would not be supported if:
+
+```text
+prompt ensemble IoU <= original OpenAD IoU
+```
+
+or if richer prompts increase false positives enough to reduce overall IoU.
+
+---
+
+# 30. Planned Controlled Experiment
+
+The baseline will remain:
+
+```text
+OpenAD official checkpoint
++
+PointNet++
++
+original validation affordance text
+```
+
+The proposed version would change only:
+
+```text
+Text representation
+```
+
+while keeping the following fixed:
+
+```text
+Dataset
+Checkpoint
+PointNet++ features
+Validation split
+Point cloud preprocessing
+Evaluation metric
+Hardware
+```
+
+Conceptually:
+
+```text
+                  Original
+                     ↓
+               "clothe"
+                     ↓
+                  CLIP
+                     ↓
+              text embedding
+                     ↓
+Point features → similarity → prediction
+
+
+                  Proposed
+                     ↓
+          several equivalent prompts
+                     ↓
+                  CLIP
+                     ↓
+            averaged embedding
+                     ↓
+Point features → similarity → prediction
+```
+
+This allows a controlled comparison.
+
+---
+
+# 31. Possible Ablation Study
+
+If prompt ensembling becomes the final method, possible experiments include different numbers of prompts:
+
+```text
+1 prompt   ← baseline
+2 prompts
+3 prompts
+5 prompts
+```
+
+Possible analysis:
+
+```text
+Prompt count
+     ↓
+Point-wise IoU
+```
+
+I can also compare whether improvements differ across affordances.
+
+The exact prompt set should be fixed before final evaluation rather than repeatedly changed based on validation results.
+
+---
+
+# 32. Evaluation Metrics
+
+The main metric currently used by the OpenAD evaluation code is:
+
+```text
+Point-wise IoU
+```
+
+The evaluation calculates, for every affordance:
+
+```text
+intersection
+----------------
+union
+```
+
+and reports per-class IoU.
+
+Additional diagnostic measurements for my research can include:
+
+```text
+mean IoU
+per-affordance IoU
+target probability
+none probability
+target-vs-none margin
+percentage of GT target points predicted as none
+percentage of correctly predicted GT target points
+```
+
+---
+
+# 33. Connection to Related Research
+
+## OpenAD
+
+OpenAD is the executable baseline for this project.
+
+It aligns 3D point features with CLIP text features for open-vocabulary affordance detection.
+
+My experiments use its released PointNet++ checkpoints.
+
+---
+
+## Affogato
+
+Affogato is relevant to the language/semantic side of open-vocabulary affordance grounding.
+
+Its broader direction motivates investigating how semantic representation and open-vocabulary generalization affect affordance grounding.
+
+My proposed experiment is much smaller in scope.
+
+I am **not reproducing the complete Affogato system**.
+
+Instead, I am investigating whether changing the text representation alone can improve OpenAD.
+
+---
+
+## Affostruction
+
+Affostruction is relevant to the partial-observation problem because it considers missing geometry through generative reconstruction.
+
+It originally motivated my interest in partial-view failures.
+
+However, reproducing a full generative reconstruction method would be too large for the current project and hardware constraints.
+
+The current lightweight experiment therefore focuses on diagnosing OpenAD's partial-view failure and making a controlled text-side change.
+
+---
+
+# 34. Current Evidence Chain
+
+The research process so far can be summarized as:
+
+```text
+T14: 3D affordance prediction
+            ↓
+Select OpenAD baseline
+            ↓
+Prepare OpenAD on Apple M3 Pro
+            ↓
+Adapt CUDA inference to MPS
+            ↓
+Reproduce full-shape baseline
+            ↓
+mIoU ≈ 0.144
+            ↓
+Reproduce partial-view baseline
+            ↓
+mIoU ≈ 0.125
+            ↓
+Identify strongly degraded affordances
+            ↓
+clothe / wrap / pour
+            ↓
+Visualize actual failures
+            ↓
+Selected examples have IoU = 0
+            ↓
+Target prediction disappears after argmax
+            ↓
+Inspect probabilities before argmax
+            ↓
+Correct target ranks #2
+but "none" ranks #1
+            ↓
+Observed target–background confusion
+            ↓
+Need dataset-level confirmation
+            ↓
+Potential research direction:
+prompt-based text representation
+```
+
+---
+
+# 35. Work Completed
+
+So far I have completed:
+
+- [x] Selected T14 — 3D Affordance Prediction
+- [x] Selected OpenAD as baseline
+- [x] Downloaded OpenAD repository
+- [x] Created Conda environment
+- [x] Installed dependencies
+- [x] Solved Gorilla/NVML issue on macOS
+- [x] Added MPS inference support
+- [x] Patched PointNet++ model device handling
+- [x] Patched CLIP device handling
+- [x] Prepared full-shape dataset
+- [x] Prepared partial-view dataset
+- [x] Downloaded full-shape checkpoint
+- [x] Downloaded partial-view checkpoint
+- [x] Verified checkpoint structure
+- [x] Reproduced full-shape OpenAD baseline
+- [x] Saved full-shape baseline log
+- [x] Reproduced partial-view OpenAD baseline
+- [x] Saved partial-view baseline log
+- [x] Compared full vs partial IoU
+- [x] Identified degraded affordances
+- [x] Created failure visualization script
+- [x] Visualized `clothe` failure
+- [x] Visualized `wrap` failure
+- [x] Visualized `pour` failure
+- [x] Created raw-score analysis script
+- [x] Analyzed `clothe` scores
+- [x] Analyzed `wrap` scores
+- [x] Analyzed `pour` scores
+- [x] Identified target-vs-`none` confusion in the three inspected failures
+
+---
+
+# 36. Next Steps
+
+The immediate next step is **dataset-level failure analysis**.
+
+Instead of selecting only the worst samples, I will measure across the partial validation set:
+
+```text
+For each affordance:
+
+GT target points
+      ↓
+How often is target predicted correctly?
+      ↓
+How often does "none" win?
+      ↓
+What is mean target probability?
+      ↓
+What is mean none probability?
+      ↓
+What is target-vs-none score margin?
+```
+
+This will determine whether `none` dominance is a broad failure mode.
+
+If the dataset-level analysis confirms the current observation, the next stage will be:
+
+```text
+Original OpenAD text representation
+              VS
+Prompt-ensemble text representation
+```
+
+Then I will evaluate both methods under the same conditions.
+
+---
+
+# 37. Proposal Evidence Currently Available
+
+For the Week 7 proposal, I currently have:
+
+### Problem
+
+```text
+T14 — 3D affordance prediction
+```
+
+Input:
+
+```text
+3D object point cloud + affordance text
+```
+
+Output:
+
+```text
+point-wise affordance prediction
+```
+
+### Baseline
+
+```text
+OpenAD + PointNet++
+```
+
+### Quantitative Evidence
+
+```text
+Full-shape mean IoU    ≈ 0.144
+Partial-view mean IoU  ≈ 0.125
+```
+
+### Strong Partial-View Drops
+
+```text
+clothe: 0.084 → 0.004
+wrap:   0.178 → 0.100
+pour:   0.239 → 0.170
+```
+
+### Qualitative Evidence
+
+Three visualized zero-IoU partial-view examples:
+
+```text
+Hat  → clothe
+Vase → wrap
+Vase → pour
+```
+
+### Diagnostic Evidence
+
+For all three inspected failures:
+
+```text
+correct target rank = #2
+none rank           = #1
+none argmax         = 100% of GT target points
+```
+
+### Current Failure Description
+
+```text
+Target–background ("none") confusion
+in selected partial-view OpenAD failures
+```
+
+### Provisional Research Question
+
+> Can richer text prompts reduce target–background (`none`) confusion in OpenAD for partial-view 3D affordance prediction?
+
+### Provisional Hypothesis
+
+> Averaging CLIP embeddings from multiple semantically equivalent affordance prompts will increase the correct affordance score relative to `none` and improve point-wise IoU on partial-view data compared with OpenAD's original text representation.
+
+---
+
+# 38. Important Things Still Missing for the Proposal
+
+Before considering the proposal complete, I still need to obtain:
+
+- [ ] dataset-level `none` confusion statistics
+- [ ] final research question
+- [ ] final hypothesis
+- [ ] exact prompt design
+- [ ] prompt-count ablation plan
+- [ ] baseline inference time
+- [ ] one-input inference time
+- [ ] memory usage on Apple M3 Pro/MPS
+- [ ] repository commit hash
+- [ ] complete list of modifications from official settings
+- [ ] proposed-method preliminary result if time permits
+- [ ] final comparison table
+- [ ] final proposal figures
+- [ ] final 8-minute proposal slides
+
+---
+
+# 39. Current Research Status
+
+**Current stage:**
+
+```text
+Baseline reproduction       DONE
+        ↓
+Partial-view comparison     DONE
+        ↓
+Qualitative failure study   DONE
+        ↓
+Selected-case diagnosis     DONE
+        ↓
+Dataset-level diagnosis     ← CURRENT NEXT STEP
+        ↓
+Finalize RQ/Hypothesis
+        ↓
+Implement one modification
+        ↓
+Controlled experiments
+        ↓
+Ablation
+        ↓
+Final analysis
+```
+
+At this point, I have a working OpenAD baseline on my Apple M3 Pro, reproducible full-shape and partial-view results, three real qualitative failure examples, and initial evidence that some zero-IoU partial-view failures are caused by the `none` class dominating the correct affordance during the final point-wise decision.
+
+The next important step is to determine whether this target-vs-background confusion is common across the full partial-view validation set before committing to the prompt-ensemble research direction.

@@ -1,0 +1,106 @@
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/cuda/__init__.py:68: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+{
+  "experiment": "E09",
+  "status": "running",
+  "model": "Unofficial Espresso-3D; Affogato-pretrained weights",
+  "device": "mps",
+  "seed": 1,
+  "scope": "Development analysis, partial-view point clouds, pour affordance only",
+  "query_conditions": [
+    "Point to the part used for pouring.",
+    "Locate the region from which liquid is poured.",
+    "Identify the pouring region."
+  ],
+  "ensemble": "Arithmetic mean of the three sigmoid score maps, pointwise",
+  "sample_selection": "For each shape ID, take first partial view with any GT pour points; sort eligible IDs by SHA256(\"E09-pour:\"+shape_id); first 10. Selection uses GT availability only, not prediction outcomes.",
+  "metric": "Affogato/Espresso source sample_metrics; aIoU 20 thresholds [0,1], AUC, SIM, MAE",
+  "claim_limit": "Development set selected for positive pour labels; not random benchmark or held-out final evaluation.",
+  "dataset_samples": 9140,
+  "eligible_unique_objects": 193,
+  "objects": [
+    {
+      "index": 4240,
+      "shape_id": "134c723696216addedee8d59893c8633",
+      "category": "Bottle",
+      "gt_pour_points": 34,
+      "selection_hash": "02513ffb0a611a12fd531b88be276c2293805457aab0fbdbf2112c5334fd0e20"
+    },
+    {
+      "index": 664,
+      "shape_id": "c6ff7725e2e3832835b3d63776480dcf",
+      "category": "Vase",
+      "gt_pour_points": 604,
+      "selection_hash": "02e76bab2696dc4e758129d9c9ec57dc58831a4eb2f3dcf087e10ccce65ebfd1"
+    },
+    {
+      "index": 4300,
+      "shape_id": "48202d357e79315e45891653421dc140",
+      "category": "Bottle",
+      "gt_pour_points": 61,
+      "selection_hash": "0441b044ab0f214f035ff3054a7d4a141f98f53715af212905f606f97241bcf7"
+    },
+    {
+      "index": 4200,
+      "shape_id": "3d758f0c11f01e3e3ddcd369aa279f39",
+      "category": "Bottle",
+      "gt_pour_points": 239,
+      "selection_hash": "050e93622f0851451db39cafe6b4cb8accde71d5320809efa08f263142815946"
+    },
+    {
+      "index": 1032,
+      "shape_id": "f6a61fe956c94edeb5e4c1add293da95",
+      "category": "Bowl",
+      "gt_pour_points": 1366,
+      "selection_hash": "067229a43cdb0d7faf0d0bbdbee5aa61b27a7971cae9276e0de5d205e0c9cc55"
+    },
+    {
+      "index": 588,
+      "shape_id": "1a7ba1f4c892e2da30711cdbdbc73924",
+      "category": "Vase",
+      "gt_pour_points": 464,
+      "selection_hash": "08080a313602bf3e1b2725d668b9fd1f6365ebec3f20695976c43cb1d1009c6d"
+    },
+    {
+      "index": 696,
+      "shape_id": "eff3b8277a2f1fb9d4d8765e3910f617",
+      "category": "Vase",
+      "gt_pour_points": 839,
+      "selection_hash": "089fe9124c273f947dc786f6686db6a26f37b5c116dbff651bcb45dfe1dac83d"
+    },
+    {
+      "index": 9072,
+      "shape_id": "ccd313055ecb8799f155d75bbf62b80",
+      "category": "TrashCan",
+      "gt_pour_points": 106,
+      "selection_hash": "0b00a9542aa8864edb7d86dadc020b318540074ee97824d33e9793a8041a3046"
+    },
+    {
+      "index": 9016,
+      "shape_id": "200b3f3d859c8677ad5067eac75a07f7",
+      "category": "TrashCan",
+      "gt_pour_points": 545,
+      "selection_hash": "0b8f4b9e16428020895b23e1d9da2a5a360f84bf925e9348664175bea5cddf61"
+    },
+    {
+      "index": 4284,
+      "shape_id": "99d595bf3ac08bace13f76b539e1d69a",
+      "category": "Bottle",
+      "gt_pour_points": 37,
+      "selection_hash": "0bab0a009149c5c074179ce2633aaeda45897b5ac541c76f233e21e150f57033"
+    }
+  ]
+}
+/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/voxelization.py:17: UserWarning: The reduce argument of torch.scatter with Tensor src is deprecated and will be removed in a future PyTorch release. Use torch.scatter_reduce instead for more reduction options. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:227.)
+  out_feature = result.scatter_(index=indices.long(), src=features, dim=2, reduce='add')
+Completed object 1/10: Bottle, 134c723696216addedee8d59893c8633; GT pour points=34
+Completed object 2/10: Vase, c6ff7725e2e3832835b3d63776480dcf; GT pour points=604
+Completed object 3/10: Bottle, 48202d357e79315e45891653421dc140; GT pour points=61
+Completed object 4/10: Bottle, 3d758f0c11f01e3e3ddcd369aa279f39; GT pour points=239
+Completed object 5/10: Bowl, f6a61fe956c94edeb5e4c1add293da95; GT pour points=1366
+Completed object 6/10: Vase, 1a7ba1f4c892e2da30711cdbdbc73924; GT pour points=464
+Completed object 7/10: Vase, eff3b8277a2f1fb9d4d8765e3910f617; GT pour points=839
+Completed object 8/10: TrashCan, ccd313055ecb8799f155d75bbf62b80; GT pour points=106
+Completed object 9/10: TrashCan, 200b3f3d859c8677ad5067eac75a07f7; GT pour points=545
+Completed object 10/10: Bottle, 99d595bf3ac08bace13f76b539e1d69a; GT pour points=37
+Final status: complete

@@ -1,0 +1,49 @@
+{
+  "experiment": "E09",
+  "status": "running",
+  "scope": "20 additional unique Vase objects; one target-present partial view each; development pilot only",
+  "queries": [
+    "Point to the part you would use to pour.",
+    "Point to the part used for pouring.",
+    "Locate the region from which liquid is poured.",
+    "Identify the pouring region."
+  ],
+  "seed": 1,
+  "ensemble_members": [
+    1,
+    2,
+    3
+  ],
+  "device": "mps",
+  "provenance": {
+    "status": "complete",
+    "implementation": "unofficial Espresso-3D with local device adaptations",
+    "input": "OpenAD partial validation sample 452",
+    "query": "Point to the part you would use to pour.",
+    "checkpoint": "LHC0312/espresso-3d-reimplementation:espresso3d_affogato_pretrain.safetensors",
+    "device": "mps",
+    "seed": 1,
+    "note": "Cross-dataset feasibility case, not comparable benchmark evidence.",
+    "shape_id": "edb8e199485be4e968747a7f12307bdb",
+    "category": "Vase",
+    "points": 2048,
+    "inference_seconds": 1.643059041001834,
+    "heatmap_min": 0.02124299295246601,
+    "heatmap_max": 0.5292502045631409,
+    "heatmap_mean": 0.1611708402633667,
+    "mps_current_allocated_bytes": 1794523904,
+    "hf_revisions": {
+      "models--mikaelaangel--partfield-ckpt": "90b9b1e08b6a12fdcb6ee26b4854a26235e1765f",
+      "models--UCSC-VLAA--ViT-L-16-HTxt-Recap-CLIP": "445500e40a7d73d3f9fde2538c18f7799cc54802",
+      "models--bert-base-uncased": "86b5e0934494bd15c9632b12f734a8a67f723594",
+      "models--LHC0312--espresso-3d-reimplementation": "7dcbbb1af72a59f0b939e175627a98f5f5bad148"
+    }
+  },
+  "selection": "SHA256 E09-object:UID order; one view ranked by SHA256 E09-view:UID:view_id; no model scores used",
+  "eligibility": "Vase category; at least one pour point and one non-pour point in view; excludes E08 object",
+  "primary_metric": "equal-object mean aIoU over 20 thresholds [0,1]",
+  "diagnostic_threshold": 0.5,
+  "bootstrap": "paired object bootstrap, 10000 resamples, seed 901; percentile 95% interval; exploratory",
+  "completed_objects": 0,
+  "eligible_objects": 95
+}

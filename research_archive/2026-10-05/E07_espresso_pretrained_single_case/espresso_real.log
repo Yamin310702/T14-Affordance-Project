@@ -1,0 +1,26 @@
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/cuda/__init__.py:68: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Loading pretrained vision, text and affordance weights...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+All weights loaded. Starting real-input inference.
+/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/voxelization.py:17: UserWarning: The reduce argument of torch.scatter with Tensor src is deprecated and will be removed in a future PyTorch release. Use torch.scatter_reduce instead for more reduction options. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:227.)
+  out_feature = result.scatter_(index=indices.long(), src=features, dim=2, reduce='add')
+{
+  "status": "complete",
+  "implementation": "unofficial Espresso-3D with local device adaptations",
+  "input": "OpenAD partial validation sample 452",
+  "query": "Point to the part you would use to pour.",
+  "checkpoint": "LHC0312/espresso-3d-reimplementation:espresso3d_affogato_pretrain.safetensors",
+  "device": "mps",
+  "seed": 1,
+  "note": "Cross-dataset feasibility case, not comparable benchmark evidence.",
+  "shape_id": "edb8e199485be4e968747a7f12307bdb",
+  "category": "Vase",
+  "points": 2048,
+  "inference_seconds": 1.643059041001834,
+  "heatmap_min": 0.02124299295246601,
+  "heatmap_max": 0.5292502045631409,
+  "heatmap_mean": 0.1611708402633667,
+  "mps_current_allocated_bytes": 1794523904
+}

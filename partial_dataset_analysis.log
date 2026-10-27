@@ -1,0 +1,413 @@
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/cuda/__init__.py:68: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+DGCNN CLIP device: mps
+Working Dir is already existed!
+{
+  "config": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/config/openad_pn2/partial_view_open_vocab_cfg.py",
+  "checkpoint": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/checkpoints/best_model_openad_pn2_partial.t7",
+  "model": "OpenAD_PN2",
+  "device": "mps",
+  "torch_version": "2.14.1",
+  "seed": 1,
+  "batch_size": 1,
+  "classes": [
+    "grab",
+    "accommodate",
+    "raise",
+    "unlock",
+    "rest",
+    "take a seat",
+    "bear",
+    "wrap",
+    "pour",
+    "reposition",
+    "demonstrate",
+    "push",
+    "drag",
+    "hear",
+    "clothe",
+    "thumb",
+    "slice",
+    "jab",
+    "none"
+  ],
+  "dataset_samples": 9140,
+  "start": 0,
+  "end": 9140,
+  "completed_samples": 0,
+  "status": "running",
+  "checkpoint_sha256": "cbcfe9ff70448d97a7047f1ade817645a9be29dd2782fba57776792a8210f2ae",
+  "commit": "b082265ed085455a3fdc80b0d8d95dc51351e7b4",
+  "git_status": " M models/openad_dgcnn.py\n M models/openad_pn2.py\n M test_open_vocab.py\n M utils/eval.py\n?? .DS_Store\n?? analyze_failure_scores.py\n?? checkpoints/\n?? config/.DS_Store\n?? failure_visualizations/\n?? gorilla_error.txt\n?? models/openad_dgcnn.py.backup\n?? models/openad_pn2.py.backup\n?? openad_error.txt\n?? openad_error2.txt\n?? test_open_vocab.py.backup\n?? utils/eval.py.backup\n?? visualize_failure.py\n",
+  "aggregation": "point-weighted across views; repeated objects are not independent",
+  "note": "Batch size 1; stochastic point sampling can differ from earlier batch-16 runs."
+}
+Processed 25/9140; elapsed 6.7s
+Processed 50/9140; elapsed 13.1s
+Processed 75/9140; elapsed 19.8s
+Processed 100/9140; elapsed 26.2s
+Processed 125/9140; elapsed 33.0s
+Processed 150/9140; elapsed 39.3s
+Processed 175/9140; elapsed 45.8s
+Processed 200/9140; elapsed 52.7s
+Processed 225/9140; elapsed 59.2s
+Processed 250/9140; elapsed 65.7s
+Processed 275/9140; elapsed 72.4s
+Processed 300/9140; elapsed 79.2s
+Processed 325/9140; elapsed 86.0s
+Processed 350/9140; elapsed 92.4s
+Processed 375/9140; elapsed 98.9s
+Processed 400/9140; elapsed 105.4s
+Processed 425/9140; elapsed 111.8s
+Processed 450/9140; elapsed 118.3s
+Processed 475/9140; elapsed 124.9s
+Processed 500/9140; elapsed 131.4s
+Processed 525/9140; elapsed 137.9s
+Processed 550/9140; elapsed 144.3s
+Processed 575/9140; elapsed 150.8s
+Processed 600/9140; elapsed 157.3s
+Processed 625/9140; elapsed 163.8s
+Processed 650/9140; elapsed 170.3s
+Processed 675/9140; elapsed 176.8s
+Processed 700/9140; elapsed 184.1s
+Processed 725/9140; elapsed 190.5s
+Processed 750/9140; elapsed 197.2s
+Processed 775/9140; elapsed 203.9s
+Processed 800/9140; elapsed 210.7s
+Processed 825/9140; elapsed 217.4s
+Processed 850/9140; elapsed 224.2s
+Processed 875/9140; elapsed 230.9s
+Processed 900/9140; elapsed 237.7s
+Processed 925/9140; elapsed 244.4s
+Processed 950/9140; elapsed 251.1s
+Processed 975/9140; elapsed 257.8s
+Processed 1000/9140; elapsed 264.2s
+Processed 1025/9140; elapsed 271.0s
+Processed 1050/9140; elapsed 277.8s
+Processed 1075/9140; elapsed 284.5s
+Processed 1100/9140; elapsed 291.1s
+Processed 1125/9140; elapsed 297.9s
+Processed 1150/9140; elapsed 304.8s
+Processed 1175/9140; elapsed 312.0s
+Processed 1200/9140; elapsed 319.1s
+Processed 1225/9140; elapsed 326.3s
+Processed 1250/9140; elapsed 333.5s
+Processed 1275/9140; elapsed 340.5s
+Processed 1300/9140; elapsed 347.0s
+Processed 1325/9140; elapsed 353.5s
+Processed 1350/9140; elapsed 360.1s
+Processed 1375/9140; elapsed 366.9s
+Processed 1400/9140; elapsed 373.4s
+Processed 1425/9140; elapsed 380.0s
+Processed 1450/9140; elapsed 386.5s
+Processed 1475/9140; elapsed 393.2s
+Processed 1500/9140; elapsed 399.9s
+Processed 1525/9140; elapsed 406.6s
+Processed 1550/9140; elapsed 413.3s
+Processed 1575/9140; elapsed 419.9s
+Processed 1600/9140; elapsed 426.4s
+Processed 1625/9140; elapsed 432.8s
+Processed 1650/9140; elapsed 439.3s
+Processed 1675/9140; elapsed 445.7s
+Processed 1700/9140; elapsed 452.3s
+Processed 1725/9140; elapsed 458.8s
+Processed 1750/9140; elapsed 465.3s
+Processed 1775/9140; elapsed 471.8s
+Processed 1800/9140; elapsed 478.4s
+Processed 1825/9140; elapsed 485.0s
+Processed 1850/9140; elapsed 491.5s
+Processed 1875/9140; elapsed 498.0s
+Processed 1900/9140; elapsed 504.4s
+Processed 1925/9140; elapsed 510.9s
+Processed 1950/9140; elapsed 517.4s
+Processed 1975/9140; elapsed 523.9s
+Processed 2000/9140; elapsed 530.4s
+Processed 2025/9140; elapsed 536.8s
+Processed 2050/9140; elapsed 543.3s
+Processed 2075/9140; elapsed 549.9s
+Processed 2100/9140; elapsed 556.4s
+Processed 2125/9140; elapsed 563.3s
+Processed 2150/9140; elapsed 569.7s
+Processed 2175/9140; elapsed 576.3s
+Processed 2200/9140; elapsed 582.8s
+Processed 2225/9140; elapsed 589.3s
+Processed 2250/9140; elapsed 595.7s
+Processed 2275/9140; elapsed 602.3s
+Processed 2300/9140; elapsed 609.1s
+Processed 2325/9140; elapsed 615.5s
+Processed 2350/9140; elapsed 622.0s
+Processed 2375/9140; elapsed 628.7s
+Processed 2400/9140; elapsed 635.2s
+Processed 2425/9140; elapsed 641.9s
+Processed 2450/9140; elapsed 648.4s
+Processed 2475/9140; elapsed 655.0s
+Processed 2500/9140; elapsed 662.1s
+Processed 2525/9140; elapsed 669.2s
+Processed 2550/9140; elapsed 675.6s
+Processed 2575/9140; elapsed 682.1s
+Processed 2600/9140; elapsed 688.6s
+Processed 2625/9140; elapsed 695.2s
+Processed 2650/9140; elapsed 701.6s
+Processed 2675/9140; elapsed 708.2s
+Processed 2700/9140; elapsed 714.8s
+Processed 2725/9140; elapsed 721.3s
+Processed 2750/9140; elapsed 727.9s
+Processed 2775/9140; elapsed 734.6s
+Processed 2800/9140; elapsed 741.1s
+Processed 2825/9140; elapsed 747.6s
+Processed 2850/9140; elapsed 754.2s
+Processed 2875/9140; elapsed 760.7s
+Processed 2900/9140; elapsed 767.1s
+Processed 2925/9140; elapsed 773.6s
+Processed 2950/9140; elapsed 780.1s
+Processed 2975/9140; elapsed 786.6s
+Processed 3000/9140; elapsed 793.0s
+Processed 3025/9140; elapsed 799.5s
+Processed 3050/9140; elapsed 806.1s
+Processed 3075/9140; elapsed 812.5s
+Processed 3100/9140; elapsed 819.2s
+Processed 3125/9140; elapsed 825.8s
+Processed 3150/9140; elapsed 832.2s
+Processed 3175/9140; elapsed 838.7s
+Processed 3200/9140; elapsed 845.3s
+Processed 3225/9140; elapsed 851.8s
+Processed 3250/9140; elapsed 858.3s
+Processed 3275/9140; elapsed 864.8s
+Processed 3300/9140; elapsed 871.3s
+Processed 3325/9140; elapsed 878.3s
+Processed 3350/9140; elapsed 885.2s
+Processed 3375/9140; elapsed 891.9s
+Processed 3400/9140; elapsed 898.6s
+Processed 3425/9140; elapsed 905.3s
+Processed 3450/9140; elapsed 911.9s
+Processed 3475/9140; elapsed 918.6s
+Processed 3500/9140; elapsed 925.3s
+Processed 3525/9140; elapsed 931.9s
+Processed 3550/9140; elapsed 938.5s
+Processed 3575/9140; elapsed 945.2s
+Processed 3600/9140; elapsed 951.9s
+Processed 3625/9140; elapsed 958.5s
+Processed 3650/9140; elapsed 965.2s
+Processed 3675/9140; elapsed 971.9s
+Processed 3700/9140; elapsed 978.5s
+Processed 3725/9140; elapsed 985.1s
+Processed 3750/9140; elapsed 992.5s
+Processed 3775/9140; elapsed 999.9s
+Processed 3800/9140; elapsed 1006.8s
+Processed 3825/9140; elapsed 1013.5s
+Processed 3850/9140; elapsed 1020.1s
+Processed 3875/9140; elapsed 1026.8s
+Processed 3900/9140; elapsed 1033.4s
+Processed 3925/9140; elapsed 1040.1s
+Processed 3950/9140; elapsed 1046.8s
+Processed 3975/9140; elapsed 1053.4s
+Processed 4000/9140; elapsed 1060.1s
+Processed 4025/9140; elapsed 1066.8s
+Processed 4050/9140; elapsed 1073.4s
+Processed 4075/9140; elapsed 1080.1s
+Processed 4100/9140; elapsed 1086.8s
+Processed 4125/9140; elapsed 1093.6s
+Processed 4150/9140; elapsed 1100.3s
+Processed 4175/9140; elapsed 1107.1s
+Processed 4200/9140; elapsed 1114.1s
+Processed 4225/9140; elapsed 1120.7s
+Processed 4250/9140; elapsed 1127.4s
+Processed 4275/9140; elapsed 1134.1s
+Processed 4300/9140; elapsed 1140.8s
+Processed 4325/9140; elapsed 1147.4s
+Processed 4350/9140; elapsed 1154.1s
+Processed 4375/9140; elapsed 1160.8s
+Processed 4400/9140; elapsed 1167.5s
+Processed 4425/9140; elapsed 1174.2s
+Processed 4450/9140; elapsed 1180.8s
+Processed 4475/9140; elapsed 1187.5s
+Processed 4500/9140; elapsed 1194.1s
+Processed 4525/9140; elapsed 1200.8s
+Processed 4550/9140; elapsed 1207.5s
+Processed 4575/9140; elapsed 1214.2s
+Processed 4600/9140; elapsed 1220.8s
+Processed 4625/9140; elapsed 1227.5s
+Processed 4650/9140; elapsed 1234.2s
+Processed 4675/9140; elapsed 1240.9s
+Processed 4700/9140; elapsed 1247.9s
+Processed 4725/9140; elapsed 1254.6s
+Processed 4750/9140; elapsed 1261.3s
+Processed 4775/9140; elapsed 1267.9s
+Processed 4800/9140; elapsed 1274.6s
+Processed 4825/9140; elapsed 1281.3s
+Processed 4850/9140; elapsed 1288.0s
+Processed 4875/9140; elapsed 1294.7s
+Processed 4900/9140; elapsed 1301.5s
+Processed 4925/9140; elapsed 1308.3s
+Processed 4950/9140; elapsed 1315.2s
+Processed 4975/9140; elapsed 1321.9s
+Processed 5000/9140; elapsed 1328.6s
+Processed 5025/9140; elapsed 1335.1s
+Processed 5050/9140; elapsed 1341.6s
+Processed 5075/9140; elapsed 1348.1s
+Processed 5100/9140; elapsed 1354.7s
+Processed 5125/9140; elapsed 1361.2s
+Processed 5150/9140; elapsed 1367.7s
+Processed 5175/9140; elapsed 1374.3s
+Processed 5200/9140; elapsed 1380.8s
+Processed 5225/9140; elapsed 1387.3s
+Processed 5250/9140; elapsed 1393.9s
+Processed 5275/9140; elapsed 1400.3s
+Processed 5300/9140; elapsed 1406.8s
+Processed 5325/9140; elapsed 1413.4s
+Processed 5350/9140; elapsed 1419.8s
+Processed 5375/9140; elapsed 1426.3s
+Processed 5400/9140; elapsed 1432.8s
+Processed 5425/9140; elapsed 1439.3s
+Processed 5450/9140; elapsed 1446.2s
+Processed 5475/9140; elapsed 1453.0s
+Processed 5500/9140; elapsed 1459.6s
+Processed 5525/9140; elapsed 1466.3s
+Processed 5550/9140; elapsed 1473.1s
+Processed 5575/9140; elapsed 1479.7s
+Processed 5600/9140; elapsed 1486.4s
+Processed 5625/9140; elapsed 1493.1s
+Processed 5650/9140; elapsed 1499.8s
+Processed 5675/9140; elapsed 1506.4s
+Processed 5700/9140; elapsed 1513.1s
+Processed 5725/9140; elapsed 1519.8s
+Processed 5750/9140; elapsed 1526.4s
+Processed 5775/9140; elapsed 1533.1s
+Processed 5800/9140; elapsed 1539.8s
+Processed 5825/9140; elapsed 1546.5s
+Processed 5850/9140; elapsed 1553.1s
+Processed 5875/9140; elapsed 1559.9s
+Processed 5900/9140; elapsed 1566.6s
+Processed 5925/9140; elapsed 1573.2s
+Processed 5950/9140; elapsed 1579.9s
+Processed 5975/9140; elapsed 1586.6s
+Processed 6000/9140; elapsed 1593.3s
+Processed 6025/9140; elapsed 1600.0s
+Processed 6050/9140; elapsed 1606.6s
+Processed 6075/9140; elapsed 1613.3s
+Processed 6100/9140; elapsed 1620.1s
+Processed 6125/9140; elapsed 1626.7s
+Processed 6150/9140; elapsed 1633.4s
+Processed 6175/9140; elapsed 1640.1s
+Processed 6200/9140; elapsed 1646.8s
+Processed 6225/9140; elapsed 1654.0s
+Processed 6250/9140; elapsed 1661.1s
+Processed 6275/9140; elapsed 1667.9s
+Processed 6300/9140; elapsed 1674.6s
+Processed 6325/9140; elapsed 1681.6s
+Processed 6350/9140; elapsed 1688.4s
+Processed 6375/9140; elapsed 1695.2s
+Processed 6400/9140; elapsed 1701.9s
+Processed 6425/9140; elapsed 1708.6s
+Processed 6450/9140; elapsed 1715.4s
+Processed 6475/9140; elapsed 1722.6s
+Processed 6500/9140; elapsed 1729.6s
+Processed 6525/9140; elapsed 1736.5s
+Processed 6550/9140; elapsed 1743.2s
+Processed 6575/9140; elapsed 1749.9s
+Processed 6600/9140; elapsed 1756.5s
+Processed 6625/9140; elapsed 1763.0s
+Processed 6650/9140; elapsed 1769.7s
+Processed 6675/9140; elapsed 1776.5s
+Processed 6700/9140; elapsed 1783.0s
+Processed 6725/9140; elapsed 1789.5s
+Processed 6750/9140; elapsed 1795.9s
+Processed 6775/9140; elapsed 1802.3s
+Processed 6800/9140; elapsed 1808.8s
+Processed 6825/9140; elapsed 1815.3s
+Processed 6850/9140; elapsed 1821.7s
+Processed 6875/9140; elapsed 1828.1s
+Processed 6900/9140; elapsed 1834.7s
+Processed 6925/9140; elapsed 1841.1s
+Processed 6950/9140; elapsed 1847.5s
+Processed 6975/9140; elapsed 1853.9s
+Processed 7000/9140; elapsed 1860.3s
+Processed 7025/9140; elapsed 1866.8s
+Processed 7050/9140; elapsed 1873.3s
+Processed 7075/9140; elapsed 1879.8s
+Processed 7100/9140; elapsed 1886.2s
+Processed 7125/9140; elapsed 1892.6s
+Processed 7150/9140; elapsed 1899.2s
+Processed 7175/9140; elapsed 1905.7s
+Processed 7200/9140; elapsed 1912.1s
+Processed 7225/9140; elapsed 1918.5s
+Processed 7250/9140; elapsed 1925.0s
+Processed 7275/9140; elapsed 1931.5s
+Processed 7300/9140; elapsed 1938.0s
+Processed 7325/9140; elapsed 1944.6s
+Processed 7350/9140; elapsed 1951.0s
+Processed 7375/9140; elapsed 1957.4s
+Processed 7400/9140; elapsed 1963.8s
+Processed 7425/9140; elapsed 1970.2s
+Processed 7450/9140; elapsed 1976.7s
+Processed 7475/9140; elapsed 1983.8s
+Processed 7500/9140; elapsed 1990.6s
+Processed 7525/9140; elapsed 1997.0s
+Processed 7550/9140; elapsed 2003.2s
+Processed 7575/9140; elapsed 2009.7s
+Processed 7600/9140; elapsed 2016.2s
+Processed 7625/9140; elapsed 2022.6s
+Processed 7650/9140; elapsed 2028.9s
+Processed 7675/9140; elapsed 2035.1s
+Processed 7700/9140; elapsed 2041.5s
+Processed 7725/9140; elapsed 2047.9s
+Processed 7750/9140; elapsed 2054.3s
+Processed 7775/9140; elapsed 2060.8s
+Processed 7800/9140; elapsed 2067.4s
+Processed 7825/9140; elapsed 2074.1s
+Processed 7850/9140; elapsed 2080.6s
+Processed 7875/9140; elapsed 2087.0s
+Processed 7900/9140; elapsed 2093.6s
+Processed 7925/9140; elapsed 2100.3s
+Processed 7950/9140; elapsed 2106.9s
+Processed 7975/9140; elapsed 2113.3s
+Processed 8000/9140; elapsed 2119.9s
+Processed 8025/9140; elapsed 2126.3s
+Processed 8050/9140; elapsed 2132.7s
+Processed 8075/9140; elapsed 2139.1s
+Processed 8100/9140; elapsed 2145.6s
+Processed 8125/9140; elapsed 2151.9s
+Processed 8150/9140; elapsed 2158.5s
+Processed 8175/9140; elapsed 2165.0s
+Processed 8200/9140; elapsed 2171.5s
+Processed 8225/9140; elapsed 2178.0s
+Processed 8250/9140; elapsed 2184.4s
+Processed 8275/9140; elapsed 2191.0s
+Processed 8300/9140; elapsed 2197.6s
+Processed 8325/9140; elapsed 2204.1s
+Processed 8350/9140; elapsed 2210.7s
+Processed 8375/9140; elapsed 2217.5s
+Processed 8400/9140; elapsed 2224.3s
+Processed 8425/9140; elapsed 2230.7s
+Processed 8450/9140; elapsed 2237.1s
+Processed 8475/9140; elapsed 2243.6s
+Processed 8500/9140; elapsed 2250.1s
+Processed 8525/9140; elapsed 2256.6s
+Processed 8550/9140; elapsed 2263.1s
+Processed 8575/9140; elapsed 2269.6s
+Processed 8600/9140; elapsed 2276.0s
+Processed 8625/9140; elapsed 2282.8s
+Processed 8650/9140; elapsed 2289.4s
+Processed 8675/9140; elapsed 2295.8s
+Processed 8700/9140; elapsed 2302.6s
+Processed 8725/9140; elapsed 2309.2s
+Processed 8750/9140; elapsed 2315.9s
+Processed 8775/9140; elapsed 2322.4s
+Processed 8800/9140; elapsed 2328.9s
+Processed 8825/9140; elapsed 2335.5s
+Processed 8850/9140; elapsed 2341.9s
+Processed 8875/9140; elapsed 2348.4s
+Processed 8900/9140; elapsed 2354.9s
+Processed 8925/9140; elapsed 2361.4s
+Processed 8950/9140; elapsed 2367.8s
+Processed 8975/9140; elapsed 2374.3s
+Processed 9000/9140; elapsed 2380.7s
+Processed 9025/9140; elapsed 2387.2s
+Processed 9050/9140; elapsed 2393.7s
+Processed 9075/9140; elapsed 2400.2s
+Processed 9100/9140; elapsed 2406.7s
+Processed 9125/9140; elapsed 2413.1s
+Processed 9140/9140; elapsed 2417.0s
+Saved to /Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/partial_dataset_scores

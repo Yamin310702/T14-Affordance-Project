@@ -1,0 +1,42 @@
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/cuda/__init__.py:68: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+{
+  "status": "running",
+  "eligible_training": {
+    "grab": {
+      "positive": 1440,
+      "negative": 14642
+    },
+    "pour": {
+      "positive": 1396,
+      "negative": 14686
+    },
+    "wrap": {
+      "positive": 1240,
+      "negative": 14842
+    },
+    "accommodate": {
+      "positive": 3005,
+      "negative": 13077
+    },
+    "unlock": {
+      "positive": 2528,
+      "negative": 13554
+    }
+  },
+  "per_affordance": "40 positive+40 negative",
+  "train_val_overlap": 0
+}
+/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/voxelization.py:17: UserWarning: The reduce argument of torch.scatter with Tensor src is deprecated and will be removed in a future PyTorch release. Use torch.scatter_reduce instead for more reduction options. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:227.)
+  out_feature = result.scatter_(index=indices.long(), src=features, dim=2, reduce='add')
+Calibrated-score collection: grab positive 40 objects
+Calibrated-score collection: grab negative 40 objects
+Calibrated-score collection: pour positive 40 objects
+Calibrated-score collection: pour negative 40 objects
+Calibrated-score collection: wrap positive 40 objects
+Calibrated-score collection: wrap negative 40 objects
+Calibrated-score collection: accommodate positive 40 objects
+Calibrated-score collection: accommodate negative 40 objects
+Calibrated-score collection: unlock positive 40 objects
+Calibrated-score collection: unlock negative 40 objects
+Final status: complete

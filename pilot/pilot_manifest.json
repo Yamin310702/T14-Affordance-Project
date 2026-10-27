@@ -1,0 +1,118 @@
+{
+  "purpose": "Exploratory development pilot; not final hypothesis test",
+  "selection": "10 lowest SHA256(T14-pilot-v1:UID); no replacement based on results",
+  "source_commit": "bd37f11ea4e8f0ce211b46559a82e8fcc1e6609d",
+  "source_manifest_sha256": "6d3d284126e691eb0d6640d9228f9371fe517e6db098595b32cc3bb2cf55e832",
+  "objects": [
+    {
+      "objaverse_uid": "821dedf6966848819ac096a290f96c13",
+      "processed_sha256": "419c8457ed2bbdc6c544074524bfe0775a8e32b7e4a932bc65234f3c0f665084",
+      "query_index": 0,
+      "annotation": "annotations/821dedf6966848819ac096a290f96c13/xyzc.npy",
+      "query_file": "annotations/821dedf6966848819ac096a290f96c13/queries.json",
+      "rgbd_directory": "renders_cond/419c8457ed2bbdc6c544074524bfe0775a8e32b7e4a932bc65234f3c0f665084",
+      "affordance_file": "affordances/419c8457ed2bbdc6c544074524bfe0775a8e32b7e4a932bc65234f3c0f665084/affordance.npz",
+      "assets_status": "not_downloaded",
+      "espresso_training_overlap": "unchecked"
+    },
+    {
+      "objaverse_uid": "c68434f1190f48e1902be623971b4031",
+      "processed_sha256": "4e967dab62dcf9259707ffc1cfe05f022929fe7dd9c090781385f6566c2fbca5",
+      "query_index": 0,
+      "annotation": "annotations/c68434f1190f48e1902be623971b4031/xyzc.npy",
+      "query_file": "annotations/c68434f1190f48e1902be623971b4031/queries.json",
+      "rgbd_directory": "renders_cond/4e967dab62dcf9259707ffc1cfe05f022929fe7dd9c090781385f6566c2fbca5",
+      "affordance_file": "affordances/4e967dab62dcf9259707ffc1cfe05f022929fe7dd9c090781385f6566c2fbca5/affordance.npz",
+      "assets_status": "not_downloaded",
+      "espresso_training_overlap": "unchecked"
+    },
+    {
+      "objaverse_uid": "519c813e95af46a59e010539cd02ac5f",
+      "processed_sha256": "ebd11f8c81564cf4682d783dd16490c23ebda66d4864b40fe93b2d2501f02525",
+      "query_index": 0,
+      "annotation": "annotations/519c813e95af46a59e010539cd02ac5f/xyzc.npy",
+      "query_file": "annotations/519c813e95af46a59e010539cd02ac5f/queries.json",
+      "rgbd_directory": "renders_cond/ebd11f8c81564cf4682d783dd16490c23ebda66d4864b40fe93b2d2501f02525",
+      "affordance_file": "affordances/ebd11f8c81564cf4682d783dd16490c23ebda66d4864b40fe93b2d2501f02525/affordance.npz",
+      "assets_status": "not_downloaded",
+      "espresso_training_overlap": "unchecked"
+    },
+    {
+      "objaverse_uid": "36c9d24782734931accc2f2787bec8d8",
+      "processed_sha256": "f6a42e075f7dd365b87030d9035f41e37334a80896133faa3b71c80e638f2420",
+      "query_index": 0,
+      "annotation": "annotations/36c9d24782734931accc2f2787bec8d8/xyzc.npy",
+      "query_file": "annotations/36c9d24782734931accc2f2787bec8d8/queries.json",
+      "rgbd_directory": "renders_cond/f6a42e075f7dd365b87030d9035f41e37334a80896133faa3b71c80e638f2420",
+      "affordance_file": "affordances/f6a42e075f7dd365b87030d9035f41e37334a80896133faa3b71c80e638f2420/affordance.npz",
+      "assets_status": "not_downloaded",
+      "espresso_training_overlap": "unchecked"
+    },
+    {
+      "objaverse_uid": "341229405f3a4da8aef5fd43c3b8cdfa",
+      "processed_sha256": "f9662ab84036ca3ae6cfc6ad7096c129d62ff9aba5aa21c51858a4995ab3166e",
+      "query_index": 0,
+      "annotation": "annotations/341229405f3a4da8aef5fd43c3b8cdfa/xyzc.npy",
+      "query_file": "annotations/341229405f3a4da8aef5fd43c3b8cdfa/queries.json",
+      "rgbd_directory": "renders_cond/f9662ab84036ca3ae6cfc6ad7096c129d62ff9aba5aa21c51858a4995ab3166e",
+      "affordance_file": "affordances/f9662ab84036ca3ae6cfc6ad7096c129d62ff9aba5aa21c51858a4995ab3166e/affordance.npz",
+      "assets_status": "not_downloaded",
+      "espresso_training_overlap": "unchecked"
+    },
+    {
+      "objaverse_uid": "087fed38b74a45f78a9dd7dbd396f9e5",
+      "processed_sha256": "c2519e93b7e3ce9ad2991ce0d44b6058cc0739a297e0f94cf493c536a60cdd27",
+      "query_index": 0,
+      "annotation": "annotations/087fed38b74a45f78a9dd7dbd396f9e5/xyzc.npy",
+      "query_file": "annotations/087fed38b74a45f78a9dd7dbd396f9e5/queries.json",
+      "rgbd_directory": "renders_cond/c2519e93b7e3ce9ad2991ce0d44b6058cc0739a297e0f94cf493c536a60cdd27",
+      "affordance_file": "affordances/c2519e93b7e3ce9ad2991ce0d44b6058cc0739a297e0f94cf493c536a60cdd27/affordance.npz",
+      "assets_status": "not_downloaded",
+      "espresso_training_overlap": "unchecked"
+    },
+    {
+      "objaverse_uid": "3d48fafa685740ff84941324d0f453ec",
+      "processed_sha256": "1f0fe643223bbadb1d64bf5992ff5886000d2d026238766278d66aa9829273db",
+      "query_index": 0,
+      "annotation": "annotations/3d48fafa685740ff84941324d0f453ec/xyzc.npy",
+      "query_file": "annotations/3d48fafa685740ff84941324d0f453ec/queries.json",
+      "rgbd_directory": "renders_cond/1f0fe643223bbadb1d64bf5992ff5886000d2d026238766278d66aa9829273db",
+      "affordance_file": "affordances/1f0fe643223bbadb1d64bf5992ff5886000d2d026238766278d66aa9829273db/affordance.npz",
+      "assets_status": "not_downloaded",
+      "espresso_training_overlap": "unchecked"
+    },
+    {
+      "objaverse_uid": "f76f6ec4e06f4e5d9e1f7273a5bff619",
+      "processed_sha256": "260f126567db5e368ff21f7aba851d5c3b9c060b00d5700b6b6ced068f680aa6",
+      "query_index": 0,
+      "annotation": "annotations/f76f6ec4e06f4e5d9e1f7273a5bff619/xyzc.npy",
+      "query_file": "annotations/f76f6ec4e06f4e5d9e1f7273a5bff619/queries.json",
+      "rgbd_directory": "renders_cond/260f126567db5e368ff21f7aba851d5c3b9c060b00d5700b6b6ced068f680aa6",
+      "affordance_file": "affordances/260f126567db5e368ff21f7aba851d5c3b9c060b00d5700b6b6ced068f680aa6/affordance.npz",
+      "assets_status": "not_downloaded",
+      "espresso_training_overlap": "unchecked"
+    },
+    {
+      "objaverse_uid": "19b07d2f38f14f5f9c8d9d9c8e458f71",
+      "processed_sha256": "9c1e4b959eaccec8687dd8499ecefb7c4fbe327ccac19c065a92293b5a67d335",
+      "query_index": 0,
+      "annotation": "annotations/19b07d2f38f14f5f9c8d9d9c8e458f71/xyzc.npy",
+      "query_file": "annotations/19b07d2f38f14f5f9c8d9d9c8e458f71/queries.json",
+      "rgbd_directory": "renders_cond/9c1e4b959eaccec8687dd8499ecefb7c4fbe327ccac19c065a92293b5a67d335",
+      "affordance_file": "affordances/9c1e4b959eaccec8687dd8499ecefb7c4fbe327ccac19c065a92293b5a67d335/affordance.npz",
+      "assets_status": "not_downloaded",
+      "espresso_training_overlap": "unchecked"
+    },
+    {
+      "objaverse_uid": "59c1fd83b17842bbb7000a1267da4f23",
+      "processed_sha256": "9e0829a6192785ed649f57919672a9d99e044c855e8f3c957408d06fdae459b9",
+      "query_index": 0,
+      "annotation": "annotations/59c1fd83b17842bbb7000a1267da4f23/xyzc.npy",
+      "query_file": "annotations/59c1fd83b17842bbb7000a1267da4f23/queries.json",
+      "rgbd_directory": "renders_cond/9e0829a6192785ed649f57919672a9d99e044c855e8f3c957408d06fdae459b9",
+      "affordance_file": "affordances/9e0829a6192785ed649f57919672a9d99e044c855e8f3c957408d06fdae459b9/affordance.npz",
+      "assets_status": "not_downloaded",
+      "espresso_training_overlap": "unchecked"
+    }
+  ]
+}

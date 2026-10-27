@@ -1,0 +1,62 @@
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/cuda/__init__.py:68: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+{
+  "status": "running",
+  "device": "cpu",
+  "eligible_fresh": {
+    "positive": 128,
+    "negative": 1638
+  },
+  "test_per_group": 20
+}
+/Users/yaminmyataung/Documents/ChatGPT/3D Vision Research/pilot/espresso-3d-reimplementation/partfield/model/PVCNN/pv_module/voxelization.py:17: UserWarning: The reduce argument of torch.scatter with Tensor src is deprecated and will be removed in a future PyTorch release. Use torch.scatter_reduce instead for more reduction options. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:227.)
+  out_feature = result.scatter_(index=indices.long(), src=features, dim=2, reduce='add')
+Calibration positive: 10/40
+Calibration positive: 20/40
+Calibration positive: 30/40
+Calibration positive: 40/40
+Calibration negative: 10/40
+Calibration negative: 20/40
+Calibration negative: 30/40
+Calibration negative: 40/40
+Test positive: 1/20 53b396d2ff7af087d01673c7c57450c9
+Test positive: 2/20 7d95374a9110157c7d8c689e1315827b
+Test positive: 3/20 fae333fdef97b004193e4b893d21eb4c
+Test positive: 4/20 217d29a61745991f7aa75dfc74adc93f
+Test positive: 5/20 c462e3b75f570a3b42227a2ba4dff5ab
+Test positive: 6/20 72b84b9b53fee78c664b3b9b23ddfcbc
+Test positive: 7/20 8fba7de21910dcfc4c3aee8e9d3a6ffa
+Test positive: 8/20 b187206fe6ed4228a805114916841d69
+Test positive: 9/20 c3615a091971ed0e9941e769880462e7
+Test positive: 10/20 49b69d5e4330ae2457b1c0b6d5084bcf
+Test positive: 11/20 6f46c38f86fa961ed2f1945599cd5176
+Test positive: 12/20 c2d6739b7d2b6cadad5067eac75a07f7
+Test positive: 13/20 7a48b295d6c3956fa96fd0f479def5ab
+Test positive: 14/20 11b8fd945de0ee99642f6fb37a230b5e
+Test positive: 15/20 dca2cd661bece47bd810b14a81e12eca
+Test positive: 16/20 93ea6a4c9068dd65ba5b64592e406eca
+Test positive: 17/20 21c7f1ff67976e7c29cb7aca40b7cd0
+Test positive: 18/20 9e6434ba1ad59fa611fc2b865c2a185b
+Test positive: 19/20 ea48a2a501942eedde650492e45fb14f
+Test positive: 20/20 uc9c77d51-a8f3-45c2-a9cd-5a992b8796ef
+Test negative: 1/20 de46aee11f397e1c5af597c14b093f6
+Test negative: 2/20 24d1d32aa33c38716a97150bb2a72733
+Test negative: 3/20 96aff91d7898cb1358df8eeaf3dad1c
+Test negative: 4/20 3dd217a06e76292b372b6139ac78b39e
+Test negative: 5/20 a1efc57eedf9a2e93c8311d2f6bcff87
+Test negative: 6/20 eaad54605e6dfee6d862787d0e1b892b
+Test negative: 7/20 7a617f62ec5bb2075e7faf7f49c2907a
+Test negative: 8/20 36770c30c74a32e16dbc8927361b2733
+Test negative: 9/20 329ec98f10af7214ac6962daa1b6ab91
+Test negative: 10/20 90dddd5e4aa586bf14513156cf2b8d0d
+Test negative: 11/20 a4da5746b99209f85da16758ae613576
+Test negative: 12/20 d29445f24bbf1b1814c05b481f895c37
+Test negative: 13/20 53d88f50e3abc2888dcbe86402c7c15
+Test negative: 14/20 75fb953aaa9924d1f28b9459ae3635d3
+Test negative: 15/20 df166b0407fef7ae4b3c42e318f3affc
+Test negative: 16/20 898073ee0a493fed4c58a7782e1dd690
+Test negative: 17/20 2e8a4184f4067657f2cf6a9bef44d625
+Test negative: 18/20 18fef71ad80139a2af02521b7ec8a38e
+Test negative: 19/20 58951c10aaeeff2afe8474bfd438f6d8
+Test negative: 20/20 1acc3dae512b56b01f8b303c0da5108d
+Final status: complete

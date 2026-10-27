@@ -1,0 +1,411 @@
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/cuda/__init__.py:68: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/homebrew/Caskroom/miniforge/base/envs/openad/lib/python3.10/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+DGCNN CLIP device: cpu
+E18: 50/1941 shapes (23.8s)
+E18: 100/1941 shapes (47.7s)
+E18: 150/1941 shapes (72.1s)
+E18: 200/1941 shapes (96.1s)
+E18: 250/1941 shapes (120.3s)
+E18: 300/1941 shapes (144.4s)
+E18: 350/1941 shapes (169.2s)
+E18: 400/1941 shapes (193.1s)
+E18: 450/1941 shapes (217.3s)
+E18: 500/1941 shapes (241.4s)
+E18: 550/1941 shapes (265.6s)
+E18: 600/1941 shapes (289.9s)
+E18: 650/1941 shapes (314.0s)
+E18: 700/1941 shapes (338.4s)
+E18: 750/1941 shapes (362.6s)
+E18: 800/1941 shapes (386.8s)
+E18: 850/1941 shapes (410.9s)
+E18: 900/1941 shapes (435.5s)
+E18: 950/1941 shapes (459.7s)
+E18: 1000/1941 shapes (483.9s)
+E18: 1050/1941 shapes (508.3s)
+E18: 1100/1941 shapes (532.5s)
+E18: 1150/1941 shapes (557.3s)
+E18: 1200/1941 shapes (581.7s)
+E18: 1250/1941 shapes (605.5s)
+E18: 1300/1941 shapes (629.3s)
+E18: 1350/1941 shapes (653.7s)
+E18: 1400/1941 shapes (678.1s)
+E18: 1450/1941 shapes (702.2s)
+E18: 1500/1941 shapes (726.5s)
+E18: 1550/1941 shapes (750.5s)
+E18: 1600/1941 shapes (774.9s)
+E18: 1650/1941 shapes (799.1s)
+E18: 1700/1941 shapes (823.4s)
+E18: 1750/1941 shapes (847.8s)
+E18: 1800/1941 shapes (872.0s)
+E18: 1850/1941 shapes (896.0s)
+E18: 1900/1941 shapes (920.4s)
+E18: 1941/1941 shapes (940.4s)
+Final status: complete
+{
+  "status": "complete",
+  "elapsed_seconds": 940.7419635830447,
+  "selected_shape_count": 1941,
+  "positive_and_negative_shape_counts": {
+    "grab": {
+      "positive_shapes": 81,
+      "negative_shapes": 1860
+    },
+    "accommodate": {
+      "positive_shapes": 213,
+      "negative_shapes": 1728
+    },
+    "unlock": {
+      "positive_shapes": 198,
+      "negative_shapes": 1743
+    },
+    "wrap": {
+      "positive_shapes": 26,
+      "negative_shapes": 1915
+    },
+    "pour": {
+      "positive_shapes": 34,
+      "negative_shapes": 1907
+    }
+  },
+  "per_affordance_summary": [
+    {
+      "affordance": "grab",
+      "class_index": 0,
+      "canonical_heldout_query": "grab",
+      "conditions": {
+        "canonical_word": {
+          "global_iou": 0.013813519813519814,
+          "tp": 2963,
+          "fp": 10,
+          "fn": 211527,
+          "points": 15900672,
+          "positive_points": 214490,
+          "positive_shapes": 81,
+          "negative_shapes": 1860,
+          "mean_positive_shape_iou": 0.015314306322153696,
+          "mean_positive_shape_auc": 0.8159068797366852,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        },
+        "original_sentence": {
+          "global_iou": 0.0,
+          "tp": 0,
+          "fp": 11,
+          "fn": 214490,
+          "points": 15900672,
+          "positive_points": 214490,
+          "positive_shapes": 81,
+          "negative_shapes": 1860,
+          "mean_positive_shape_iou": 0.0,
+          "mean_positive_shape_auc": 0.7457890566910064,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        },
+        "selected_paraphrase": {
+          "global_iou": 0.0,
+          "tp": 0,
+          "fp": 7,
+          "fn": 214490,
+          "points": 15900672,
+          "positive_points": 214490,
+          "positive_shapes": 81,
+          "negative_shapes": 1860,
+          "mean_positive_shape_iou": 0.0,
+          "mean_positive_shape_auc": 0.6080588722413347,
+          "mean_negative_false_positive_fraction": 6.56292002688172e-08,
+          "negative_shape_any_alarm_rate": 0.0005376344086021505
+        }
+      }
+    },
+    {
+      "affordance": "accommodate",
+      "class_index": 1,
+      "canonical_heldout_query": "accommodate",
+      "conditions": {
+        "canonical_word": {
+          "global_iou": 2.798925212718316e-06,
+          "tp": 1,
+          "fp": 4,
+          "fn": 357275,
+          "points": 15900672,
+          "positive_points": 357276,
+          "positive_shapes": 213,
+          "negative_shapes": 1728,
+          "mean_positive_shape_iou": 1.3106743944028962e-06,
+          "mean_positive_shape_auc": 0.6932353260916706,
+          "mean_negative_false_positive_fraction": 2.8257016782407406e-07,
+          "negative_shape_any_alarm_rate": 0.0011574074074074073
+        },
+        "original_sentence": {
+          "global_iou": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 357276,
+          "points": 15900672,
+          "positive_points": 357276,
+          "positive_shapes": 213,
+          "negative_shapes": 1728,
+          "mean_positive_shape_iou": 0.0,
+          "mean_positive_shape_auc": 0.6585169531384734,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        },
+        "selected_paraphrase": {
+          "global_iou": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 357276,
+          "points": 15900672,
+          "positive_points": 357276,
+          "positive_shapes": 213,
+          "negative_shapes": 1728,
+          "mean_positive_shape_iou": 0.0,
+          "mean_positive_shape_auc": 0.5869682112209678,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        }
+      }
+    },
+    {
+      "affordance": "unlock",
+      "class_index": 3,
+      "canonical_heldout_query": "unlock",
+      "conditions": {
+        "canonical_word": {
+          "global_iou": 0.036461272058680466,
+          "tp": 5622,
+          "fp": 7137,
+          "fn": 141432,
+          "points": 15900672,
+          "positive_points": 147054,
+          "positive_shapes": 198,
+          "negative_shapes": 1743,
+          "mean_positive_shape_iou": 0.024314789458905247,
+          "mean_positive_shape_auc": 0.8596106898679716,
+          "mean_negative_false_positive_fraction": 8.684290734366035e-05,
+          "negative_shape_any_alarm_rate": 0.004016064257028112
+        },
+        "original_sentence": {
+          "global_iou": 0.0009274616660461023,
+          "tp": 137,
+          "fp": 661,
+          "fn": 146917,
+          "points": 15900672,
+          "positive_points": 147054,
+          "positive_shapes": 198,
+          "negative_shapes": 1743,
+          "mean_positive_shape_iou": 0.001748358774148441,
+          "mean_positive_shape_auc": 0.8420431493951834,
+          "mean_negative_false_positive_fraction": 1.5617716401319564e-05,
+          "negative_shape_any_alarm_rate": 0.0034423407917383822
+        },
+        "selected_paraphrase": {
+          "global_iou": 0.12359258361752555,
+          "tp": 20911,
+          "fp": 22139,
+          "fn": 126143,
+          "points": 15900672,
+          "positive_points": 147054,
+          "positive_shapes": 198,
+          "negative_shapes": 1743,
+          "mean_positive_shape_iou": 0.08579284061160351,
+          "mean_positive_shape_auc": 0.8837613595762539,
+          "mean_negative_false_positive_fraction": 0.00039569550523522665,
+          "negative_shape_any_alarm_rate": 0.01606425702811245
+        }
+      }
+    },
+    {
+      "affordance": "wrap",
+      "class_index": 7,
+      "canonical_heldout_query": "wrap",
+      "conditions": {
+        "canonical_word": {
+          "global_iou": 0.07898100304781464,
+          "tp": 7230,
+          "fp": 7341,
+          "fn": 76970,
+          "points": 15900672,
+          "positive_points": 84200,
+          "positive_shapes": 26,
+          "negative_shapes": 1915,
+          "mean_positive_shape_iou": 0.08627325456422263,
+          "mean_positive_shape_auc": 0.755590372896364,
+          "mean_negative_false_positive_fraction": 0.0002739729520234987,
+          "negative_shape_any_alarm_rate": 0.005744125326370757
+        },
+        "original_sentence": {
+          "global_iou": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 84200,
+          "points": 15900672,
+          "positive_points": 84200,
+          "positive_shapes": 26,
+          "negative_shapes": 1915,
+          "mean_positive_shape_iou": 0.0,
+          "mean_positive_shape_auc": 0.6546334834442953,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        },
+        "selected_paraphrase": {
+          "global_iou": 0.0009158767229930851,
+          "tp": 80,
+          "fp": 3148,
+          "fn": 84120,
+          "points": 15900672,
+          "positive_points": 84200,
+          "positive_shapes": 26,
+          "negative_shapes": 1915,
+          "mean_positive_shape_iou": 0.000526990334144659,
+          "mean_positive_shape_auc": 0.6104470095008941,
+          "mean_negative_false_positive_fraction": 0.00011269990208877285,
+          "negative_shape_any_alarm_rate": 0.009921671018276762
+        }
+      }
+    },
+    {
+      "affordance": "pour",
+      "class_index": 8,
+      "canonical_heldout_query": "pour",
+      "conditions": {
+        "canonical_word": {
+          "global_iou": 0.08540950744558992,
+          "tp": 4772,
+          "fp": 2178,
+          "fn": 48922,
+          "points": 15900672,
+          "positive_points": 53694,
+          "positive_shapes": 34,
+          "negative_shapes": 1907,
+          "mean_positive_shape_iou": 0.05302536060181475,
+          "mean_positive_shape_auc": 0.749756564028929,
+          "mean_negative_false_positive_fraction": 5.953088129260619e-05,
+          "negative_shape_any_alarm_rate": 0.001048767697954903
+        },
+        "original_sentence": {
+          "global_iou": 0.0,
+          "tp": 0,
+          "fp": 9,
+          "fn": 53694,
+          "points": 15900672,
+          "positive_points": 53694,
+          "positive_shapes": 34,
+          "negative_shapes": 1907,
+          "mean_positive_shape_iou": 0.0,
+          "mean_positive_shape_auc": 0.7698048591920363,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        },
+        "selected_paraphrase": {
+          "global_iou": 1.8624054829217416e-05,
+          "tp": 1,
+          "fp": 0,
+          "fn": 53693,
+          "points": 15900672,
+          "positive_points": 53694,
+          "positive_shapes": 34,
+          "negative_shapes": 1907,
+          "mean_positive_shape_iou": 1.0418620157946281e-05,
+          "mean_positive_shape_auc": 0.7679491610874735,
+          "mean_negative_false_positive_fraction": 0.0,
+          "negative_shape_any_alarm_rate": 0.0
+        }
+      }
+    }
+  ],
+  "paired_bootstrap": {
+    "grab:positive_shape_iou": {
+      "n_shapes": 81,
+      "mean_delta_paraphrase_minus_original": 0.0,
+      "bootstrap_95pct_ci": [
+        0.0,
+        0.0
+      ],
+      "fraction_improved": 0.0
+    },
+    "grab:negative_shape_false_positive_fraction": {
+      "n_shapes": 1860,
+      "mean_delta_paraphrase_minus_original": 6.56292002688172e-08,
+      "bootstrap_95pct_ci": [
+        0.0,
+        1.968876008064516e-07
+      ],
+      "fraction_improved": 0.0005376344086021505
+    },
+    "accommodate:positive_shape_iou": {
+      "n_shapes": 213,
+      "mean_delta_paraphrase_minus_original": 0.0,
+      "bootstrap_95pct_ci": [
+        0.0,
+        0.0
+      ],
+      "fraction_improved": 0.0
+    },
+    "accommodate:negative_shape_false_positive_fraction": {
+      "n_shapes": 1728,
+      "mean_delta_paraphrase_minus_original": 0.0,
+      "bootstrap_95pct_ci": [
+        0.0,
+        0.0
+      ],
+      "fraction_improved": 0.0
+    },
+    "unlock:positive_shape_iou": {
+      "n_shapes": 198,
+      "mean_delta_paraphrase_minus_original": 0.08404448183745507,
+      "bootstrap_95pct_ci": [
+        0.05690409467981072,
+        0.11415788612039054
+      ],
+      "fraction_improved": 0.31313131313131315
+    },
+    "unlock:negative_shape_false_positive_fraction": {
+      "n_shapes": 1743,
+      "mean_delta_paraphrase_minus_original": 0.00038007778883390704,
+      "bootstrap_95pct_ci": [
+        0.0001634502575032272,
+        0.0006512517704747562
+      ],
+      "fraction_improved": 0.01606425702811245
+    },
+    "wrap:positive_shape_iou": {
+      "n_shapes": 26,
+      "mean_delta_paraphrase_minus_original": 0.000526990334144659,
+      "bootstrap_95pct_ci": [
+        0.0,
+        0.00123352104492513
+      ],
+      "fraction_improved": 0.11538461538461539
+    },
+    "wrap:negative_shape_false_positive_fraction": {
+      "n_shapes": 1915,
+      "mean_delta_paraphrase_minus_original": 0.00011269990208877285,
+      "bootstrap_95pct_ci": [
+        3.289205287206266e-05,
+        0.00021354336651436032
+      ],
+      "fraction_improved": 0.009921671018276762
+    },
+    "pour:positive_shape_iou": {
+      "n_shapes": 34,
+      "mean_delta_paraphrase_minus_original": 1.0418620157946281e-05,
+      "bootstrap_95pct_ci": [
+        0.0,
+        3.125586047383884e-05
+      ],
+      "fraction_improved": 0.029411764705882353
+    },
+    "pour:negative_shape_false_positive_fraction": {
+      "n_shapes": 1907,
+      "mean_delta_paraphrase_minus_original": 0.0,
+      "bootstrap_95pct_ci": [
+        0.0,
+        0.0
+      ],
+      "fraction_improved": 0.0
+    }
+  }
+}
