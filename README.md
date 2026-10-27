@@ -4,6 +4,8 @@ Course research project on how text-query wording changes 3D affordance localiza
 
 ## Start here
 
+For setup from a fresh clone, follow the [step-by-step clone and run guide (PDF)](output/pdf/T14_Project_Clone_and_Run_Guide.pdf). It covers the external OpenAD setup, data and checkpoint downloads, path fixes, baseline evaluation, E17/E18, and troubleshooting. The guide distinguishes runnable experiments from historical or proposed work.
+
 1. **Current proposal:** [Team07_T14_proposal.pptx](output/Team07_T14_proposal.pptx).
 2. **Experiment overview:** [TEAMMATE_START_HERE.md](TEAMMATE_START_HERE.md).
 3. **Completed experiment map:** [ALL_EXPERIMENTS_PROPOSAL_MAP.md](research_archive/2026-10-11/ALL_EXPERIMENTS_PROPOSAL_MAP.md).
