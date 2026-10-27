@@ -39,6 +39,13 @@ pilot/espresso-3d-reimplementation/
 /tmp/
 /proposal_build/
 
+# Local-only paper preparation and superseded proposal drafts
+/output/LASO*
+/output/T14_prompt_localization_proposal*
+/output/T14_proposal*
+/output/T14_team7_8min_talk_and_QA_guide.pdf
+/output/proposal/
+
 # Duplicate compressed and extracted sharing packages
 /research_archive/*.zip
 /research_archive/T14_teammate_compact_package_*/

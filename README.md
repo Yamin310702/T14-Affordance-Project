@@ -1,6 +1,6 @@
 # Team 07: T14 3D Affordance Prediction
 
-Course research project on how text-query wording changes 3D affordance localization and false alarms. This repository shares research scripts, experiment records, proposal materials, and mini-conference preparation with the team.
+Course research project on how text-query wording changes 3D affordance localization and false alarms. This repository shares research scripts, experiment records, and the current Team 07 proposal with the team.
 
 ## Start here
 
@@ -8,7 +8,6 @@ Course research project on how text-query wording changes 3D affordance localiza
 2. **Experiment overview:** [TEAMMATE_START_HERE.md](TEAMMATE_START_HERE.md).
 3. **Completed experiment map:** [ALL_EXPERIMENTS_PROPOSAL_MAP.md](research_archive/2026-10-11/ALL_EXPERIMENTS_PROPOSAL_MAP.md).
 4. **Latest dated archive:** [2026-10-11 README](research_archive/2026-10-11/README.md).
-5. **LASO talk preparation:** [LASO_mini_conference_preparation.md](output/LASO_mini_conference_preparation.md). This is a working outline, not a completed slide deck or confirmation of a paper reservation. Follow the mini-conference guideline when preparing the final talk.
 
 ## Current research direction
 
@@ -39,11 +38,11 @@ Use the dated result reports for exact metrics, object manifests, devices and li
 | `research_archive/2026-10-05/` | Earlier OpenAD baseline and diagnostic evidence, including adapted source snapshots |
 | `research_archive/2026-10-08/` | Query-sensitivity studies |
 | `research_archive/2026-10-11/` | Later prompt, calibration, transfer and CPU/MPS comparison records |
-| `output/` | Current proposal, historical presentation variants, speaking materials and LASO preparation |
+| `output/` | Current Team 07 proposal |
 | `pilot_scores*/`, `partial_dataset_scores/` | Dataset-analysis summaries |
 | `MPS_RERUN_GUIDE.md` | Existing instructions for E17/E18 on Apple MPS |
 
-The repository retains small raw prediction arrays and archived run records. Large model downloads, Python environments, separate upstream Git checkouts, duplicate ZIP packages and temporary presentation renders are excluded. Existing historical output variants remain available for reference.
+The repository retains small raw prediction arrays and archived run records. Large model downloads, Python environments, separate upstream Git checkouts, duplicate ZIP packages and temporary presentation renders are excluded. Superseded proposal output variants and paper-presentation preparation remain local and are excluded from the current repository tree.
 
 ## Reproducing experiments on another computer
 
@@ -75,7 +74,6 @@ If a collaborator cannot clone the private repository, the owner must grant that
 ## Upstream references and attribution
 
 - [OpenAD paper](https://arxiv.org/abs/2303.02401) and [official source](https://github.com/Fsoft-AIC/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds).
-- [LASO paper](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_LASO_Language-guided_Affordance_Segmentation_on_3D_Object_CVPR_2024_paper.pdf) and [author source](https://github.com/yl3800/LASO). A downloaded paper copy is in `output/LASO_CVPR2024.pdf`.
 - [Affogato project](https://junha-l.github.io/affogato/) and [unofficial Espresso implementation](https://github.com/LHC0312/espresso-3d-reimplementation).
 - [Affostruction source](https://github.com/chrockey/Affostruction).
 
