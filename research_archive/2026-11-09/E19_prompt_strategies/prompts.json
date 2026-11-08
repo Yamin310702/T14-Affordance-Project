@@ -1,0 +1,25 @@
+{
+  "experiment": "E19_prompt_strategies",
+  "canonical_baseline": "label-aligned training-name queries, selected by user on 2026-11-09",
+  "none_query": "none",
+  "actions": [
+    {"canonical":"grasp","paraphrases":["the part to grasp","the region used for grasping","the part that can be grasped"]},
+    {"canonical":"contain","paraphrases":["the part that contains something","the region used to contain something","the part where something can be contained"]},
+    {"canonical":"lift","paraphrases":["the part to use when lifting the object","the region used to lift the object","the part by which the object can be lifted"]},
+    {"canonical":"openable","paraphrases":["the part that can be opened","the region used to open the object","the part involved in opening the object"]},
+    {"canonical":"layable","paraphrases":["the surface to lie on","the region used for lying down","the part on which a person can lie"]},
+    {"canonical":"sittable","paraphrases":["the surface to sit on","the region used for sitting","the part on which a person can sit"]},
+    {"canonical":"support","paraphrases":["the part that supports something","the region used to support something","the part on which something can be supported"]},
+    {"canonical":"wrap_grasp","paraphrases":["the part to grasp by wrapping a hand around it","the region used for a wrap grasp","the part held with a hand wrapped around it"]},
+    {"canonical":"pourable","paraphrases":["the part used for pouring","the region from which something is poured","the part through which contents can be poured out"]},
+    {"canonical":"move","paraphrases":["the part used to move the object","the region used when moving the object","the part by which the object can be moved"]},
+    {"canonical":"displaY","paraphrases":["the part that displays information","the region used to display information","the part where information is displayed"]},
+    {"canonical":"pushable","paraphrases":["the part to push","the region used for pushing","the part that can be pushed"]},
+    {"canonical":"pull","paraphrases":["the part to pull","the region used for pulling","the part that can be pulled"]},
+    {"canonical":"listen","paraphrases":["the part used for listening","the region from which a person listens to sound","the part that provides sound to listen to"]},
+    {"canonical":"wear","paraphrases":["the part that can be worn","the region used when wearing the object","the part worn on the body"]},
+    {"canonical":"press","paraphrases":["the part to press","the region used for pressing","the part that can be pressed"]},
+    {"canonical":"cut","paraphrases":["the part used for cutting","the region that cuts something","the part with which something can be cut"]},
+    {"canonical":"stab","paraphrases":["the part used for stabbing","the region that stabs something","the part with which something can be stabbed"]}
+  ]
+}

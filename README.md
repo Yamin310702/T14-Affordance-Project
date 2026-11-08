@@ -13,6 +13,8 @@ For setup from a fresh clone, follow the [step-by-step clone and run guide (PDF)
 
 ## Current research direction
 
+The next implementation is [E19: three fixed prompt strategies](research_archive/2026-11-09/E19_prompt_strategies/README.md). On 2026-11-09 the team selected OpenAD's label-aligned names as the canonical baseline. The runner and frozen prompt file are available; see the dated study record for verification and run status. Older K=1/3/5 notes are superseded by this three-condition protocol.
+
 Keep OpenAD frozen and compare three query strategies on identical point samples:
 
 - Canonical action word.

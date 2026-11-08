@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "scope": "one object, all four partial views; adapted upstream OpenAD forward comparison",
+  "shape_id": "0dacd08b-26eb-4cbb-9bb7-0efec828d1ed",
+  "max_absolute_probability_difference": 2.980232238769531e-07,
+  "identical_argmax": true,
+  "checkpoint_sha256": "cbcfe9ff70448d97a7047f1ade817645a9be29dd2782fba57776792a8210f2ae",
+  "runner_sha256": "3a18d7d18cbb17b51f699b224aa5961626e46490ca1d879adb0791f2dff1d2d1"
+}

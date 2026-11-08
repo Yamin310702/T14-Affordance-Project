@@ -1,0 +1,766 @@
+{
+  "experiment": "E19_prompt_strategies",
+  "status": "complete",
+  "split": "full",
+  "device": "cpu",
+  "seed": 1,
+  "conditions": [
+    "A_canonical",
+    "B_single_paraphrase",
+    "C_three_map_average"
+  ],
+  "prompts": {
+    "experiment": "E19_prompt_strategies",
+    "canonical_baseline": "label-aligned training-name queries, selected by user on 2026-11-09",
+    "none_query": "none",
+    "actions": [
+      {
+        "canonical": "grasp",
+        "paraphrases": [
+          "the part to grasp",
+          "the region used for grasping",
+          "the part that can be grasped"
+        ]
+      },
+      {
+        "canonical": "contain",
+        "paraphrases": [
+          "the part that contains something",
+          "the region used to contain something",
+          "the part where something can be contained"
+        ]
+      },
+      {
+        "canonical": "lift",
+        "paraphrases": [
+          "the part to use when lifting the object",
+          "the region used to lift the object",
+          "the part by which the object can be lifted"
+        ]
+      },
+      {
+        "canonical": "openable",
+        "paraphrases": [
+          "the part that can be opened",
+          "the region used to open the object",
+          "the part involved in opening the object"
+        ]
+      },
+      {
+        "canonical": "layable",
+        "paraphrases": [
+          "the surface to lie on",
+          "the region used for lying down",
+          "the part on which a person can lie"
+        ]
+      },
+      {
+        "canonical": "sittable",
+        "paraphrases": [
+          "the surface to sit on",
+          "the region used for sitting",
+          "the part on which a person can sit"
+        ]
+      },
+      {
+        "canonical": "support",
+        "paraphrases": [
+          "the part that supports something",
+          "the region used to support something",
+          "the part on which something can be supported"
+        ]
+      },
+      {
+        "canonical": "wrap_grasp",
+        "paraphrases": [
+          "the part to grasp by wrapping a hand around it",
+          "the region used for a wrap grasp",
+          "the part held with a hand wrapped around it"
+        ]
+      },
+      {
+        "canonical": "pourable",
+        "paraphrases": [
+          "the part used for pouring",
+          "the region from which something is poured",
+          "the part through which contents can be poured out"
+        ]
+      },
+      {
+        "canonical": "move",
+        "paraphrases": [
+          "the part used to move the object",
+          "the region used when moving the object",
+          "the part by which the object can be moved"
+        ]
+      },
+      {
+        "canonical": "displaY",
+        "paraphrases": [
+          "the part that displays information",
+          "the region used to display information",
+          "the part where information is displayed"
+        ]
+      },
+      {
+        "canonical": "pushable",
+        "paraphrases": [
+          "the part to push",
+          "the region used for pushing",
+          "the part that can be pushed"
+        ]
+      },
+      {
+        "canonical": "pull",
+        "paraphrases": [
+          "the part to pull",
+          "the region used for pulling",
+          "the part that can be pulled"
+        ]
+      },
+      {
+        "canonical": "listen",
+        "paraphrases": [
+          "the part used for listening",
+          "the region from which a person listens to sound",
+          "the part that provides sound to listen to"
+        ]
+      },
+      {
+        "canonical": "wear",
+        "paraphrases": [
+          "the part that can be worn",
+          "the region used when wearing the object",
+          "the part worn on the body"
+        ]
+      },
+      {
+        "canonical": "press",
+        "paraphrases": [
+          "the part to press",
+          "the region used for pressing",
+          "the part that can be pressed"
+        ]
+      },
+      {
+        "canonical": "cut",
+        "paraphrases": [
+          "the part used for cutting",
+          "the region that cuts something",
+          "the part with which something can be cut"
+        ]
+      },
+      {
+        "canonical": "stab",
+        "paraphrases": [
+          "the part used for stabbing",
+          "the region that stabs something",
+          "the part with which something can be stabbed"
+        ]
+      }
+    ]
+  },
+  "prompts_sha256": "630f862487dd23bf3577357668ce0ae6e8c8504bde9eb5bcd6a7fffcca2b3340",
+  "runner_sha256": "3a18d7d18cbb17b51f699b224aa5961626e46490ca1d879adb0791f2dff1d2d1",
+  "checkpoint": "/Users/yaminmyataung/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds/checkpoints/best_model_openad_pn2_partial.t7",
+  "checkpoint_sha256": "cbcfe9ff70448d97a7047f1ade817645a9be29dd2782fba57776792a8210f2ae",
+  "max_shapes": 3,
+  "bootstrap_resamples": 200,
+  "claim_scope": "smoke check only",
+  "negative_definition": "action absent from all stored full-shape validation labels; no negative inference from partial-view absence",
+  "ensemble_rule": "mean of three complete 19-class softmax probability maps, then 19-way argmax; fixed none text",
+  "primary_metric": "global 18-action macro IoU; absent-union slots undefined, explicitly excluded",
+  "primary_contrast": "C minus A; object-paired bootstrap recomputes global macro IoU",
+  "interpretation": "all 18 query slots change together in B/C; this is a whole-vocabulary strategy study, unlike E18 one-slot changes",
+  "shape_count": 3,
+  "view_count": 3,
+  "torch_version": "2.14.1",
+  "mps_available": false,
+  "dataset_label_names": [
+    "grasp",
+    "contain",
+    "lift",
+    "openable",
+    "layable",
+    "sittable",
+    "support",
+    "wrap_grasp",
+    "pourable",
+    "move",
+    "displaY",
+    "pushable",
+    "pull",
+    "listen",
+    "wear",
+    "press",
+    "cut",
+    "stab"
+  ],
+  "dataset_files": {
+    "full_shape_val_data.pkl": "9f91a003ca95a24f5112f74d25be484e4271a9fd08befdcf755c0e8f6161b1aa"
+  },
+  "inference_seconds": 0.34235412505222484,
+  "macro_iou_18": {
+    "A_canonical": 0.382899084898638,
+    "B_single_paraphrase": 0.028960817717206135,
+    "C_three_map_average": 0.055705030622720995
+  },
+  "defined_action_count": {
+    "A_canonical": 6,
+    "B_single_paraphrase": 5,
+    "C_three_map_average": 5
+  },
+  "paired_95_intervals": {
+    "B_single_paraphrase_minus_A": [
+      -0.6238708313427017,
+      -0.14576870168319558
+    ],
+    "C_three_map_average_minus_A": [
+      -0.6175683103342984,
+      -0.10474111279811764
+    ]
+  },
+  "auc_status": "not computed in this initial runner; no AUC result claimed",
+  "negative_paired_differences": {
+    "grasp": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "contain": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "lift": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "openable": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "layable": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "sittable": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "support": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "wrap_grasp": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "pourable": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": -0.3333333333333333,
+        "ci95": [
+          -0.6666666666666666,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": -0.08821614583333333,
+        "ci95": [
+          -0.2646484375,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": -0.3333333333333333,
+        "ci95": [
+          -1.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": -0.08821614583333333,
+        "ci95": [
+          -0.2646484375,
+          0.0
+        ]
+      }
+    },
+    "move": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "displaY": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "pushable": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "pull": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "listen": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "wear": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "press": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "cut": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "stab": {
+      "B_single_paraphrase_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "B_single_paraphrase_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_any_alarm": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "C_three_map_average_false_positive_point_fraction": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+# Normalize generated CSV line endings for readable cross-platform diffs.
+*.csv text eol=lf
