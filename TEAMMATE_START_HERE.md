@@ -1,5 +1,7 @@
 # T14 research handoff: 3D affordance prediction
 
+**2026-11-09 update:** the current proposal uses A: canonical label-aligned names, B: one fixed paraphrase, C: average of three paraphrase probability maps. Use the [E19 protocol and current status](research_archive/2026-11-09/E19_prompt_strategies/README.md). The K=1/3/5 hypothesis and comparison below describe an older proposal and are superseded; completed historical results remain unchanged.
+
 Prepared 2026-10-11 for sharing the project work and proposal context. This note is the recommended first read. The ZIP also contains the dated experiment archive, raw result tables, run records, figures, scripts, and the course proposal guideline.
 
 ## What this project is about
